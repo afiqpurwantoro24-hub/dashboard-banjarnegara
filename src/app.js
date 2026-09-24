@@ -6,7 +6,8 @@
 const BAB_DEFINITIONS = [
   {
     id: 1,
-    title: 'Geografi dan Iklim',
+    title: 'Geografi',
+    titleEn: 'Geography',
     shortTitle: 'Geografi',
     icon: 'globe',
     unit: 'km²',
@@ -16,6 +17,7 @@ const BAB_DEFINITIONS = [
   {
     id: 2,
     title: 'Pemerintahan',
+    titleEn: 'Government',
     shortTitle: 'Pemerintahan',
     icon: 'landmark',
     unit: 'Orang',
@@ -25,6 +27,7 @@ const BAB_DEFINITIONS = [
   {
     id: 3,
     title: 'Kependudukan',
+    titleEn: 'Population',
     shortTitle: 'Penduduk',
     icon: 'users',
     unit: 'Jiwa',
@@ -34,6 +37,7 @@ const BAB_DEFINITIONS = [
   {
     id: 4,
     title: 'Sosial dan Kesejahteraan Rakyat',
+    titleEn: "Social and People's Welfare",
     shortTitle: 'Sosial',
     icon: 'graduation-cap',
     subTopics: [
@@ -44,6 +48,7 @@ const BAB_DEFINITIONS = [
   {
     id: 5,
     title: 'Pertanian',
+    titleEn: 'Agriculture',
     shortTitle: 'Pertanian',
     icon: 'wheat',
     unit: 'Kuintal',
@@ -53,6 +58,7 @@ const BAB_DEFINITIONS = [
   {
     id: 6,
     title: 'Pariwisata, Transportasi & Komunikasi',
+    titleEn: 'Tourism, Transportation and Communication',
     shortTitle: 'Komunikasi',
     icon: 'radio',
     subTopics: [
@@ -63,6 +69,7 @@ const BAB_DEFINITIONS = [
   {
     id: 7,
     title: 'Perbankan, Koperasi & Perdagangan',
+    titleEn: 'Banking, Cooperatives and Trade',
     shortTitle: 'Perdagangan',
     icon: 'store',
     subTopics: [
@@ -155,11 +162,14 @@ function initSidebar() {
         : 'text-[#64748B] hover:bg-amber-50 hover:text-[#0F172A]'
     }`;
     btn.innerHTML = `
-      <div class="flex items-center gap-2.5">
-        <i data-lucide="${b.icon}" class="w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}"></i>
-        <span>Bab ${b.id}: ${b.shortTitle}</span>
+      <div class="flex items-center gap-2.5 min-w-0">
+        <i data-lucide="${b.icon}" class="w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-400'}"></i>
+        <div class="min-w-0 leading-tight">
+          <div class="font-bold truncate">Bab ${b.id}: ${b.title}</div>
+          <div class="text-[10px] italic ${isActive ? 'text-amber-100' : 'text-slate-400'} font-normal truncate mt-0.5">${b.titleEn}</div>
+        </div>
       </div>
-      <i data-lucide="chevron-right" class="w-3.5 h-3.5 ${isActive ? 'text-white' : 'opacity-40'}"></i>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 shrink-0 ml-1 ${isActive ? 'text-white' : 'opacity-40'}"></i>
     `;
     btn.onclick = () => {
       state.bab = b.id;
@@ -458,7 +468,7 @@ function renderApp() {
   const curBadge = document.getElementById('currentBabBadge');
   curBadge.textContent = `Bab ${curBabDef.id}`;
   curBadge.className = 'bg-[#F59E0B] text-white font-extrabold text-xs px-2.5 py-0.5 rounded-md shadow-sm';
-  document.getElementById('currentBabTitle').textContent = curBabDef.title;
+  document.getElementById('currentBabTitle').innerHTML = `${curBabDef.title} <span class="italic font-normal text-slate-500 text-sm sm:text-base font-sans ml-1.5">/ ${curBabDef.titleEn}</span>`;
   
   let targetKecName = 'Kabupaten Banjarnegara (Seluruh Kecamatan)';
   if (state.isCompareMode && state.compareList.length > 0) {
@@ -496,7 +506,7 @@ function renderApp() {
 
   const metricInfo = getCurrentMetrics();
 
-  // Show/hide and update banner for uninputted / provisional data
+  // Show banner only if data is not yet inputted
   const banner2025 = document.getElementById('bannerDisclaimer2025');
   if (banner2025) {
     const hasAnyData = metricInfo.records.some((r) => {
@@ -514,15 +524,6 @@ function renderApp() {
             Pada Google Spreadsheet BPS, kolom data tahun <strong>${state.tahun}</strong> untuk bab/indikator ini belum diisi oleh BPS Banjarnegara. 
             Silakan pilih <strong>Tahun 2021 s.d. 2024</strong> pada filter tahun di atas untuk melihat data yang sudah terisi lengkap, atau isi angka pada Google Spreadsheet agar otomatis muncul di sini.
           </p>
-        </div>
-      `;
-      banner2025.classList.remove('hidden');
-    } else if (state.tahun === 2025) {
-      banner2025.className = 'mt-4 p-3 bg-bpsYellowLight border border-bpsYellowBorder rounded-xl flex items-start gap-2.5 text-bpsYellowText text-xs';
-      banner2025.innerHTML = `
-        <i data-lucide="alert-triangle" class="w-4 h-4 shrink-0 text-amber-600 mt-0.5"></i>
-        <div>
-          <span class="font-bold">Informasi Data Tahun 2025:</span> Sebagian indikator data tahun 2025 masih bersifat sementara / dalam proses survei BPS. Nilai yang belum lengkap ditandai dengan garis putus-putus pada grafik dan tanda strip pada tabel.
         </div>
       `;
       banner2025.classList.remove('hidden');
@@ -789,7 +790,7 @@ function renderMapChoropleth(metricInfo) {
     // Tooltip Events
     pathEl.addEventListener('mouseenter', (e) => {
       const tooltip = document.getElementById('mapTooltip');
-      const formatVal = val !== null && val !== undefined ? new Intl.NumberFormat('id-ID').format(val) : 'Data Sementara';
+      const formatVal = val !== null && val !== undefined ? new Intl.NumberFormat('id-ID').format(val) : 'Belum Tersedia';
       tooltip.innerHTML = `
         <div class="font-extrabold text-amber-300 text-sm">Kec. ${mp.nama}</div>
         <div class="text-[11px] text-slate-300 mt-0.5">Peringkat: <span class="text-white font-bold">#${rank} dari 20</span></div>
@@ -894,9 +895,6 @@ function renderTrendLineChart(metricInfo) {
         tension: 0.3,
         borderWidth: 2.5,
         pointRadius: 4,
-        segment: {
-          borderDash: (ctx) => (ctx.p1DataIndex === 4 ? [6, 6] : undefined),
-        },
       });
     });
   } else if (state.selectedKecamatan !== 'ALL') {
@@ -918,9 +916,6 @@ function renderTrendLineChart(metricInfo) {
       tension: 0.3,
       borderWidth: 3,
       pointRadius: 5,
-      segment: {
-        borderDash: (ctx) => (ctx.p1DataIndex === 4 ? [6, 6] : undefined),
-      },
     });
   } else {
     // Total Kabupaten (Navy #1E3A8A)
@@ -944,9 +939,6 @@ function renderTrendLineChart(metricInfo) {
       tension: 0.3,
       borderWidth: 3,
       pointRadius: 5,
-      segment: {
-        borderDash: (ctx) => (ctx.p1DataIndex === 4 ? [6, 6] : undefined),
-      },
     });
   }
 
@@ -1195,7 +1187,7 @@ function renderTable(metricInfo) {
   const tbody = document.createElement('tbody');
   tbody.className = 'divide-y divide-slate-100';
 
-  const formatId = (v) => (v !== null && v !== undefined ? new Intl.NumberFormat('id-ID').format(v) : '<span class="text-amber-500 font-semibold italic">— (Data Sem.)</span>');
+  const formatId = (v) => (v !== null && v !== undefined ? new Intl.NumberFormat('id-ID').format(v) : '<span class="text-slate-400 font-semibold">—</span>');
 
   // Compute maximum value for relative visual magnitude bar
   let maxTableVal = 0;

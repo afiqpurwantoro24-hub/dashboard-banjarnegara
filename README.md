@@ -9,13 +9,13 @@ Transformasi Data Statistik BPS Kabupaten Banjarnegara Menjadi Dashboard Interak
 1. **Header & Filter Global Terpadu**:
    - Filter Tahun (2021 – 2025).
    - Filter Kecamatan (Semua Kecamatan / Profil 1 Kecamatan / Komparasi Multi-Kecamatan hingga 5 wilayah).
-   - Indikator Status Data 2025 (data sementara / berjalan ditandai dengan garis putus-putus pada grafik & badge informasi).
+   - Indikator Status Data (notifikasi cerdas jika indikator belum diinput pada Google Spreadsheet).
    - Tombol Bagikan Tautan (Shareable URL dengan query params otomatis).
    - Ekspor Data ke format CSV/Excel.
    - Mode Cetak / Unduh Laporan PDF.
 
 2. **Cakupan Lengkap 7 Bab Tematik**:
-   - **Bab 1 - Geografi & Iklim**: Luas Wilayah ($km^2$).
+   - **Bab 1 - Geografi**: Luas Wilayah ($km^2$).
    - **Bab 2 - Pemerintahan**: Jumlah PNS Pemda menurut Jenis Kelamin (Laki-laki & Perempuan).
    - **Bab 3 - Kependudukan**: Jumlah Penduduk menurut Jenis Kelamin.
    - **Bab 4 - Sosial & Kesejahteraan Rakyat**: 
