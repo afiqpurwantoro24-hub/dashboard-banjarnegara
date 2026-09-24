@@ -57,8 +57,8 @@ const BAB_DEFINITIONS = [
   },
   {
     id: 6,
-    title: 'Pariwisata, Transportasi & Komunikasi',
-    titleEn: 'Tourism, Transportation and Communication',
+    title: 'Komunikasi',
+    titleEn: 'Communication',
     shortTitle: 'Komunikasi',
     icon: 'radio',
     subTopics: [

@@ -186,7 +186,14 @@ export const BAB_CONFIG: BabConfig[] = [
   },
   {
     id: 5,
-    title: 'Pariwisata, Transportasi, dan Komunikasi',
+    title: 'Pertanian',
+    shortTitle: 'Pertanian',
+    icon: '🌾',
+    hasSubTopics: false,
+  },
+  {
+    id: 6,
+    title: 'Komunikasi',
     shortTitle: 'Komunikasi',
     icon: '📡',
     hasSubTopics: true,
@@ -194,13 +201,6 @@ export const BAB_CONFIG: BabConfig[] = [
       { id: 'menara', label: 'Menara Telekomunikasi' },
       { id: 'sinyal', label: 'Kualitas Sinyal' },
     ],
-  },
-  {
-    id: 6,
-    title: 'Pertanian',
-    shortTitle: 'Pertanian',
-    icon: '🌾',
-    hasSubTopics: false,
   },
   {
     id: 7,

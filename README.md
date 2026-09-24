@@ -22,7 +22,7 @@ Transformasi Data Statistik BPS Kabupaten Banjarnegara Menjadi Dashboard Interak
      - Sub-tab 1: Sarana Pendidikan per Jenjang (SD/MI, SMP/MTs, SMA/SMK/MA, Perguruan Tinggi).
      - Sub-tab 2: Keluarga Pengguna Listrik PLN.
    - **Bab 5 - Pertanian**: Total Produksi Tanaman Sayuran dan Buah-buahan Semusim (Kuintal, dengan penyesuaian skala logaritmik).
-   - **Bab 6 - Pariwisata, Transportasi & Komunikasi**:
+   - **Bab 6 - Komunikasi**:
      - Sub-tab 1: Jumlah Menara Telekomunikasi.
      - Sub-tab 2: Persentase Desa menurut Kekuatan Sinyal Telepon Seluler.
    - **Bab 7 - Perbankan, Koperasi & Perdagangan**:
