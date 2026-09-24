@@ -1,0 +1,7337 @@
+﻿// Auto-generated KCDA dataset
+import { GeografiData, PemerintahanData, PendudukData, SekolahData, ListrikData, MenaraData, SinyalData, PertanianData, BankData, PerdaganganData } from '../lib/types';
+
+export const KCDA_DATA = {
+    "menara":  [
+                   {
+                       "jumlahMenara":  59,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304100",
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "jumlahMenara":  59,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304100",
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "jumlahMenara":  48,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304100",
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "jumlahMenara":  48,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304100",
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304100",
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304060",
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304060",
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "jumlahMenara":  53,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304060",
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "jumlahMenara":  53,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304060",
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304060",
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "jumlahMenara":  27,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304170",
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "jumlahMenara":  27,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304170",
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "jumlahMenara":  27,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304170",
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "jumlahMenara":  21,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304170",
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304170",
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "jumlahMenara":  83,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304050",
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "jumlahMenara":  83,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304050",
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "jumlahMenara":  71,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304050",
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "jumlahMenara":  81,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304050",
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304050",
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "jumlahMenara":  42,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304190",
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "jumlahMenara":  42,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304190",
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304190",
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304190",
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304190",
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "jumlahMenara":  54,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304140",
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "jumlahMenara":  54,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304140",
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "jumlahMenara":  39,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304140",
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "jumlahMenara":  39,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304140",
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304140",
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "jumlahMenara":  72,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304090",
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "jumlahMenara":  72,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304090",
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "jumlahMenara":  72,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304090",
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "jumlahMenara":  74,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304090",
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304090",
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "jumlahMenara":  87,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304030",
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "jumlahMenara":  87,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304030",
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "jumlahMenara":  64,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304030",
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "jumlahMenara":  64,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304030",
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304030",
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "jumlahMenara":  33,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304070",
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "jumlahMenara":  33,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304070",
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "jumlahMenara":  34,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304070",
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "jumlahMenara":  34,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304070",
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304070",
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "jumlahMenara":  49,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304150",
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "jumlahMenara":  49,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304150",
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304150",
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304150",
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304150",
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "jumlahMenara":  12,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304200",
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "jumlahMenara":  12,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304200",
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "jumlahMenara":  13,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304200",
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "jumlahMenara":  13,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304200",
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304200",
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "jumlahMenara":  57,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304160",
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "jumlahMenara":  57,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304160",
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "jumlahMenara":  57,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304160",
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "jumlahMenara":  58,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304160",
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304160",
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "jumlahMenara":  78,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304130",
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "jumlahMenara":  78,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304130",
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "jumlahMenara":  68,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304130",
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "jumlahMenara":  68,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304130",
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304130",
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "jumlahMenara":  50,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304040",
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "jumlahMenara":  50,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304040",
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "jumlahMenara":  53,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304040",
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "jumlahMenara":  53,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304040",
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304040",
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304020",
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "jumlahMenara":  46,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304020",
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "jumlahMenara":  32,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304020",
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "jumlahMenara":  32,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304020",
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304020",
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "jumlahMenara":  61,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304120",
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "jumlahMenara":  61,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304120",
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "jumlahMenara":  48,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304120",
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "jumlahMenara":  48,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304120",
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304120",
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304080",
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304080",
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "jumlahMenara":  58,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304080",
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "jumlahMenara":  58,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304080",
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304080",
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "jumlahMenara":  76,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304010",
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "jumlahMenara":  76,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304010",
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "jumlahMenara":  68,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304010",
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "jumlahMenara":  68,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304010",
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304010",
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "jumlahMenara":  55,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304110",
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "jumlahMenara":  55,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304110",
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "jumlahMenara":  45,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304110",
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "jumlahMenara":  45,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304110",
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304110",
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "jumlahMenara":  66,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304180",
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "jumlahMenara":  66,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304180",
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304180",
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "jumlahMenara":  60,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304180",
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "jumlahMenara":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304180",
+                       "namaKecamatan":  "Wanayasa"
+                   }
+               ],
+    "sekolah":  [
+                    {
+                        "sdMi":  41,
+                        "smpMts":  6,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Banjarmangu",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304100",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  41,
+                        "smpMts":  6,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Banjarmangu",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304100",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  38,
+                        "smpMts":  5,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Banjarmangu",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304100",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  38,
+                        "smpMts":  5,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Banjarmangu",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304100",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Banjarmangu",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304100",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  42,
+                        "smpMts":  16,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Banjarnegara",
+                        "perguruanTinggi":  3,
+                        "kodeKecamatan":  "3304060",
+                        "smaSmkMa":  12
+                    },
+                    {
+                        "sdMi":  42,
+                        "smpMts":  16,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Banjarnegara",
+                        "perguruanTinggi":  3,
+                        "kodeKecamatan":  "3304060",
+                        "smaSmkMa":  12
+                    },
+                    {
+                        "sdMi":  42,
+                        "smpMts":  12,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Banjarnegara",
+                        "perguruanTinggi":  3,
+                        "kodeKecamatan":  "3304060",
+                        "smaSmkMa":  13
+                    },
+                    {
+                        "sdMi":  42,
+                        "smpMts":  12,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Banjarnegara",
+                        "perguruanTinggi":  3,
+                        "kodeKecamatan":  "3304060",
+                        "smaSmkMa":  13
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Banjarnegara",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304060",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  30,
+                        "smpMts":  3,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Batur",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304170",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  30,
+                        "smpMts":  3,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Batur",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304170",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  3,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Batur",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304170",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  3,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Batur",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304170",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Batur",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304170",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  38,
+                        "smpMts":  5,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Bawang",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304050",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  38,
+                        "smpMts":  5,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Bawang",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304050",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  52,
+                        "smpMts":  7,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Bawang",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304050",
+                        "smaSmkMa":  6
+                    },
+                    {
+                        "sdMi":  52,
+                        "smpMts":  7,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Bawang",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304050",
+                        "smaSmkMa":  7
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Bawang",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304050",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  7,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Kalibening",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304190",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  7,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Kalibening",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304190",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  40,
+                        "smpMts":  9,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Kalibening",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304190",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  38,
+                        "smpMts":  9,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Kalibening",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304190",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Kalibening",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304190",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  5,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Karangkobar",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304140",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  5,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Karangkobar",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304140",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  32,
+                        "smpMts":  5,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Karangkobar",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304140",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  32,
+                        "smpMts":  5,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Karangkobar",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304140",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Karangkobar",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304140",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  35,
+                        "smpMts":  5,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Madukara",
+                        "perguruanTinggi":  1,
+                        "kodeKecamatan":  "3304090",
+                        "smaSmkMa":  0
+                    },
+                    {
+                        "sdMi":  35,
+                        "smpMts":  5,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Madukara",
+                        "perguruanTinggi":  1,
+                        "kodeKecamatan":  "3304090",
+                        "smaSmkMa":  0
+                    },
+                    {
+                        "sdMi":  34,
+                        "smpMts":  7,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Madukara",
+                        "perguruanTinggi":  1,
+                        "kodeKecamatan":  "3304090",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  34,
+                        "smpMts":  8,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Madukara",
+                        "perguruanTinggi":  1,
+                        "kodeKecamatan":  "3304090",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Madukara",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304090",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  6,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Mandiraja",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304030",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  6,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Mandiraja",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304030",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  57,
+                        "smpMts":  10,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Mandiraja",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304030",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  57,
+                        "smpMts":  10,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Mandiraja",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304030",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Mandiraja",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304030",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  8,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Pagedongan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304070",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  8,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Pagedongan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304070",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  8,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Pagedongan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304070",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  8,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Pagedongan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304070",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Pagedongan",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304070",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  5,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Pagentan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304150",
+                        "smaSmkMa":  0
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  5,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Pagentan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304150",
+                        "smaSmkMa":  0
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  5,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Pagentan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304150",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  31,
+                        "smpMts":  5,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Pagentan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304150",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Pagentan",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304150",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  23,
+                        "smpMts":  4,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Pandanarum",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304200",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  23,
+                        "smpMts":  4,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Pandanarum",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304200",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  22,
+                        "smpMts":  4,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Pandanarum",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304200",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  22,
+                        "smpMts":  4,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Pandanarum",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304200",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Pandanarum",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304200",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  7,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Pejawaran",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304160",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  7,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Pejawaran",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304160",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  7,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Pejawaran",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304160",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  39,
+                        "smpMts":  7,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Pejawaran",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304160",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Pejawaran",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304160",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  70,
+                        "smpMts":  10,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Punggelan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304130",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  70,
+                        "smpMts":  10,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Punggelan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304130",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  69,
+                        "smpMts":  10,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Punggelan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304130",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  69,
+                        "smpMts":  10,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Punggelan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304130",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Punggelan",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304130",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  58,
+                        "smpMts":  9,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Purwanegara",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304040",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  58,
+                        "smpMts":  9,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Purwanegara",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304040",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  55,
+                        "smpMts":  9,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Purwanegara",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304040",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  55,
+                        "smpMts":  9,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Purwanegara",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304040",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Purwanegara",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304040",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  43,
+                        "smpMts":  7,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Purwareja Klampok",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304020",
+                        "smaSmkMa":  6
+                    },
+                    {
+                        "sdMi":  43,
+                        "smpMts":  7,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Purwareja Klampok",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304020",
+                        "smaSmkMa":  6
+                    },
+                    {
+                        "sdMi":  40,
+                        "smpMts":  7,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Purwareja Klampok",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304020",
+                        "smaSmkMa":  7
+                    },
+                    {
+                        "sdMi":  40,
+                        "smpMts":  7,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Purwareja Klampok",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304020",
+                        "smaSmkMa":  7
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Purwareja Klampok",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304020",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  51,
+                        "smpMts":  7,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Rakit",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304120",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  51,
+                        "smpMts":  7,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Rakit",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304120",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  51,
+                        "smpMts":  8,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Rakit",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304120",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  51,
+                        "smpMts":  8,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Rakit",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304120",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Rakit",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304120",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  4,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Sigaluh",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304080",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  4,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Sigaluh",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304080",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  4,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Sigaluh",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304080",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  29,
+                        "smpMts":  4,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Sigaluh",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304080",
+                        "smaSmkMa":  4
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Sigaluh",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304080",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  52,
+                        "smpMts":  6,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Susukan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304010",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  52,
+                        "smpMts":  6,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Susukan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304010",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  50,
+                        "smpMts":  6,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Susukan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304010",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  50,
+                        "smpMts":  6,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Susukan",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304010",
+                        "smaSmkMa":  1
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Susukan",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304010",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  6,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Wanadadi",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304110",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  6,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Wanadadi",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304110",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  5,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Wanadadi",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304110",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  33,
+                        "smpMts":  5,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Wanadadi",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304110",
+                        "smaSmkMa":  3
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Wanadadi",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304110",
+                        "smaSmkMa":  null
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  7,
+                        "tahun":  2021,
+                        "namaKecamatan":  "Wanayasa",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304180",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  7,
+                        "tahun":  2022,
+                        "namaKecamatan":  "Wanayasa",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304180",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  7,
+                        "tahun":  2023,
+                        "namaKecamatan":  "Wanayasa",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304180",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  45,
+                        "smpMts":  7,
+                        "tahun":  2024,
+                        "namaKecamatan":  "Wanayasa",
+                        "perguruanTinggi":  0,
+                        "kodeKecamatan":  "3304180",
+                        "smaSmkMa":  2
+                    },
+                    {
+                        "sdMi":  null,
+                        "smpMts":  null,
+                        "tahun":  2025,
+                        "namaKecamatan":  "Wanayasa",
+                        "perguruanTinggi":  null,
+                        "kodeKecamatan":  "3304180",
+                        "smaSmkMa":  null
+                    }
+                ],
+    "listrik":  [
+                    {
+                        "jumlahKeluargaPLN":  15212,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304100",
+                        "namaKecamatan":  "Banjarmangu"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15212,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304100",
+                        "namaKecamatan":  "Banjarmangu"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15588,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304100",
+                        "namaKecamatan":  "Banjarmangu"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15588,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304100",
+                        "namaKecamatan":  "Banjarmangu"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304100",
+                        "namaKecamatan":  "Banjarmangu"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21599,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304060",
+                        "namaKecamatan":  "Banjarnegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304060",
+                        "namaKecamatan":  "Banjarnegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304060",
+                        "namaKecamatan":  "Banjarnegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304060",
+                        "namaKecamatan":  "Banjarnegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304060",
+                        "namaKecamatan":  "Banjarnegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13890,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304170",
+                        "namaKecamatan":  "Batur"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13890,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304170",
+                        "namaKecamatan":  "Batur"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13029,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304170",
+                        "namaKecamatan":  "Batur"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13029,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304170",
+                        "namaKecamatan":  "Batur"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304170",
+                        "namaKecamatan":  "Batur"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21468,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304050",
+                        "namaKecamatan":  "Bawang"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21468,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304050",
+                        "namaKecamatan":  "Bawang"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21630,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304050",
+                        "namaKecamatan":  "Bawang"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21630,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304050",
+                        "namaKecamatan":  "Bawang"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304050",
+                        "namaKecamatan":  "Bawang"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14074,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304190",
+                        "namaKecamatan":  "Kalibening"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14074,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304190",
+                        "namaKecamatan":  "Kalibening"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14961,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304190",
+                        "namaKecamatan":  "Kalibening"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14961,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304190",
+                        "namaKecamatan":  "Kalibening"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304190",
+                        "namaKecamatan":  "Kalibening"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  9330,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304140",
+                        "namaKecamatan":  "Karangkobar"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  9330,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304140",
+                        "namaKecamatan":  "Karangkobar"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  10462,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304140",
+                        "namaKecamatan":  "Karangkobar"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  10462,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304140",
+                        "namaKecamatan":  "Karangkobar"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304140",
+                        "namaKecamatan":  "Karangkobar"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15084,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304090",
+                        "namaKecamatan":  "Madukara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15084,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304090",
+                        "namaKecamatan":  "Madukara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  16107,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304090",
+                        "namaKecamatan":  "Madukara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15905,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304090",
+                        "namaKecamatan":  "Madukara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304090",
+                        "namaKecamatan":  "Madukara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  25957,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304030",
+                        "namaKecamatan":  "Mandiraja"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  25957,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304030",
+                        "namaKecamatan":  "Mandiraja"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  26414,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304030",
+                        "namaKecamatan":  "Mandiraja"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  26414,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304030",
+                        "namaKecamatan":  "Mandiraja"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304030",
+                        "namaKecamatan":  "Mandiraja"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14498,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304070",
+                        "namaKecamatan":  "Pagedongan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14498,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304070",
+                        "namaKecamatan":  "Pagedongan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  16846,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304070",
+                        "namaKecamatan":  "Pagedongan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  16846,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304070",
+                        "namaKecamatan":  "Pagedongan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304070",
+                        "namaKecamatan":  "Pagedongan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  12127,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304150",
+                        "namaKecamatan":  "Pagentan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  12127,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304150",
+                        "namaKecamatan":  "Pagentan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13451,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304150",
+                        "namaKecamatan":  "Pagentan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13451,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304150",
+                        "namaKecamatan":  "Pagentan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304150",
+                        "namaKecamatan":  "Pagentan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  7029,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304200",
+                        "namaKecamatan":  "Pandanarum"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  7029,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304200",
+                        "namaKecamatan":  "Pandanarum"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  7509,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304200",
+                        "namaKecamatan":  "Pandanarum"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  7509,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304200",
+                        "namaKecamatan":  "Pandanarum"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304200",
+                        "namaKecamatan":  "Pandanarum"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13564,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304160",
+                        "namaKecamatan":  "Pejawaran"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  13564,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304160",
+                        "namaKecamatan":  "Pejawaran"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14797,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304160",
+                        "namaKecamatan":  "Pejawaran"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  14797,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304160",
+                        "namaKecamatan":  "Pejawaran"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304160",
+                        "namaKecamatan":  "Pejawaran"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  28077,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304130",
+                        "namaKecamatan":  "Punggelan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  28077,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304130",
+                        "namaKecamatan":  "Punggelan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  31458,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304130",
+                        "namaKecamatan":  "Punggelan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  31458,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304130",
+                        "namaKecamatan":  "Punggelan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304130",
+                        "namaKecamatan":  "Punggelan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  27839,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304040",
+                        "namaKecamatan":  "Purwanegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  27839,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304040",
+                        "namaKecamatan":  "Purwanegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  29399,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304040",
+                        "namaKecamatan":  "Purwanegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  29399,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304040",
+                        "namaKecamatan":  "Purwanegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304040",
+                        "namaKecamatan":  "Purwanegara"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15486,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304020",
+                        "namaKecamatan":  "Purwareja Klampok"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15486,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304020",
+                        "namaKecamatan":  "Purwareja Klampok"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  16093,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304020",
+                        "namaKecamatan":  "Purwareja Klampok"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  16093,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304020",
+                        "namaKecamatan":  "Purwareja Klampok"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304020",
+                        "namaKecamatan":  "Purwareja Klampok"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  18095,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304120",
+                        "namaKecamatan":  "Rakit"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  18095,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304120",
+                        "namaKecamatan":  "Rakit"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  18458,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304120",
+                        "namaKecamatan":  "Rakit"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  18458,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304120",
+                        "namaKecamatan":  "Rakit"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304120",
+                        "namaKecamatan":  "Rakit"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  10223,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304080",
+                        "namaKecamatan":  "Sigaluh"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  10223,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304080",
+                        "namaKecamatan":  "Sigaluh"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11208,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304080",
+                        "namaKecamatan":  "Sigaluh"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11208,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304080",
+                        "namaKecamatan":  "Sigaluh"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304080",
+                        "namaKecamatan":  "Sigaluh"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21902,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304010",
+                        "namaKecamatan":  "Susukan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  21902,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304010",
+                        "namaKecamatan":  "Susukan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  22282,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304010",
+                        "namaKecamatan":  "Susukan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  22282,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304010",
+                        "namaKecamatan":  "Susukan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304010",
+                        "namaKecamatan":  "Susukan"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11057,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304110",
+                        "namaKecamatan":  "Wanadadi"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11057,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304110",
+                        "namaKecamatan":  "Wanadadi"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11403,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304110",
+                        "namaKecamatan":  "Wanadadi"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  11403,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304110",
+                        "namaKecamatan":  "Wanadadi"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304110",
+                        "namaKecamatan":  "Wanadadi"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15352,
+                        "tahun":  2021,
+                        "kodeKecamatan":  "3304180",
+                        "namaKecamatan":  "Wanayasa"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15352,
+                        "tahun":  2022,
+                        "kodeKecamatan":  "3304180",
+                        "namaKecamatan":  "Wanayasa"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15580,
+                        "tahun":  2023,
+                        "kodeKecamatan":  "3304180",
+                        "namaKecamatan":  "Wanayasa"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  15580,
+                        "tahun":  2024,
+                        "kodeKecamatan":  "3304180",
+                        "namaKecamatan":  "Wanayasa"
+                    },
+                    {
+                        "jumlahKeluargaPLN":  null,
+                        "tahun":  2025,
+                        "kodeKecamatan":  "3304180",
+                        "namaKecamatan":  "Wanayasa"
+                    }
+                ],
+    "sinyal":  [
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304100",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304100",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "persenSinyalLemah":  5.88,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304100",
+                       "persenSinyalKuat":  94.12,
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "persenSinyalLemah":  5.88,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304100",
+                       "persenSinyalKuat":  94.12,
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304100",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Banjarmangu"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304060",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304060",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304060",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304060",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304060",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Banjarnegara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304170",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304170",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304170",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304170",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304170",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Batur"
+                   },
+                   {
+                       "persenSinyalLemah":  16.67,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304050",
+                       "persenSinyalKuat":  83.33,
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "persenSinyalLemah":  16.67,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304050",
+                       "persenSinyalKuat":  83.33,
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "persenSinyalLemah":  5.56,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304050",
+                       "persenSinyalKuat":  94.44,
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "persenSinyalLemah":  5.56,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304050",
+                       "persenSinyalKuat":  94.44,
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304050",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Bawang"
+                   },
+                   {
+                       "persenSinyalLemah":  50,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304190",
+                       "persenSinyalKuat":  50,
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "persenSinyalLemah":  50,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304190",
+                       "persenSinyalKuat":  50,
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "persenSinyalLemah":  25,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304190",
+                       "persenSinyalKuat":  75,
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "persenSinyalLemah":  25,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304190",
+                       "persenSinyalKuat":  75,
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304190",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Kalibening"
+                   },
+                   {
+                       "persenSinyalLemah":  15.38,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304140",
+                       "persenSinyalKuat":  84.62,
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "persenSinyalLemah":  15.38,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304140",
+                       "persenSinyalKuat":  84.62,
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304140",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "persenSinyalLemah":  7.69,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304140",
+                       "persenSinyalKuat":  92.31,
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304140",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Karangkobar"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304090",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304090",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304090",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304090",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304090",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Madukara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304030",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304030",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304030",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304030",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304030",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Mandiraja"
+                   },
+                   {
+                       "persenSinyalLemah":  22.22,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304070",
+                       "persenSinyalKuat":  77.78,
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "persenSinyalLemah":  22.22,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304070",
+                       "persenSinyalKuat":  77.78,
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "persenSinyalLemah":  22.22,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304070",
+                       "persenSinyalKuat":  77.78,
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "persenSinyalLemah":  22.22,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304070",
+                       "persenSinyalKuat":  77.78,
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304070",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Pagedongan"
+                   },
+                   {
+                       "persenSinyalLemah":  6.25,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304150",
+                       "persenSinyalKuat":  93.75,
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "persenSinyalLemah":  6.25,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304150",
+                       "persenSinyalKuat":  93.75,
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "persenSinyalLemah":  12.5,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304150",
+                       "persenSinyalKuat":  87.5,
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "persenSinyalLemah":  12.5,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304150",
+                       "persenSinyalKuat":  87.5,
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304150",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Pagentan"
+                   },
+                   {
+                       "persenSinyalLemah":  37.5,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304200",
+                       "persenSinyalKuat":  62.5,
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "persenSinyalLemah":  37.5,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304200",
+                       "persenSinyalKuat":  62.5,
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "persenSinyalLemah":  37.5,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304200",
+                       "persenSinyalKuat":  62.5,
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "persenSinyalLemah":  37.5,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304200",
+                       "persenSinyalKuat":  62.5,
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304200",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Pandanarum"
+                   },
+                   {
+                       "persenSinyalLemah":  35.29,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304160",
+                       "persenSinyalKuat":  64.71,
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "persenSinyalLemah":  35.29,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304160",
+                       "persenSinyalKuat":  64.71,
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "persenSinyalLemah":  35.29,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304160",
+                       "persenSinyalKuat":  64.71,
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "persenSinyalLemah":  35.29,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304160",
+                       "persenSinyalKuat":  64.71,
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304160",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Pejawaran"
+                   },
+                   {
+                       "persenSinyalLemah":  5.88,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304130",
+                       "persenSinyalKuat":  94.12,
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "persenSinyalLemah":  5.88,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304130",
+                       "persenSinyalKuat":  94.12,
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304130",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304130",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304130",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Punggelan"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304040",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304040",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304040",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304040",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304040",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Purwanegara"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304020",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304020",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304020",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304020",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304020",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Purwareja Klampok"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304120",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304120",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304120",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304120",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304120",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Rakit"
+                   },
+                   {
+                       "persenSinyalLemah":  13.33,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304080",
+                       "persenSinyalKuat":  86.67,
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "persenSinyalLemah":  13.33,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304080",
+                       "persenSinyalKuat":  86.67,
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "persenSinyalLemah":  13.33,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304080",
+                       "persenSinyalKuat":  86.67,
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "persenSinyalLemah":  13.33,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304080",
+                       "persenSinyalKuat":  86.67,
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304080",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Sigaluh"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304010",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304010",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304010",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304010",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304010",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Susukan"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304110",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304110",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304110",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "persenSinyalLemah":  0,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304110",
+                       "persenSinyalKuat":  100,
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304110",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Wanadadi"
+                   },
+                   {
+                       "persenSinyalLemah":  41.18,
+                       "tahun":  2021,
+                       "kodeKecamatan":  "3304180",
+                       "persenSinyalKuat":  58.82,
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "persenSinyalLemah":  41.18,
+                       "tahun":  2022,
+                       "kodeKecamatan":  "3304180",
+                       "persenSinyalKuat":  58.82,
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2023,
+                       "kodeKecamatan":  "3304180",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "persenSinyalLemah":  11.76,
+                       "tahun":  2024,
+                       "kodeKecamatan":  "3304180",
+                       "persenSinyalKuat":  88.24,
+                       "namaKecamatan":  "Wanayasa"
+                   },
+                   {
+                       "persenSinyalLemah":  null,
+                       "tahun":  2025,
+                       "kodeKecamatan":  "3304180",
+                       "persenSinyalKuat":  null,
+                       "namaKecamatan":  "Wanayasa"
+                   }
+               ],
+    "pertanian":  [
+                      {
+                          "produksiSayuranBuah":  9,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304100",
+                          "namaKecamatan":  "Banjarmangu"
+                      },
+                      {
+                          "produksiSayuranBuah":  71,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304100",
+                          "namaKecamatan":  "Banjarmangu"
+                      },
+                      {
+                          "produksiSayuranBuah":  178,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304100",
+                          "namaKecamatan":  "Banjarmangu"
+                      },
+                      {
+                          "produksiSayuranBuah":  22,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304100",
+                          "namaKecamatan":  "Banjarmangu"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304100",
+                          "namaKecamatan":  "Banjarmangu"
+                      },
+                      {
+                          "produksiSayuranBuah":  1961,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304060",
+                          "namaKecamatan":  "Banjarnegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  2086,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304060",
+                          "namaKecamatan":  "Banjarnegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  2315,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304060",
+                          "namaKecamatan":  "Banjarnegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  37,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304060",
+                          "namaKecamatan":  "Banjarnegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304060",
+                          "namaKecamatan":  "Banjarnegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  871600,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304170",
+                          "namaKecamatan":  "Batur"
+                      },
+                      {
+                          "produksiSayuranBuah":  872100,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304170",
+                          "namaKecamatan":  "Batur"
+                      },
+                      {
+                          "produksiSayuranBuah":  772700,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304170",
+                          "namaKecamatan":  "Batur"
+                      },
+                      {
+                          "produksiSayuranBuah":  1166100,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304170",
+                          "namaKecamatan":  "Batur"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304170",
+                          "namaKecamatan":  "Batur"
+                      },
+                      {
+                          "produksiSayuranBuah":  976,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304050",
+                          "namaKecamatan":  "Bawang"
+                      },
+                      {
+                          "produksiSayuranBuah":  259,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304050",
+                          "namaKecamatan":  "Bawang"
+                      },
+                      {
+                          "produksiSayuranBuah":  146,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304050",
+                          "namaKecamatan":  "Bawang"
+                      },
+                      {
+                          "produksiSayuranBuah":  527,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304050",
+                          "namaKecamatan":  "Bawang"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304050",
+                          "namaKecamatan":  "Bawang"
+                      },
+                      {
+                          "produksiSayuranBuah":  34618,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304190",
+                          "namaKecamatan":  "Kalibening"
+                      },
+                      {
+                          "produksiSayuranBuah":  18509,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304190",
+                          "namaKecamatan":  "Kalibening"
+                      },
+                      {
+                          "produksiSayuranBuah":  38778,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304190",
+                          "namaKecamatan":  "Kalibening"
+                      },
+                      {
+                          "produksiSayuranBuah":  68641,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304190",
+                          "namaKecamatan":  "Kalibening"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304190",
+                          "namaKecamatan":  "Kalibening"
+                      },
+                      {
+                          "produksiSayuranBuah":  58629,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304140",
+                          "namaKecamatan":  "Karangkobar"
+                      },
+                      {
+                          "produksiSayuranBuah":  36075,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304140",
+                          "namaKecamatan":  "Karangkobar"
+                      },
+                      {
+                          "produksiSayuranBuah":  48030,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304140",
+                          "namaKecamatan":  "Karangkobar"
+                      },
+                      {
+                          "produksiSayuranBuah":  41394,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304140",
+                          "namaKecamatan":  "Karangkobar"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304140",
+                          "namaKecamatan":  "Karangkobar"
+                      },
+                      {
+                          "produksiSayuranBuah":  2438,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304090",
+                          "namaKecamatan":  "Madukara"
+                      },
+                      {
+                          "produksiSayuranBuah":  958,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304090",
+                          "namaKecamatan":  "Madukara"
+                      },
+                      {
+                          "produksiSayuranBuah":  121,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304090",
+                          "namaKecamatan":  "Madukara"
+                      },
+                      {
+                          "produksiSayuranBuah":  433,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304090",
+                          "namaKecamatan":  "Madukara"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304090",
+                          "namaKecamatan":  "Madukara"
+                      },
+                      {
+                          "produksiSayuranBuah":  610,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304030",
+                          "namaKecamatan":  "Mandiraja"
+                      },
+                      {
+                          "produksiSayuranBuah":  73,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304030",
+                          "namaKecamatan":  "Mandiraja"
+                      },
+                      {
+                          "produksiSayuranBuah":  253,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304030",
+                          "namaKecamatan":  "Mandiraja"
+                      },
+                      {
+                          "produksiSayuranBuah":  726,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304030",
+                          "namaKecamatan":  "Mandiraja"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304030",
+                          "namaKecamatan":  "Mandiraja"
+                      },
+                      {
+                          "produksiSayuranBuah":  259,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304070",
+                          "namaKecamatan":  "Pagedongan"
+                      },
+                      {
+                          "produksiSayuranBuah":  146,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304070",
+                          "namaKecamatan":  "Pagedongan"
+                      },
+                      {
+                          "produksiSayuranBuah":  527,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304070",
+                          "namaKecamatan":  "Pagedongan"
+                      },
+                      {
+                          "produksiSayuranBuah":  1756,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304070",
+                          "namaKecamatan":  "Pagedongan"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304070",
+                          "namaKecamatan":  "Pagedongan"
+                      },
+                      {
+                          "produksiSayuranBuah":  81528,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304150",
+                          "namaKecamatan":  "Pagentan"
+                      },
+                      {
+                          "produksiSayuranBuah":  45886,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304150",
+                          "namaKecamatan":  "Pagentan"
+                      },
+                      {
+                          "produksiSayuranBuah":  146870,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304150",
+                          "namaKecamatan":  "Pagentan"
+                      },
+                      {
+                          "produksiSayuranBuah":  101285,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304150",
+                          "namaKecamatan":  "Pagentan"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304150",
+                          "namaKecamatan":  "Pagentan"
+                      },
+                      {
+                          "produksiSayuranBuah":  259,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304200",
+                          "namaKecamatan":  "Pandanarum"
+                      },
+                      {
+                          "produksiSayuranBuah":  146,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304200",
+                          "namaKecamatan":  "Pandanarum"
+                      },
+                      {
+                          "produksiSayuranBuah":  527,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304200",
+                          "namaKecamatan":  "Pandanarum"
+                      },
+                      {
+                          "produksiSayuranBuah":  6448,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304200",
+                          "namaKecamatan":  "Pandanarum"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304200",
+                          "namaKecamatan":  "Pandanarum"
+                      },
+                      {
+                          "produksiSayuranBuah":  5897,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304160",
+                          "namaKecamatan":  "Pejawaran"
+                      },
+                      {
+                          "produksiSayuranBuah":  4067,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304160",
+                          "namaKecamatan":  "Pejawaran"
+                      },
+                      {
+                          "produksiSayuranBuah":  4687,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304160",
+                          "namaKecamatan":  "Pejawaran"
+                      },
+                      {
+                          "produksiSayuranBuah":  3575,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304160",
+                          "namaKecamatan":  "Pejawaran"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304160",
+                          "namaKecamatan":  "Pejawaran"
+                      },
+                      {
+                          "produksiSayuranBuah":  21,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304130",
+                          "namaKecamatan":  "Punggelan"
+                      },
+                      {
+                          "produksiSayuranBuah":  14,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304130",
+                          "namaKecamatan":  "Punggelan"
+                      },
+                      {
+                          "produksiSayuranBuah":  52,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304130",
+                          "namaKecamatan":  "Punggelan"
+                      },
+                      {
+                          "produksiSayuranBuah":  2960,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304130",
+                          "namaKecamatan":  "Punggelan"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304130",
+                          "namaKecamatan":  "Punggelan"
+                      },
+                      {
+                          "produksiSayuranBuah":  112870,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304040",
+                          "namaKecamatan":  "Purwanegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  48059,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304040",
+                          "namaKecamatan":  "Purwanegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  71975,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304040",
+                          "namaKecamatan":  "Purwanegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  153687,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304040",
+                          "namaKecamatan":  "Purwanegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304040",
+                          "namaKecamatan":  "Purwanegara"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304020",
+                          "namaKecamatan":  "Purwareja Klampok"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304020",
+                          "namaKecamatan":  "Purwareja Klampok"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304020",
+                          "namaKecamatan":  "Purwareja Klampok"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304020",
+                          "namaKecamatan":  "Purwareja Klampok"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304020",
+                          "namaKecamatan":  "Purwareja Klampok"
+                      },
+                      {
+                          "produksiSayuranBuah":  799,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304120",
+                          "namaKecamatan":  "Rakit"
+                      },
+                      {
+                          "produksiSayuranBuah":  437,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304120",
+                          "namaKecamatan":  "Rakit"
+                      },
+                      {
+                          "produksiSayuranBuah":  291,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304120",
+                          "namaKecamatan":  "Rakit"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304120",
+                          "namaKecamatan":  "Rakit"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304120",
+                          "namaKecamatan":  "Rakit"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304080",
+                          "namaKecamatan":  "Sigaluh"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304080",
+                          "namaKecamatan":  "Sigaluh"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304080",
+                          "namaKecamatan":  "Sigaluh"
+                      },
+                      {
+                          "produksiSayuranBuah":  8,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304080",
+                          "namaKecamatan":  "Sigaluh"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304080",
+                          "namaKecamatan":  "Sigaluh"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304010",
+                          "namaKecamatan":  "Susukan"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304010",
+                          "namaKecamatan":  "Susukan"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304010",
+                          "namaKecamatan":  "Susukan"
+                      },
+                      {
+                          "produksiSayuranBuah":  0,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304010",
+                          "namaKecamatan":  "Susukan"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304010",
+                          "namaKecamatan":  "Susukan"
+                      },
+                      {
+                          "produksiSayuranBuah":  900,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304110",
+                          "namaKecamatan":  "Wanadadi"
+                      },
+                      {
+                          "produksiSayuranBuah":  937,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304110",
+                          "namaKecamatan":  "Wanadadi"
+                      },
+                      {
+                          "produksiSayuranBuah":  1031,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304110",
+                          "namaKecamatan":  "Wanadadi"
+                      },
+                      {
+                          "produksiSayuranBuah":  1226,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304110",
+                          "namaKecamatan":  "Wanadadi"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304110",
+                          "namaKecamatan":  "Wanadadi"
+                      },
+                      {
+                          "produksiSayuranBuah":  83234,
+                          "tahun":  2021,
+                          "kodeKecamatan":  "3304180",
+                          "namaKecamatan":  "Wanayasa"
+                      },
+                      {
+                          "produksiSayuranBuah":  65524,
+                          "tahun":  2022,
+                          "kodeKecamatan":  "3304180",
+                          "namaKecamatan":  "Wanayasa"
+                      },
+                      {
+                          "produksiSayuranBuah":  111469,
+                          "tahun":  2023,
+                          "kodeKecamatan":  "3304180",
+                          "namaKecamatan":  "Wanayasa"
+                      },
+                      {
+                          "produksiSayuranBuah":  128110,
+                          "tahun":  2024,
+                          "kodeKecamatan":  "3304180",
+                          "namaKecamatan":  "Wanayasa"
+                      },
+                      {
+                          "produksiSayuranBuah":  null,
+                          "tahun":  2025,
+                          "kodeKecamatan":  "3304180",
+                          "namaKecamatan":  "Wanayasa"
+                      }
+                  ],
+    "perdagangan":  [
+                        {
+                            "kodeKecamatan":  "3304100",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarmangu",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304100",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarmangu",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304100",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarmangu",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304100",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarmangu",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304100",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarmangu",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304060",
+                            "minimarket":  20,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  31,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  33,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarnegara",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304060",
+                            "minimarket":  20,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  31,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  33,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarnegara",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304060",
+                            "minimarket":  22,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  33,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  50,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarnegara",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304060",
+                            "minimarket":  22,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  33,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  50,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarnegara",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304060",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Banjarnegara",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304170",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Batur",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304170",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  5,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Batur",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304170",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  27,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Batur",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304170",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  27,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Batur",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304170",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Batur",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304050",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  11,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Bawang",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304050",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  11,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Bawang",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304050",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  11,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Bawang",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304050",
+                            "minimarket":  18,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  12,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  20,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Bawang",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304050",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Bawang",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304190",
+                            "minimarket":  2,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Kalibening",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304190",
+                            "minimarket":  2,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Kalibening",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304190",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Kalibening",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304190",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Kalibening",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304190",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Kalibening",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304140",
+                            "minimarket":  3,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Karangkobar",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304140",
+                            "minimarket":  3,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Karangkobar",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304140",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  14,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Karangkobar",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304140",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  14,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  3,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Karangkobar",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304140",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Karangkobar",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304090",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Madukara",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304090",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Madukara",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304090",
+                            "minimarket":  12,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  9,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Madukara",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304090",
+                            "minimarket":  12,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  9,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Madukara",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304090",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Madukara",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304030",
+                            "minimarket":  15,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Mandiraja",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304030",
+                            "minimarket":  15,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  8,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Mandiraja",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304030",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  17,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Mandiraja",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304030",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  17,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Mandiraja",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304030",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Mandiraja",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304070",
+                            "minimarket":  1,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagedongan",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304070",
+                            "minimarket":  1,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagedongan",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304070",
+                            "minimarket":  1,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagedongan",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304070",
+                            "minimarket":  1,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagedongan",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304070",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagedongan",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304150",
+                            "minimarket":  3,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagentan",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304150",
+                            "minimarket":  0,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  3,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagentan",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304150",
+                            "minimarket":  3,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagentan",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304150",
+                            "minimarket":  2,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagentan",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304150",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pagentan",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304200",
+                            "minimarket":  0,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  0,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pandanarum",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304200",
+                            "minimarket":  0,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  0,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pandanarum",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304200",
+                            "minimarket":  0,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pandanarum",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304200",
+                            "minimarket":  0,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  1,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pandanarum",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304200",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pandanarum",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304160",
+                            "minimarket":  4,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pejawaran",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304160",
+                            "minimarket":  4,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pejawaran",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304160",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pejawaran",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304160",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  3,
+                            "pasarPermanen":  2,
+                            "restoranRumahMakan":  0,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pejawaran",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304160",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Pejawaran",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304130",
+                            "minimarket":  10,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Punggelan",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304130",
+                            "minimarket":  10,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Punggelan",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304130",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  8,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Punggelan",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304130",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  8,
+                            "pasarPermanen":  5,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Punggelan",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304130",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Punggelan",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304040",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwanegara",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304040",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  6,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwanegara",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304040",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwanegara",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304040",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwanegara",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304040",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwanegara",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304020",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  8,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwareja Klampok",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304020",
+                            "minimarket":  14,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  8,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwareja Klampok",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304020",
+                            "minimarket":  18,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  11,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwareja Klampok",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304020",
+                            "minimarket":  18,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  11,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwareja Klampok",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304020",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Purwareja Klampok",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304120",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Rakit",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304120",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  7,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Rakit",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304120",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  8,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Rakit",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304120",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  9,
+                            "pasarPermanen":  8,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Rakit",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304120",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Rakit",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304080",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  9,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Sigaluh",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304080",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  7,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  9,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Sigaluh",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304080",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  15,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Sigaluh",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304080",
+                            "minimarket":  7,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  6,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  15,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Sigaluh",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304080",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Sigaluh",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304010",
+                            "minimarket":  10,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  0,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Susukan",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304010",
+                            "minimarket":  10,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  0,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Susukan",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304010",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Susukan",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304010",
+                            "minimarket":  9,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  4,
+                            "pasarPermanen":  1,
+                            "restoranRumahMakan":  2,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Susukan",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304010",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Susukan",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304110",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  11,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanadadi",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304110",
+                            "minimarket":  5,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  11,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  4,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanadadi",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304110",
+                            "minimarket":  6,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanadadi",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304110",
+                            "minimarket":  6,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  10,
+                            "pasarPermanen":  4,
+                            "restoranRumahMakan":  1,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanadadi",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304110",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanadadi",
+                            "tahun":  2025
+                        },
+                        {
+                            "kodeKecamatan":  "3304180",
+                            "minimarket":  6,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanayasa",
+                            "tahun":  2021
+                        },
+                        {
+                            "kodeKecamatan":  "3304180",
+                            "minimarket":  6,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  6,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanayasa",
+                            "tahun":  2022
+                        },
+                        {
+                            "kodeKecamatan":  "3304180",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  5,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanayasa",
+                            "tahun":  2023
+                        },
+                        {
+                            "kodeKecamatan":  "3304180",
+                            "minimarket":  11,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  2,
+                            "pasarPermanen":  3,
+                            "restoranRumahMakan":  5,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanayasa",
+                            "tahun":  2024
+                        },
+                        {
+                            "kodeKecamatan":  "3304180",
+                            "minimarket":  null,
+                            "pasarSemiPermanen":  0,
+                            "pertokoan":  null,
+                            "pasarPermanen":  null,
+                            "restoranRumahMakan":  null,
+                            "pasarTanpaBangunan":  0,
+                            "namaKecamatan":  "Wanayasa",
+                            "tahun":  2025
+                        }
+                    ],
+    "penduduk":  [
+                     {
+                         "pendudukPerempuan":  22711,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "pendudukLakiLaki":  23928
+                     },
+                     {
+                         "pendudukPerempuan":  22711,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "pendudukLakiLaki":  23928
+                     },
+                     {
+                         "pendudukPerempuan":  23172,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "pendudukLakiLaki":  24303
+                     },
+                     {
+                         "pendudukPerempuan":  23350,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "pendudukLakiLaki":  24489
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  34873,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304060",
+                         "namaKecamatan":  "Banjarnegara",
+                         "pendudukLakiLaki":  35284
+                     },
+                     {
+                         "pendudukPerempuan":  34873,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304060",
+                         "namaKecamatan":  "Banjarnegara",
+                         "pendudukLakiLaki":  35284
+                     },
+                     {
+                         "pendudukPerempuan":  35373,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304060",
+                         "namaKecamatan":  "Banjarnegara",
+                         "pendudukLakiLaki":  35673
+                     },
+                     {
+                         "pendudukPerempuan":  35472,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304060",
+                         "namaKecamatan":  "Banjarnegara",
+                         "pendudukLakiLaki":  35986
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304060",
+                         "namaKecamatan":  "Banjarnegara",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  19736,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304170",
+                         "namaKecamatan":  "Batur",
+                         "pendudukLakiLaki":  21090
+                     },
+                     {
+                         "pendudukPerempuan":  20146,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304170",
+                         "namaKecamatan":  "Batur",
+                         "pendudukLakiLaki":  21478
+                     },
+                     {
+                         "pendudukPerempuan":  20702,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304170",
+                         "namaKecamatan":  "Batur",
+                         "pendudukLakiLaki":  21980
+                     },
+                     {
+                         "pendudukPerempuan":  21031,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304170",
+                         "namaKecamatan":  "Batur",
+                         "pendudukLakiLaki":  22352
+                     },
+                     {
+                         "pendudukPerempuan":  21260,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304170",
+                         "namaKecamatan":  "Batur",
+                         "pendudukLakiLaki":  22632
+                     },
+                     {
+                         "pendudukPerempuan":  31934,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304050",
+                         "namaKecamatan":  "Bawang",
+                         "pendudukLakiLaki":  32833
+                     },
+                     {
+                         "pendudukPerempuan":  31934,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304050",
+                         "namaKecamatan":  "Bawang",
+                         "pendudukLakiLaki":  32833
+                     },
+                     {
+                         "pendudukPerempuan":  32685,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304050",
+                         "namaKecamatan":  "Bawang",
+                         "pendudukLakiLaki":  33344
+                     },
+                     {
+                         "pendudukPerempuan":  33003,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304050",
+                         "namaKecamatan":  "Bawang",
+                         "pendudukLakiLaki":  33746
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304050",
+                         "namaKecamatan":  "Bawang",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  23163,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304190",
+                         "namaKecamatan":  "Kalibening",
+                         "pendudukLakiLaki":  24242
+                     },
+                     {
+                         "pendudukPerempuan":  23163,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304190",
+                         "namaKecamatan":  "Kalibening",
+                         "pendudukLakiLaki":  24242
+                     },
+                     {
+                         "pendudukPerempuan":  23742,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304190",
+                         "namaKecamatan":  "Kalibening",
+                         "pendudukLakiLaki":  24796
+                     },
+                     {
+                         "pendudukPerempuan":  24040,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304190",
+                         "namaKecamatan":  "Kalibening",
+                         "pendudukLakiLaki":  25148
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304190",
+                         "namaKecamatan":  "Kalibening",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  15497,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304140",
+                         "namaKecamatan":  "Karangkobar",
+                         "pendudukLakiLaki":  16592
+                     },
+                     {
+                         "pendudukPerempuan":  15497,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304140",
+                         "namaKecamatan":  "Karangkobar",
+                         "pendudukLakiLaki":  16592
+                     },
+                     {
+                         "pendudukPerempuan":  15909,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304140",
+                         "namaKecamatan":  "Karangkobar",
+                         "pendudukLakiLaki":  17008
+                     },
+                     {
+                         "pendudukPerempuan":  16044,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304140",
+                         "namaKecamatan":  "Karangkobar",
+                         "pendudukLakiLaki":  17130
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304140",
+                         "namaKecamatan":  "Karangkobar",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  22789,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304090",
+                         "namaKecamatan":  "Madukara",
+                         "pendudukLakiLaki":  23717
+                     },
+                     {
+                         "pendudukPerempuan":  22789,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304090",
+                         "namaKecamatan":  "Madukara",
+                         "pendudukLakiLaki":  23717
+                     },
+                     {
+                         "pendudukPerempuan":  23071,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304090",
+                         "namaKecamatan":  "Madukara",
+                         "pendudukLakiLaki":  23940
+                     },
+                     {
+                         "pendudukPerempuan":  23222,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304090",
+                         "namaKecamatan":  "Madukara",
+                         "pendudukLakiLaki":  24086
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304090",
+                         "namaKecamatan":  "Madukara",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  39793,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304030",
+                         "namaKecamatan":  "Mandiraja",
+                         "pendudukLakiLaki":  40620
+                     },
+                     {
+                         "pendudukPerempuan":  39793,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304030",
+                         "namaKecamatan":  "Mandiraja",
+                         "pendudukLakiLaki":  40620
+                     },
+                     {
+                         "pendudukPerempuan":  40835,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304030",
+                         "namaKecamatan":  "Mandiraja",
+                         "pendudukLakiLaki":  41730
+                     },
+                     {
+                         "pendudukPerempuan":  41260,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304030",
+                         "namaKecamatan":  "Mandiraja",
+                         "pendudukLakiLaki":  42202
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304030",
+                         "namaKecamatan":  "Mandiraja",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  20449,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304070",
+                         "namaKecamatan":  "Pagedongan",
+                         "pendudukLakiLaki":  21287
+                     },
+                     {
+                         "pendudukPerempuan":  21099,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304070",
+                         "namaKecamatan":  "Pagedongan",
+                         "pendudukLakiLaki":  22269
+                     },
+                     {
+                         "pendudukPerempuan":  21629,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304070",
+                         "namaKecamatan":  "Pagedongan",
+                         "pendudukLakiLaki":  22758
+                     },
+                     {
+                         "pendudukPerempuan":  21935,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304070",
+                         "namaKecamatan":  "Pagedongan",
+                         "pendudukLakiLaki":  22999
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304070",
+                         "namaKecamatan":  "Pagedongan",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  19052,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304150",
+                         "namaKecamatan":  "Pagentan",
+                         "pendudukLakiLaki":  20065
+                     },
+                     {
+                         "pendudukPerempuan":  19052,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304150",
+                         "namaKecamatan":  "Pagentan",
+                         "pendudukLakiLaki":  20065
+                     },
+                     {
+                         "pendudukPerempuan":  19526,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304150",
+                         "namaKecamatan":  "Pagentan",
+                         "pendudukLakiLaki":  20448
+                     },
+                     {
+                         "pendudukPerempuan":  19608,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304150",
+                         "namaKecamatan":  "Pagentan",
+                         "pendudukLakiLaki":  20595
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304150",
+                         "namaKecamatan":  "Pagentan",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  11191,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304200",
+                         "namaKecamatan":  "Pandanarum",
+                         "pendudukLakiLaki":  11735
+                     },
+                     {
+                         "pendudukPerempuan":  11364,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304200",
+                         "namaKecamatan":  "Pandanarum",
+                         "pendudukLakiLaki":  11911
+                     },
+                     {
+                         "pendudukPerempuan":  11558,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304200",
+                         "namaKecamatan":  "Pandanarum",
+                         "pendudukLakiLaki":  12133
+                     },
+                     {
+                         "pendudukPerempuan":  11599,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304200",
+                         "namaKecamatan":  "Pandanarum",
+                         "pendudukLakiLaki":  12223
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304200",
+                         "namaKecamatan":  "Pandanarum",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  21710,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304160",
+                         "namaKecamatan":  "Pejawaran",
+                         "pendudukLakiLaki":  23305
+                     },
+                     {
+                         "pendudukPerempuan":  21710,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304160",
+                         "namaKecamatan":  "Pejawaran",
+                         "pendudukLakiLaki":  23305
+                     },
+                     {
+                         "pendudukPerempuan":  22324,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304160",
+                         "namaKecamatan":  "Pejawaran",
+                         "pendudukLakiLaki":  23990
+                     },
+                     {
+                         "pendudukPerempuan":  22552,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304160",
+                         "namaKecamatan":  "Pejawaran",
+                         "pendudukLakiLaki":  24278
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304160",
+                         "namaKecamatan":  "Pejawaran",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  43816,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304130",
+                         "namaKecamatan":  "Punggelan",
+                         "pendudukLakiLaki":  45948
+                     },
+                     {
+                         "pendudukPerempuan":  43816,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304130",
+                         "namaKecamatan":  "Punggelan",
+                         "pendudukLakiLaki":  45948
+                     },
+                     {
+                         "pendudukPerempuan":  44789,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304130",
+                         "namaKecamatan":  "Punggelan",
+                         "pendudukLakiLaki":  47023
+                     },
+                     {
+                         "pendudukPerempuan":  45311,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304130",
+                         "namaKecamatan":  "Punggelan",
+                         "pendudukLakiLaki":  47634
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304130",
+                         "namaKecamatan":  "Punggelan",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  41601,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304040",
+                         "namaKecamatan":  "Purwanegara",
+                         "pendudukLakiLaki":  42253
+                     },
+                     {
+                         "pendudukPerempuan":  41601,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304040",
+                         "namaKecamatan":  "Purwanegara",
+                         "pendudukLakiLaki":  42253
+                     },
+                     {
+                         "pendudukPerempuan":  42632,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304040",
+                         "namaKecamatan":  "Purwanegara",
+                         "pendudukLakiLaki":  43297
+                     },
+                     {
+                         "pendudukPerempuan":  43025,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304040",
+                         "namaKecamatan":  "Purwanegara",
+                         "pendudukLakiLaki":  43754
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304040",
+                         "namaKecamatan":  "Purwanegara",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  24041,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304020",
+                         "namaKecamatan":  "Purwareja Klampok",
+                         "pendudukLakiLaki":  24330
+                     },
+                     {
+                         "pendudukPerempuan":  24041,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304020",
+                         "namaKecamatan":  "Purwareja Klampok",
+                         "pendudukLakiLaki":  24330
+                     },
+                     {
+                         "pendudukPerempuan":  24419,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304020",
+                         "namaKecamatan":  "Purwareja Klampok",
+                         "pendudukLakiLaki":  24641
+                     },
+                     {
+                         "pendudukPerempuan":  24632,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304020",
+                         "namaKecamatan":  "Purwareja Klampok",
+                         "pendudukLakiLaki":  24801
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304020",
+                         "namaKecamatan":  "Purwareja Klampok",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  27294,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304120",
+                         "namaKecamatan":  "Rakit",
+                         "pendudukLakiLaki":  27933
+                     },
+                     {
+                         "pendudukPerempuan":  27294,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304120",
+                         "namaKecamatan":  "Rakit",
+                         "pendudukLakiLaki":  27933
+                     },
+                     {
+                         "pendudukPerempuan":  27910,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304120",
+                         "namaKecamatan":  "Rakit",
+                         "pendudukLakiLaki":  28498
+                     },
+                     {
+                         "pendudukPerempuan":  28188,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304120",
+                         "namaKecamatan":  "Rakit",
+                         "pendudukLakiLaki":  28786
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304120",
+                         "namaKecamatan":  "Rakit",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  16047,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304080",
+                         "namaKecamatan":  "Sigaluh",
+                         "pendudukLakiLaki":  16361
+                     },
+                     {
+                         "pendudukPerempuan":  16047,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304080",
+                         "namaKecamatan":  "Sigaluh",
+                         "pendudukLakiLaki":  16361
+                     },
+                     {
+                         "pendudukPerempuan":  16262,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304080",
+                         "namaKecamatan":  "Sigaluh",
+                         "pendudukLakiLaki":  16560
+                     },
+                     {
+                         "pendudukPerempuan":  16396,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304080",
+                         "namaKecamatan":  "Sigaluh",
+                         "pendudukLakiLaki":  16607
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304080",
+                         "namaKecamatan":  "Sigaluh",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  31929,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304010",
+                         "namaKecamatan":  "Susukan",
+                         "pendudukLakiLaki":  32510
+                     },
+                     {
+                         "pendudukPerempuan":  31929,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304010",
+                         "namaKecamatan":  "Susukan",
+                         "pendudukLakiLaki":  32510
+                     },
+                     {
+                         "pendudukPerempuan":  32364,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304010",
+                         "namaKecamatan":  "Susukan",
+                         "pendudukLakiLaki":  32943
+                     },
+                     {
+                         "pendudukPerempuan":  32520,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304010",
+                         "namaKecamatan":  "Susukan",
+                         "pendudukLakiLaki":  33181
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304010",
+                         "namaKecamatan":  "Susukan",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  17128,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304110",
+                         "namaKecamatan":  "Wanadadi",
+                         "pendudukLakiLaki":  17501
+                     },
+                     {
+                         "pendudukPerempuan":  17128,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304110",
+                         "namaKecamatan":  "Wanadadi",
+                         "pendudukLakiLaki":  17501
+                     },
+                     {
+                         "pendudukPerempuan":  17509,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304110",
+                         "namaKecamatan":  "Wanadadi",
+                         "pendudukLakiLaki":  17867
+                     },
+                     {
+                         "pendudukPerempuan":  17678,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304110",
+                         "namaKecamatan":  "Wanadadi",
+                         "pendudukLakiLaki":  18026
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304110",
+                         "namaKecamatan":  "Wanadadi",
+                         "pendudukLakiLaki":  null
+                     },
+                     {
+                         "pendudukPerempuan":  24568,
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304180",
+                         "namaKecamatan":  "Wanayasa",
+                         "pendudukLakiLaki":  26363
+                     },
+                     {
+                         "pendudukPerempuan":  24568,
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304180",
+                         "namaKecamatan":  "Wanayasa",
+                         "pendudukLakiLaki":  26363
+                     },
+                     {
+                         "pendudukPerempuan":  25098,
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304180",
+                         "namaKecamatan":  "Wanayasa",
+                         "pendudukLakiLaki":  26773
+                     },
+                     {
+                         "pendudukPerempuan":  25388,
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304180",
+                         "namaKecamatan":  "Wanayasa",
+                         "pendudukLakiLaki":  27154
+                     },
+                     {
+                         "pendudukPerempuan":  null,
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304180",
+                         "namaKecamatan":  "Wanayasa",
+                         "pendudukLakiLaki":  null
+                     }
+                 ],
+    "pemerintahan":  [
+                         {
+                             "pnsLakiLaki":  185,
+                             "pnsPerempuan":  19,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304100",
+                             "namaKecamatan":  "Banjarmangu"
+                         },
+                         {
+                             "pnsLakiLaki":  185,
+                             "pnsPerempuan":  19,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304100",
+                             "namaKecamatan":  "Banjarmangu"
+                         },
+                         {
+                             "pnsLakiLaki":  167,
+                             "pnsPerempuan":  55,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304100",
+                             "namaKecamatan":  "Banjarmangu"
+                         },
+                         {
+                             "pnsLakiLaki":  63,
+                             "pnsPerempuan":  153,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304100",
+                             "namaKecamatan":  "Banjarmangu"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304100",
+                             "namaKecamatan":  "Banjarmangu"
+                         },
+                         {
+                             "pnsLakiLaki":  30,
+                             "pnsPerempuan":  39,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304060",
+                             "namaKecamatan":  "Banjarnegara"
+                         },
+                         {
+                             "pnsLakiLaki":  30,
+                             "pnsPerempuan":  39,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304060",
+                             "namaKecamatan":  "Banjarnegara"
+                         },
+                         {
+                             "pnsLakiLaki":  30,
+                             "pnsPerempuan":  39,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304060",
+                             "namaKecamatan":  "Banjarnegara"
+                         },
+                         {
+                             "pnsLakiLaki":  30,
+                             "pnsPerempuan":  39,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304060",
+                             "namaKecamatan":  "Banjarnegara"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304060",
+                             "namaKecamatan":  "Banjarnegara"
+                         },
+                         {
+                             "pnsLakiLaki":  75,
+                             "pnsPerempuan":  123,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304170",
+                             "namaKecamatan":  "Batur"
+                         },
+                         {
+                             "pnsLakiLaki":  75,
+                             "pnsPerempuan":  123,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304170",
+                             "namaKecamatan":  "Batur"
+                         },
+                         {
+                             "pnsLakiLaki":  75,
+                             "pnsPerempuan":  123,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304170",
+                             "namaKecamatan":  "Batur"
+                         },
+                         {
+                             "pnsLakiLaki":  67,
+                             "pnsPerempuan":  116,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304170",
+                             "namaKecamatan":  "Batur"
+                         },
+                         {
+                             "pnsLakiLaki":  86,
+                             "pnsPerempuan":  113,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304170",
+                             "namaKecamatan":  "Batur"
+                         },
+                         {
+                             "pnsLakiLaki":  98,
+                             "pnsPerempuan":  226,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304050",
+                             "namaKecamatan":  "Bawang"
+                         },
+                         {
+                             "pnsLakiLaki":  98,
+                             "pnsPerempuan":  226,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304050",
+                             "namaKecamatan":  "Bawang"
+                         },
+                         {
+                             "pnsLakiLaki":  98,
+                             "pnsPerempuan":  226,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304050",
+                             "namaKecamatan":  "Bawang"
+                         },
+                         {
+                             "pnsLakiLaki":  90,
+                             "pnsPerempuan":  224,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304050",
+                             "namaKecamatan":  "Bawang"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304050",
+                             "namaKecamatan":  "Bawang"
+                         },
+                         {
+                             "pnsLakiLaki":  95,
+                             "pnsPerempuan":  139,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304190",
+                             "namaKecamatan":  "Kalibening"
+                         },
+                         {
+                             "pnsLakiLaki":  95,
+                             "pnsPerempuan":  139,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304190",
+                             "namaKecamatan":  "Kalibening"
+                         },
+                         {
+                             "pnsLakiLaki":  95,
+                             "pnsPerempuan":  139,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304190",
+                             "namaKecamatan":  "Kalibening"
+                         },
+                         {
+                             "pnsLakiLaki":  86,
+                             "pnsPerempuan":  132,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304190",
+                             "namaKecamatan":  "Kalibening"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304190",
+                             "namaKecamatan":  "Kalibening"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  138,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304140",
+                             "namaKecamatan":  "Karangkobar"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  138,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304140",
+                             "namaKecamatan":  "Karangkobar"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  138,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304140",
+                             "namaKecamatan":  "Karangkobar"
+                         },
+                         {
+                             "pnsLakiLaki":  73,
+                             "pnsPerempuan":  127,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304140",
+                             "namaKecamatan":  "Karangkobar"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304140",
+                             "namaKecamatan":  "Karangkobar"
+                         },
+                         {
+                             "pnsLakiLaki":  70,
+                             "pnsPerempuan":  154,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304090",
+                             "namaKecamatan":  "Madukara"
+                         },
+                         {
+                             "pnsLakiLaki":  70,
+                             "pnsPerempuan":  154,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304090",
+                             "namaKecamatan":  "Madukara"
+                         },
+                         {
+                             "pnsLakiLaki":  70,
+                             "pnsPerempuan":  154,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304090",
+                             "namaKecamatan":  "Madukara"
+                         },
+                         {
+                             "pnsLakiLaki":  43,
+                             "pnsPerempuan":  138,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304090",
+                             "namaKecamatan":  "Madukara"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304090",
+                             "namaKecamatan":  "Madukara"
+                         },
+                         {
+                             "pnsLakiLaki":  110,
+                             "pnsPerempuan":  203,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304030",
+                             "namaKecamatan":  "Mandiraja"
+                         },
+                         {
+                             "pnsLakiLaki":  110,
+                             "pnsPerempuan":  203,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304030",
+                             "namaKecamatan":  "Mandiraja"
+                         },
+                         {
+                             "pnsLakiLaki":  110,
+                             "pnsPerempuan":  203,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304030",
+                             "namaKecamatan":  "Mandiraja"
+                         },
+                         {
+                             "pnsLakiLaki":  94,
+                             "pnsPerempuan":  192,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304030",
+                             "namaKecamatan":  "Mandiraja"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304030",
+                             "namaKecamatan":  "Mandiraja"
+                         },
+                         {
+                             "pnsLakiLaki":  66,
+                             "pnsPerempuan":  102,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304070",
+                             "namaKecamatan":  "Pagedongan"
+                         },
+                         {
+                             "pnsLakiLaki":  66,
+                             "pnsPerempuan":  102,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304070",
+                             "namaKecamatan":  "Pagedongan"
+                         },
+                         {
+                             "pnsLakiLaki":  66,
+                             "pnsPerempuan":  102,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304070",
+                             "namaKecamatan":  "Pagedongan"
+                         },
+                         {
+                             "pnsLakiLaki":  63,
+                             "pnsPerempuan":  97,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304070",
+                             "namaKecamatan":  "Pagedongan"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304070",
+                             "namaKecamatan":  "Pagedongan"
+                         },
+                         {
+                             "pnsLakiLaki":  113,
+                             "pnsPerempuan":  162,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304150",
+                             "namaKecamatan":  "Pagentan"
+                         },
+                         {
+                             "pnsLakiLaki":  113,
+                             "pnsPerempuan":  162,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304150",
+                             "namaKecamatan":  "Pagentan"
+                         },
+                         {
+                             "pnsLakiLaki":  113,
+                             "pnsPerempuan":  162,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304150",
+                             "namaKecamatan":  "Pagentan"
+                         },
+                         {
+                             "pnsLakiLaki":  105,
+                             "pnsPerempuan":  157,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304150",
+                             "namaKecamatan":  "Pagentan"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304150",
+                             "namaKecamatan":  "Pagentan"
+                         },
+                         {
+                             "pnsLakiLaki":  85,
+                             "pnsPerempuan":  82,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304200",
+                             "namaKecamatan":  "Pandanarum"
+                         },
+                         {
+                             "pnsLakiLaki":  85,
+                             "pnsPerempuan":  82,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304200",
+                             "namaKecamatan":  "Pandanarum"
+                         },
+                         {
+                             "pnsLakiLaki":  85,
+                             "pnsPerempuan":  82,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304200",
+                             "namaKecamatan":  "Pandanarum"
+                         },
+                         {
+                             "pnsLakiLaki":  73,
+                             "pnsPerempuan":  78,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304200",
+                             "namaKecamatan":  "Pandanarum"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304200",
+                             "namaKecamatan":  "Pandanarum"
+                         },
+                         {
+                             "pnsLakiLaki":  87,
+                             "pnsPerempuan":  116,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304160",
+                             "namaKecamatan":  "Pejawaran"
+                         },
+                         {
+                             "pnsLakiLaki":  87,
+                             "pnsPerempuan":  116,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304160",
+                             "namaKecamatan":  "Pejawaran"
+                         },
+                         {
+                             "pnsLakiLaki":  87,
+                             "pnsPerempuan":  116,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304160",
+                             "namaKecamatan":  "Pejawaran"
+                         },
+                         {
+                             "pnsLakiLaki":  87,
+                             "pnsPerempuan":  116,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304160",
+                             "namaKecamatan":  "Pejawaran"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304160",
+                             "namaKecamatan":  "Pejawaran"
+                         },
+                         {
+                             "pnsLakiLaki":  166,
+                             "pnsPerempuan":  229,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304130",
+                             "namaKecamatan":  "Punggelan"
+                         },
+                         {
+                             "pnsLakiLaki":  166,
+                             "pnsPerempuan":  229,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304130",
+                             "namaKecamatan":  "Punggelan"
+                         },
+                         {
+                             "pnsLakiLaki":  166,
+                             "pnsPerempuan":  229,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304130",
+                             "namaKecamatan":  "Punggelan"
+                         },
+                         {
+                             "pnsLakiLaki":  156,
+                             "pnsPerempuan":  220,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304130",
+                             "namaKecamatan":  "Punggelan"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304130",
+                             "namaKecamatan":  "Punggelan"
+                         },
+                         {
+                             "pnsLakiLaki":  107,
+                             "pnsPerempuan":  208,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304040",
+                             "namaKecamatan":  "Purwanegara"
+                         },
+                         {
+                             "pnsLakiLaki":  107,
+                             "pnsPerempuan":  208,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304040",
+                             "namaKecamatan":  "Purwanegara"
+                         },
+                         {
+                             "pnsLakiLaki":  107,
+                             "pnsPerempuan":  208,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304040",
+                             "namaKecamatan":  "Purwanegara"
+                         },
+                         {
+                             "pnsLakiLaki":  106,
+                             "pnsPerempuan":  197,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304040",
+                             "namaKecamatan":  "Purwanegara"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304040",
+                             "namaKecamatan":  "Purwanegara"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  114,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304020",
+                             "namaKecamatan":  "Purwareja Klampok"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  114,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304020",
+                             "namaKecamatan":  "Purwareja Klampok"
+                         },
+                         {
+                             "pnsLakiLaki":  78,
+                             "pnsPerempuan":  114,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304020",
+                             "namaKecamatan":  "Purwareja Klampok"
+                         },
+                         {
+                             "pnsLakiLaki":  113,
+                             "pnsPerempuan":  118,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304020",
+                             "namaKecamatan":  "Purwareja Klampok"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304020",
+                             "namaKecamatan":  "Purwareja Klampok"
+                         },
+                         {
+                             "pnsLakiLaki":  83,
+                             "pnsPerempuan":  149,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304120",
+                             "namaKecamatan":  "Rakit"
+                         },
+                         {
+                             "pnsLakiLaki":  83,
+                             "pnsPerempuan":  149,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304120",
+                             "namaKecamatan":  "Rakit"
+                         },
+                         {
+                             "pnsLakiLaki":  83,
+                             "pnsPerempuan":  149,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304120",
+                             "namaKecamatan":  "Rakit"
+                         },
+                         {
+                             "pnsLakiLaki":  83,
+                             "pnsPerempuan":  149,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304120",
+                             "namaKecamatan":  "Rakit"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304120",
+                             "namaKecamatan":  "Rakit"
+                         },
+                         {
+                             "pnsLakiLaki":  59,
+                             "pnsPerempuan":  128,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304080",
+                             "namaKecamatan":  "Sigaluh"
+                         },
+                         {
+                             "pnsLakiLaki":  59,
+                             "pnsPerempuan":  128,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304080",
+                             "namaKecamatan":  "Sigaluh"
+                         },
+                         {
+                             "pnsLakiLaki":  59,
+                             "pnsPerempuan":  128,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304080",
+                             "namaKecamatan":  "Sigaluh"
+                         },
+                         {
+                             "pnsLakiLaki":  49,
+                             "pnsPerempuan":  120,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304080",
+                             "namaKecamatan":  "Sigaluh"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304080",
+                             "namaKecamatan":  "Sigaluh"
+                         },
+                         {
+                             "pnsLakiLaki":  146,
+                             "pnsPerempuan":  211,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304010",
+                             "namaKecamatan":  "Susukan"
+                         },
+                         {
+                             "pnsLakiLaki":  146,
+                             "pnsPerempuan":  211,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304010",
+                             "namaKecamatan":  "Susukan"
+                         },
+                         {
+                             "pnsLakiLaki":  146,
+                             "pnsPerempuan":  211,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304010",
+                             "namaKecamatan":  "Susukan"
+                         },
+                         {
+                             "pnsLakiLaki":  141,
+                             "pnsPerempuan":  187,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304010",
+                             "namaKecamatan":  "Susukan"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304010",
+                             "namaKecamatan":  "Susukan"
+                         },
+                         {
+                             "pnsLakiLaki":  77,
+                             "pnsPerempuan":  156,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304110",
+                             "namaKecamatan":  "Wanadadi"
+                         },
+                         {
+                             "pnsLakiLaki":  77,
+                             "pnsPerempuan":  156,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304110",
+                             "namaKecamatan":  "Wanadadi"
+                         },
+                         {
+                             "pnsLakiLaki":  77,
+                             "pnsPerempuan":  156,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304110",
+                             "namaKecamatan":  "Wanadadi"
+                         },
+                         {
+                             "pnsLakiLaki":  67,
+                             "pnsPerempuan":  152,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304110",
+                             "namaKecamatan":  "Wanadadi"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304110",
+                             "namaKecamatan":  "Wanadadi"
+                         },
+                         {
+                             "pnsLakiLaki":  96,
+                             "pnsPerempuan":  145,
+                             "tahun":  2021,
+                             "kodeKecamatan":  "3304180",
+                             "namaKecamatan":  "Wanayasa"
+                         },
+                         {
+                             "pnsLakiLaki":  96,
+                             "pnsPerempuan":  145,
+                             "tahun":  2022,
+                             "kodeKecamatan":  "3304180",
+                             "namaKecamatan":  "Wanayasa"
+                         },
+                         {
+                             "pnsLakiLaki":  96,
+                             "pnsPerempuan":  145,
+                             "tahun":  2023,
+                             "kodeKecamatan":  "3304180",
+                             "namaKecamatan":  "Wanayasa"
+                         },
+                         {
+                             "pnsLakiLaki":  85,
+                             "pnsPerempuan":  141,
+                             "tahun":  2024,
+                             "kodeKecamatan":  "3304180",
+                             "namaKecamatan":  "Wanayasa"
+                         },
+                         {
+                             "pnsLakiLaki":  null,
+                             "pnsPerempuan":  null,
+                             "tahun":  2025,
+                             "kodeKecamatan":  "3304180",
+                             "namaKecamatan":  "Wanayasa"
+                         }
+                     ],
+    "bank":  [
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Banjarmangu",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304100"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Banjarmangu",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304100"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Banjarmangu",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304100"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Banjarmangu",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304100"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Banjarmangu",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304100"
+                 },
+                 {
+                     "bpr":  6,
+                     "tahun":  2021,
+                     "bankPemerintah":  9,
+                     "namaKecamatan":  "Banjarnegara",
+                     "bankSwasta":  4,
+                     "kodeKecamatan":  "3304060"
+                 },
+                 {
+                     "bpr":  6,
+                     "tahun":  2022,
+                     "bankPemerintah":  9,
+                     "namaKecamatan":  "Banjarnegara",
+                     "bankSwasta":  4,
+                     "kodeKecamatan":  "3304060"
+                 },
+                 {
+                     "bpr":  7,
+                     "tahun":  2023,
+                     "bankPemerintah":  13,
+                     "namaKecamatan":  "Banjarnegara",
+                     "bankSwasta":  4,
+                     "kodeKecamatan":  "3304060"
+                 },
+                 {
+                     "bpr":  7,
+                     "tahun":  2024,
+                     "bankPemerintah":  13,
+                     "namaKecamatan":  "Banjarnegara",
+                     "bankSwasta":  4,
+                     "kodeKecamatan":  "3304060"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Banjarnegara",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304060"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2021,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Batur",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304170"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2022,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Batur",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304170"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Batur",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304170"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Batur",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304170"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Batur",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304170"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2021,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Bawang",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304050"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2022,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Bawang",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304050"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Bawang",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304050"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Bawang",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304050"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Bawang",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304050"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Kalibening",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304190"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Kalibening",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304190"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Kalibening",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304190"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Kalibening",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304190"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Kalibening",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304190"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Karangkobar",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304140"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Karangkobar",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304140"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Karangkobar",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304140"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Karangkobar",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304140"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Karangkobar",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304140"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2021,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Madukara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304090"
+                 },
+                 {
+                     "bpr":  4,
+                     "tahun":  2022,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Madukara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304090"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Madukara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304090"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Madukara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304090"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Madukara",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304090"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2021,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Mandiraja",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304030"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2022,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Mandiraja",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304030"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Mandiraja",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304030"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  3,
+                     "namaKecamatan":  "Mandiraja",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304030"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Mandiraja",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304030"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pagedongan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304070"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pagedongan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304070"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pagedongan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304070"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pagedongan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304070"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Pagedongan",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304070"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pagentan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304150"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pagentan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304150"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pagentan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304150"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pagentan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304150"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Pagentan",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304150"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pandanarum",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304200"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pandanarum",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304200"
+                 },
+                 {
+                     "bpr":  1,
+                     "tahun":  2023,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pandanarum",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304200"
+                 },
+                 {
+                     "bpr":  1,
+                     "tahun":  2024,
+                     "bankPemerintah":  0,
+                     "namaKecamatan":  "Pandanarum",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304200"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Pandanarum",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304200"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pejawaran",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304160"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pejawaran",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304160"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pejawaran",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304160"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Pejawaran",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304160"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Pejawaran",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304160"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Punggelan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304130"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Punggelan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304130"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Punggelan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304130"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Punggelan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304130"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Punggelan",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304130"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Purwanegara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304040"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Purwanegara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304040"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Purwanegara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304040"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Purwanegara",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304040"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Purwanegara",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304040"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  4,
+                     "namaKecamatan":  "Purwareja Klampok",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304020"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  4,
+                     "namaKecamatan":  "Purwareja Klampok",
+                     "bankSwasta":  1,
+                     "kodeKecamatan":  "3304020"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  4,
+                     "namaKecamatan":  "Purwareja Klampok",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304020"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  4,
+                     "namaKecamatan":  "Purwareja Klampok",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304020"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Purwareja Klampok",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304020"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Rakit",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304120"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Rakit",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304120"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Rakit",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304120"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Rakit",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304120"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Rakit",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304120"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Sigaluh",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304080"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Sigaluh",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304080"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Sigaluh",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304080"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Sigaluh",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304080"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Sigaluh",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304080"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Susukan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304010"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Susukan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304010"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Susukan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304010"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Susukan",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304010"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Susukan",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304010"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2021,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Wanadadi",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304110"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2022,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Wanadadi",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304110"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2023,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Wanadadi",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304110"
+                 },
+                 {
+                     "bpr":  2,
+                     "tahun":  2024,
+                     "bankPemerintah":  2,
+                     "namaKecamatan":  "Wanadadi",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304110"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Wanadadi",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304110"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2021,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Wanayasa",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304180"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2022,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Wanayasa",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304180"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2023,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Wanayasa",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304180"
+                 },
+                 {
+                     "bpr":  3,
+                     "tahun":  2024,
+                     "bankPemerintah":  1,
+                     "namaKecamatan":  "Wanayasa",
+                     "bankSwasta":  0,
+                     "kodeKecamatan":  "3304180"
+                 },
+                 {
+                     "bpr":  null,
+                     "tahun":  2025,
+                     "bankPemerintah":  null,
+                     "namaKecamatan":  "Wanayasa",
+                     "bankSwasta":  null,
+                     "kodeKecamatan":  "3304180"
+                 }
+             ],
+    "geografi":  [
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "luasWilayah":  46.31
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304060",
+                         "luasWilayah":  26.21,
+                         "namaKecamatan":  "Banjarnegara"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304170",
+                         "luasWilayah":  46.56,
+                         "namaKecamatan":  "Batur"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304050",
+                         "luasWilayah":  56.06,
+                         "namaKecamatan":  "Bawang"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304190",
+                         "luasWilayah":  80.08,
+                         "namaKecamatan":  "Kalibening"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304140",
+                         "luasWilayah":  39.07,
+                         "namaKecamatan":  "Karangkobar"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304090",
+                         "luasWilayah":  49.85,
+                         "namaKecamatan":  "Madukara"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304030",
+                         "luasWilayah":  52.6,
+                         "namaKecamatan":  "Mandiraja"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304070",
+                         "luasWilayah":  87.78,
+                         "namaKecamatan":  "Pagedongan"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304150",
+                         "luasWilayah":  51.16,
+                         "namaKecamatan":  "Pagentan"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304200",
+                         "luasWilayah":  58.53,
+                         "namaKecamatan":  "Pandanarum"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304160",
+                         "luasWilayah":  57.62,
+                         "namaKecamatan":  "Pejawaran"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304130",
+                         "luasWilayah":  102.84,
+                         "namaKecamatan":  "Punggelan"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304040",
+                         "luasWilayah":  73.86,
+                         "namaKecamatan":  "Purwanegara"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304020",
+                         "luasWilayah":  21.87,
+                         "namaKecamatan":  "Purwareja Klampok"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304120",
+                         "luasWilayah":  32.41,
+                         "namaKecamatan":  "Rakit"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304080",
+                         "luasWilayah":  39.47,
+                         "namaKecamatan":  "Sigaluh"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304010",
+                         "luasWilayah":  53.26,
+                         "namaKecamatan":  "Susukan"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304110",
+                         "luasWilayah":  27.07,
+                         "namaKecamatan":  "Wanadadi"
+                     },
+                     {
+                         "tahun":  2021,
+                         "kodeKecamatan":  "3304180",
+                         "luasWilayah":  83.62,
+                         "namaKecamatan":  "Wanayasa"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "luasWilayah":  46.31
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304060",
+                         "luasWilayah":  26.21,
+                         "namaKecamatan":  "Banjarnegara"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304170",
+                         "luasWilayah":  46.56,
+                         "namaKecamatan":  "Batur"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304050",
+                         "luasWilayah":  56.06,
+                         "namaKecamatan":  "Bawang"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304190",
+                         "luasWilayah":  80.08,
+                         "namaKecamatan":  "Kalibening"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304140",
+                         "luasWilayah":  39.07,
+                         "namaKecamatan":  "Karangkobar"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304090",
+                         "luasWilayah":  49.85,
+                         "namaKecamatan":  "Madukara"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304030",
+                         "luasWilayah":  52.6,
+                         "namaKecamatan":  "Mandiraja"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304070",
+                         "luasWilayah":  87.78,
+                         "namaKecamatan":  "Pagedongan"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304150",
+                         "luasWilayah":  51.16,
+                         "namaKecamatan":  "Pagentan"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304200",
+                         "luasWilayah":  58.53,
+                         "namaKecamatan":  "Pandanarum"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304160",
+                         "luasWilayah":  57.62,
+                         "namaKecamatan":  "Pejawaran"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304130",
+                         "luasWilayah":  102.84,
+                         "namaKecamatan":  "Punggelan"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304040",
+                         "luasWilayah":  73.86,
+                         "namaKecamatan":  "Purwanegara"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304020",
+                         "luasWilayah":  21.87,
+                         "namaKecamatan":  "Purwareja Klampok"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304120",
+                         "luasWilayah":  32.41,
+                         "namaKecamatan":  "Rakit"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304080",
+                         "luasWilayah":  39.47,
+                         "namaKecamatan":  "Sigaluh"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304010",
+                         "luasWilayah":  53.26,
+                         "namaKecamatan":  "Susukan"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304110",
+                         "luasWilayah":  27.07,
+                         "namaKecamatan":  "Wanadadi"
+                     },
+                     {
+                         "tahun":  2022,
+                         "kodeKecamatan":  "3304180",
+                         "luasWilayah":  83.62,
+                         "namaKecamatan":  "Wanayasa"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "luasWilayah":  46.31
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304060",
+                         "luasWilayah":  26.21,
+                         "namaKecamatan":  "Banjarnegara"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304170",
+                         "luasWilayah":  46.56,
+                         "namaKecamatan":  "Batur"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304050",
+                         "luasWilayah":  56.06,
+                         "namaKecamatan":  "Bawang"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304190",
+                         "luasWilayah":  80.08,
+                         "namaKecamatan":  "Kalibening"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304140",
+                         "luasWilayah":  39.07,
+                         "namaKecamatan":  "Karangkobar"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304090",
+                         "luasWilayah":  49.85,
+                         "namaKecamatan":  "Madukara"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304030",
+                         "luasWilayah":  52.6,
+                         "namaKecamatan":  "Mandiraja"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304070",
+                         "luasWilayah":  87.78,
+                         "namaKecamatan":  "Pagedongan"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304150",
+                         "luasWilayah":  51.16,
+                         "namaKecamatan":  "Pagentan"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304200",
+                         "luasWilayah":  58.53,
+                         "namaKecamatan":  "Pandanarum"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304160",
+                         "luasWilayah":  57.62,
+                         "namaKecamatan":  "Pejawaran"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304130",
+                         "luasWilayah":  102.84,
+                         "namaKecamatan":  "Punggelan"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304040",
+                         "luasWilayah":  73.86,
+                         "namaKecamatan":  "Purwanegara"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304020",
+                         "luasWilayah":  21.87,
+                         "namaKecamatan":  "Purwareja Klampok"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304120",
+                         "luasWilayah":  32.41,
+                         "namaKecamatan":  "Rakit"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304080",
+                         "luasWilayah":  39.47,
+                         "namaKecamatan":  "Sigaluh"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304010",
+                         "luasWilayah":  53.26,
+                         "namaKecamatan":  "Susukan"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304110",
+                         "luasWilayah":  27.07,
+                         "namaKecamatan":  "Wanadadi"
+                     },
+                     {
+                         "tahun":  2023,
+                         "kodeKecamatan":  "3304180",
+                         "luasWilayah":  83.62,
+                         "namaKecamatan":  "Wanayasa"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "luasWilayah":  46.31
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304060",
+                         "luasWilayah":  26.21,
+                         "namaKecamatan":  "Banjarnegara"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304170",
+                         "luasWilayah":  46.56,
+                         "namaKecamatan":  "Batur"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304050",
+                         "luasWilayah":  56.06,
+                         "namaKecamatan":  "Bawang"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304190",
+                         "luasWilayah":  80.08,
+                         "namaKecamatan":  "Kalibening"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304140",
+                         "luasWilayah":  39.07,
+                         "namaKecamatan":  "Karangkobar"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304090",
+                         "luasWilayah":  49.85,
+                         "namaKecamatan":  "Madukara"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304030",
+                         "luasWilayah":  52.6,
+                         "namaKecamatan":  "Mandiraja"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304070",
+                         "luasWilayah":  87.78,
+                         "namaKecamatan":  "Pagedongan"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304150",
+                         "luasWilayah":  51.16,
+                         "namaKecamatan":  "Pagentan"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304200",
+                         "luasWilayah":  58.53,
+                         "namaKecamatan":  "Pandanarum"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304160",
+                         "luasWilayah":  57.62,
+                         "namaKecamatan":  "Pejawaran"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304130",
+                         "luasWilayah":  102.84,
+                         "namaKecamatan":  "Punggelan"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304040",
+                         "luasWilayah":  73.86,
+                         "namaKecamatan":  "Purwanegara"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304020",
+                         "luasWilayah":  21.87,
+                         "namaKecamatan":  "Purwareja Klampok"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304120",
+                         "luasWilayah":  32.41,
+                         "namaKecamatan":  "Rakit"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304080",
+                         "luasWilayah":  39.47,
+                         "namaKecamatan":  "Sigaluh"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304010",
+                         "luasWilayah":  53.26,
+                         "namaKecamatan":  "Susukan"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304110",
+                         "luasWilayah":  27.07,
+                         "namaKecamatan":  "Wanadadi"
+                     },
+                     {
+                         "tahun":  2024,
+                         "kodeKecamatan":  "3304180",
+                         "luasWilayah":  83.62,
+                         "namaKecamatan":  "Wanayasa"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304100",
+                         "namaKecamatan":  "Banjarmangu",
+                         "luasWilayah":  46.31
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304060",
+                         "luasWilayah":  26.21,
+                         "namaKecamatan":  "Banjarnegara"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304170",
+                         "luasWilayah":  46.56,
+                         "namaKecamatan":  "Batur"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304050",
+                         "luasWilayah":  56.06,
+                         "namaKecamatan":  "Bawang"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304190",
+                         "luasWilayah":  80.08,
+                         "namaKecamatan":  "Kalibening"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304140",
+                         "luasWilayah":  39.07,
+                         "namaKecamatan":  "Karangkobar"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304090",
+                         "luasWilayah":  49.85,
+                         "namaKecamatan":  "Madukara"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304030",
+                         "luasWilayah":  52.6,
+                         "namaKecamatan":  "Mandiraja"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304070",
+                         "luasWilayah":  87.78,
+                         "namaKecamatan":  "Pagedongan"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304150",
+                         "luasWilayah":  51.16,
+                         "namaKecamatan":  "Pagentan"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304200",
+                         "luasWilayah":  58.53,
+                         "namaKecamatan":  "Pandanarum"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304160",
+                         "luasWilayah":  57.62,
+                         "namaKecamatan":  "Pejawaran"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304130",
+                         "luasWilayah":  102.84,
+                         "namaKecamatan":  "Punggelan"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304040",
+                         "luasWilayah":  73.86,
+                         "namaKecamatan":  "Purwanegara"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304020",
+                         "luasWilayah":  21.87,
+                         "namaKecamatan":  "Purwareja Klampok"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304120",
+                         "luasWilayah":  32.41,
+                         "namaKecamatan":  "Rakit"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304080",
+                         "luasWilayah":  39.47,
+                         "namaKecamatan":  "Sigaluh"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304010",
+                         "luasWilayah":  53.26,
+                         "namaKecamatan":  "Susukan"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304110",
+                         "luasWilayah":  27.07,
+                         "namaKecamatan":  "Wanadadi"
+                     },
+                     {
+                         "tahun":  2025,
+                         "kodeKecamatan":  "3304180",
+                         "luasWilayah":  83.62,
+                         "namaKecamatan":  "Wanayasa"
+                     }
+                 ]
+} as {
+  geografi: GeografiData[];
+  pemerintahan: PemerintahanData[];
+  penduduk: PendudukData[];
+  sekolah: SekolahData[];
+  listrik: ListrikData[];
+  menara: MenaraData[];
+  sinyal: SinyalData[];
+  pertanian: PertanianData[];
+  bank: BankData[];
+  perdagangan: PerdaganganData[];
+};
+
