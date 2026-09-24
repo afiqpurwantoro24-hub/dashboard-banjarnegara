@@ -449,6 +449,12 @@ function renderApp() {
   if (!curBabDef) return;
 
   // Header Titles
+  const pubYear = state.tahun + 1;
+  const pubHeading = document.getElementById('publicationYearHeading');
+  if (pubHeading) {
+    pubHeading.textContent = `KECAMATAN DALAM ANGKA ${pubYear}`;
+  }
+
   const curBadge = document.getElementById('currentBabBadge');
   curBadge.textContent = `Bab ${curBabDef.id}`;
   curBadge.className = 'bg-[#F59E0B] text-white font-extrabold text-xs px-2.5 py-0.5 rounded-md shadow-sm';
@@ -461,7 +467,7 @@ function renderApp() {
     const k = window.MASTER_KECAMATAN.find((m) => m.kode === state.selectedKecamatan);
     if (k) targetKecName = `Kecamatan ${k.nama}`;
   }
-  document.getElementById('currentFilterInfo').textContent = `${targetKecName} • Tahun ${state.tahun}`;
+  document.getElementById('currentFilterInfo').textContent = `${targetKecName} • Data Tahun ${state.tahun}`;
 
   // Subtopics switcher
   const subContainer = document.getElementById('subTopicContainer');
