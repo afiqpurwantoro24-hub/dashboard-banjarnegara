@@ -5,7 +5,7 @@
 
 (function () {
   const SPREADSHEET_ID = '1ImaBSH_R1IrgOe5DnvaeHq3Q3P5K7QeHtmVyCQaa7lg';
-  const CACHE_KEY = 'KCDA_SHEETS_CACHE_V2';
+  const CACHE_KEY = 'KCDA_SHEETS_CACHE_V3';
   const CACHE_TIME_KEY = 'KCDA_SHEETS_LAST_SYNC';
 
   const SHEET_TABS = [

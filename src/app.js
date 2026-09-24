@@ -494,15 +494,42 @@ function renderApp() {
     subContainer.classList.add('hidden');
   }
 
-  // Show/hide 2025 banner
-  const banner2025 = document.getElementById('bannerDisclaimer2025');
-  if (state.tahun === 2025) {
-    banner2025.classList.remove('hidden');
-  } else {
-    banner2025.classList.add('hidden');
-  }
-
   const metricInfo = getCurrentMetrics();
+
+  // Show/hide and update banner for uninputted / provisional data
+  const banner2025 = document.getElementById('bannerDisclaimer2025');
+  if (banner2025) {
+    const hasAnyData = metricInfo.records.some((r) => {
+      const v = metricInfo.extractFn(r);
+      return v !== null && v !== undefined;
+    });
+
+    if (!hasAnyData) {
+      banner2025.className = 'mt-4 p-3.5 bg-amber-50 border-2 border-amber-400 rounded-xl flex items-start gap-2.5 text-amber-950 text-xs shadow-xs';
+      banner2025.innerHTML = `
+        <i data-lucide="alert-circle" class="w-5 h-5 shrink-0 text-amber-600 mt-0.5"></i>
+        <div>
+          <span class="font-bold text-amber-950">Data Indikator "${metricInfo.title}" Tahun ${state.tahun} Belum Diinput:</span>
+          <p class="mt-1 text-amber-800 leading-relaxed font-medium">
+            Pada Google Spreadsheet BPS, kolom data tahun <strong>${state.tahun}</strong> untuk bab/indikator ini belum diisi oleh BPS Banjarnegara. 
+            Silakan pilih <strong>Tahun 2021 s.d. 2024</strong> pada filter tahun di atas untuk melihat data yang sudah terisi lengkap, atau isi angka pada Google Spreadsheet agar otomatis muncul di sini.
+          </p>
+        </div>
+      `;
+      banner2025.classList.remove('hidden');
+    } else if (state.tahun === 2025) {
+      banner2025.className = 'mt-4 p-3 bg-bpsYellowLight border border-bpsYellowBorder rounded-xl flex items-start gap-2.5 text-bpsYellowText text-xs';
+      banner2025.innerHTML = `
+        <i data-lucide="alert-triangle" class="w-4 h-4 shrink-0 text-amber-600 mt-0.5"></i>
+        <div>
+          <span class="font-bold">Informasi Data Tahun 2025:</span> Sebagian indikator data tahun 2025 masih bersifat sementara / dalam proses survei BPS. Nilai yang belum lengkap ditandai dengan garis putus-putus pada grafik dan tanda strip pada tabel.
+        </div>
+      `;
+      banner2025.classList.remove('hidden');
+    } else {
+      banner2025.classList.add('hidden');
+    }
+  }
   renderKPIs(metricInfo);
   renderMapChoropleth(metricInfo);
   renderCharts(metricInfo);
