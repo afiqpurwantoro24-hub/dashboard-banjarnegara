@@ -68,9 +68,9 @@ const BAB_DEFINITIONS = [
   },
   {
     id: 7,
-    title: 'Perbankan, Koperasi & Perdagangan',
-    titleEn: 'Banking, Cooperatives and Trade',
-    shortTitle: 'Perdagangan',
+    title: 'Perbankan dan Perdagangan',
+    titleEn: 'Banking and Trade',
+    shortTitle: 'Perbankan & Perdagangan',
     icon: 'store',
     subTopics: [
       { id: 'bank', label: 'Lembaga Keuangan Bank', unit: 'Kantor', primaryMetric: 'totalBank' },

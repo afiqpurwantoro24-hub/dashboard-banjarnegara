@@ -1,4 +1,4 @@
-# Dashboard Kecamatan Dalam Angka (KCDA) Kabupaten Banjarnegara
+﻿# Dashboard Kecamatan Dalam Angka (KCDA) Kabupaten Banjarnegara
 
 Transformasi Data Statistik BPS Kabupaten Banjarnegara Menjadi Dashboard Interaktif Berbasis Web (Periode 2021–2025, 20 Kecamatan).
 
@@ -25,7 +25,7 @@ Transformasi Data Statistik BPS Kabupaten Banjarnegara Menjadi Dashboard Interak
    - **Bab 6 - Komunikasi**:
      - Sub-tab 1: Jumlah Menara Telekomunikasi.
      - Sub-tab 2: Persentase Desa menurut Kekuatan Sinyal Telepon Seluler.
-   - **Bab 7 - Perbankan, Koperasi & Perdagangan**:
+   - **Bab 7 - Perbankan & Perdagangan**:
      - Sub-tab 1: Lembaga Keuangan Bank (Bank Pemerintah, Bank Swasta, BPR).
      - Sub-tab 2: Sarana Perdagangan (Pertokoan, Pasar, Minimarket, Restoran/Rumah Makan).
 

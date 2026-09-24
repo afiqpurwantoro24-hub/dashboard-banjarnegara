@@ -1,4 +1,4 @@
-// ===================================================================
+﻿// ===================================================================
 // Dashboard Kecamatan Dalam Angka Kabupaten Banjarnegara
 // Core Type Definitions
 // ===================================================================
@@ -204,7 +204,7 @@ export const BAB_CONFIG: BabConfig[] = [
   },
   {
     id: 7,
-    title: 'Perbankan, Koperasi, dan Perdagangan',
+    title: 'Perbankan dan Perdagangan',
     shortTitle: 'Perdagangan',
     icon: '🏪',
     hasSubTopics: true,
