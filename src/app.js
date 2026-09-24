@@ -43,6 +43,15 @@ const BAB_DEFINITIONS = [
   },
   {
     id: 5,
+    title: 'Pertanian',
+    shortTitle: 'Pertanian',
+    icon: 'wheat',
+    unit: 'Kuintal',
+    primaryMetric: 'produksiSayuranBuah',
+    subTopics: [],
+  },
+  {
+    id: 6,
     title: 'Pariwisata, Transportasi & Komunikasi',
     shortTitle: 'Komunikasi',
     icon: 'radio',
@@ -50,15 +59,6 @@ const BAB_DEFINITIONS = [
       { id: 'menara', label: 'Menara Telekomunikasi', unit: 'Menara', primaryMetric: 'jumlahMenara' },
       { id: 'sinyal', label: 'Kekuatan Sinyal Desa', unit: '% Desa Kuat', primaryMetric: 'persenSinyalKuat' },
     ],
-  },
-  {
-    id: 6,
-    title: 'Pertanian',
-    shortTitle: 'Pertanian',
-    icon: 'wheat',
-    unit: 'Kuintal',
-    primaryMetric: 'produksiSayuranBuah',
-    subTopics: [],
   },
   {
     id: 7,
@@ -386,6 +386,11 @@ function getCurrentMetrics() {
       });
     }
   } else if (bab === 5) {
+    records = window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
+    unit = 'Kuintal';
+    title = 'Produksi Sayuran & Buah Semusim';
+    extractFn = (r) => r.produksiSayuranBuah;
+  } else if (bab === 6) {
     if (sub === 'sinyal') {
       records = window.KCDA_DATA.sinyal.filter((r) => r.tahun === th);
       unit = '% Desa Sinyal Kuat';
@@ -401,11 +406,6 @@ function getCurrentMetrics() {
       title = 'Menara Telekomunikasi';
       extractFn = (r) => r.jumlahMenara;
     }
-  } else if (bab === 6) {
-    records = window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
-    unit = 'Kuintal';
-    title = 'Produksi Sayuran & Buah Semusim';
-    extractFn = (r) => r.produksiSayuranBuah;
   } else if (bab === 7) {
     if (sub === 'perdagangan') {
       records = window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => ({
@@ -711,11 +711,11 @@ function getHistoricalRecords(bab, sub, th) {
       totalSekolah: (r.sdMi || 0) + (r.smpMts || 0) + (r.smaSmkMa || 0) + (r.perguruanTinggi || 0),
     }));
   }
-  if (bab === 5) {
+  if (bab === 5) return window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
+  if (bab === 6) {
     if (sub === 'sinyal') return window.KCDA_DATA.sinyal.filter((r) => r.tahun === th);
     return window.KCDA_DATA.menara.filter((r) => r.tahun === th);
   }
-  if (bab === 6) return window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
   if (bab === 7) {
     if (sub === 'perdagangan') {
       return window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => ({
@@ -1036,7 +1036,7 @@ function renderComparisonBarChart(metricInfo) {
       },
       scales: {
         y: {
-          type: state.bab === 6 ? 'logarithmic' : 'linear', // Skala log untuk pertanian Bab 6 sesuai PRD
+          type: state.bab === 5 ? 'logarithmic' : 'linear', // Skala log untuk pertanian Bab 5 sesuai PRD
           grid: { color: '#F1F5F9' },
           ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
         },

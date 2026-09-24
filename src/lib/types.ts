@@ -85,7 +85,15 @@ export interface ListrikData {
   jumlahKeluargaPLN: number;
 }
 
-/** Bab 5A: Komunikasi - Menara Telekomunikasi */
+/** Bab 5: Pertanian - Produksi Sayuran & Buah */
+export interface PertanianData {
+  tahun: number;
+  kodeKecamatan: string;
+  namaKecamatan: string;
+  produksiSayuranBuah: number; // kuintal
+}
+
+/** Bab 6A: Komunikasi - Menara Telekomunikasi */
 export interface MenaraData {
   tahun: number;
   kodeKecamatan: string;
@@ -93,21 +101,13 @@ export interface MenaraData {
   jumlahMenara: number;
 }
 
-/** Bab 5B: Komunikasi - Kualitas Sinyal */
+/** Bab 6B: Komunikasi - Kualitas Sinyal */
 export interface SinyalData {
   tahun: number;
   kodeKecamatan: string;
   namaKecamatan: string;
   persenSinyalKuat: number; // % desa sinyal Sangat Kuat/Kuat
   persenSinyalLemah: number; // % desa sinyal Lemah/Lainnya
-}
-
-/** Bab 6: Pertanian - Produksi Sayuran & Buah */
-export interface PertanianData {
-  tahun: number;
-  kodeKecamatan: string;
-  namaKecamatan: string;
-  produksiSayuranBuah: number; // kuintal
 }
 
 /** Bab 7A: Perdagangan - Lembaga Keuangan Bank */
