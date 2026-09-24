@@ -156,20 +156,20 @@ function initSidebar() {
   BAB_DEFINITIONS.forEach((b) => {
     const isActive = state.bab === b.id;
     const btn = document.createElement('button');
-    btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between transition-all ${
+    btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-start justify-between gap-2 transition-all ${
       isActive
         ? 'bg-[#F59E0B] text-white font-extrabold shadow-md'
         : 'text-[#64748B] hover:bg-amber-50 hover:text-[#0F172A]'
     }`;
     btn.innerHTML = `
-      <div class="flex items-center gap-2.5 min-w-0">
-        <i data-lucide="${b.icon}" class="w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-400'}"></i>
-        <div class="min-w-0 leading-tight">
-          <div class="font-bold truncate">Bab ${b.id}: ${b.title}</div>
-          <div class="text-[10px] italic ${isActive ? 'text-amber-100' : 'text-slate-400'} font-normal truncate mt-0.5">${b.titleEn}</div>
+      <div class="flex items-start gap-2.5 flex-1 min-w-0">
+        <i data-lucide="${b.icon}" class="w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-white' : 'text-slate-400'}"></i>
+        <div class="flex-1 leading-snug">
+          <div class="font-bold text-[12px] break-words">Bab ${b.id}: ${b.title}</div>
+          <div class="text-[10px] italic ${isActive ? 'text-amber-100' : 'text-slate-400'} font-normal break-words mt-0.5">${b.titleEn}</div>
         </div>
       </div>
-      <i data-lucide="chevron-right" class="w-3.5 h-3.5 shrink-0 ml-1 ${isActive ? 'text-white' : 'opacity-40'}"></i>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 shrink-0 mt-1 ${isActive ? 'text-white' : 'opacity-40'}"></i>
     `;
     btn.onclick = () => {
       state.bab = b.id;
