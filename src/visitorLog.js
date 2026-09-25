@@ -5,8 +5,8 @@
 // ===================================================================
 
 (function () {
-  // Masukkan URL Google Apps Script Web App di bawah ini setelah dideploy:
-  const GOOGLE_SCRIPT_WEBAPP_URL = window.VISITOR_LOG_WEBAPP_URL || '';
+  // URL Google Apps Script Web App yang telah aktif dan terhubung ke Spreadsheet:
+  const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzLeRLYZjvgb3uYJUzelxPdTHPjA7SQUQpNgBaiVn74wEbPYbs3zE3BpImZ4rXCNlDx/exec';
 
   // Mencegah duplikasi log jika pengguna merefresh/berpindah tab dalam sesi yang sama (opsional)
   const LOG_ONCE_PER_SESSION = true;
