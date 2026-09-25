@@ -399,19 +399,25 @@
 
         <!-- Secondary Breakdown / Distribution Chart -->
         <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col">
-          <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 mb-2 border-b border-slate-100">
             <div class="flex items-center gap-2 min-w-0">
               <div class="p-1.5 bg-purple-50 text-purple-700 rounded-lg shrink-0">
                 <i data-lucide="pie-chart" class="w-4 h-4"></i>
               </div>
               <div class="min-w-0">
-                <h3 id="secondaryChartTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Distribusi / Komposisi Kategori</h3>
-                <p id="secondaryChartSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Proporsi Sektoral</p>
+                <h3 id="secondaryChartTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Pangsa Kontribusi 20 Kecamatan</h3>
+                <p id="secondaryChartSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Proporsi Seluruh Wilayah</p>
               </div>
+            </div>
+
+            <!-- Mode Toggle if Category Breakdown Exists -->
+            <div id="secondaryChartToggleContainer" class="hidden flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg border border-slate-200 shrink-0 self-start sm:self-auto">
+              <button id="btnDoughnutKec" class="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-white text-slate-900 shadow-xs transition-all cursor-pointer">20 Kecamatan</button>
+              <button id="btnDoughnutCat" class="text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md text-slate-500 hover:text-slate-900 transition-all cursor-pointer">Kategori</button>
             </div>
           </div>
 
-          <div class="relative flex-1 min-h-[280px] sm:min-h-[340px] flex items-center justify-center">
+          <div class="relative flex-1 min-h-[360px] sm:min-h-[400px] flex items-center justify-center">
             <canvas id="secondaryChart"></canvas>
           </div>
         </div>

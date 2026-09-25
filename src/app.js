@@ -91,6 +91,7 @@ const state = {
   sortCol: '',
   sortDir: 'desc',
   barSort: 'desc',
+  secondaryChartMode: 'kecamatan',
 };
 
 // Global Chart Instances
@@ -455,6 +456,23 @@ function initEventListeners() {
     btnDrawerScrollTop.addEventListener('click', () => {
       closeMobileBabDrawer();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Circular Chart Mode Toggle (20 Kecamatan vs Kategori)
+  const btnDoughnutKec = document.getElementById('btnDoughnutKec');
+  if (btnDoughnutKec) {
+    btnDoughnutKec.addEventListener('click', () => {
+      state.secondaryChartMode = 'kecamatan';
+      renderSecondaryChart(getCurrentMetrics());
+    });
+  }
+
+  const btnDoughnutCat = document.getElementById('btnDoughnutCat');
+  if (btnDoughnutCat) {
+    btnDoughnutCat.addEventListener('click', () => {
+      state.secondaryChartMode = 'category';
+      renderSecondaryChart(getCurrentMetrics());
     });
   }
 }
@@ -1268,26 +1286,59 @@ function renderComparisonBarChart(metricInfo) {
 function renderSecondaryChart(metricInfo) {
   const secTitleEl = document.getElementById('secondaryChartTitle');
   const secSubEl = document.getElementById('secondaryChartSubtitle');
+  const toggleContainer = document.getElementById('secondaryChartToggleContainer');
+  const btnKec = document.getElementById('btnDoughnutKec');
+  const btnCat = document.getElementById('btnDoughnutCat');
 
   const ctx = document.getElementById('secondaryChart').getContext('2d');
   if (secondaryChartInstance) secondaryChartInstance.destroy();
 
-  const { records, breakdownFn } = metricInfo;
+  const { records, breakdownFn, extractFn, unit, title } = metricInfo;
 
-  // Exact 5 Category Doughnut Palette: Navy (#1E3A8A), Teal (#0D9488), Oranye (#F59E0B), Biru Muda (#06B6D4), Abu-Abu (#94A3B8)
+  // 20 Harmony Colors Palette for All 20 Kecamatan
+  const palette20 = [
+    '#1E3A8A', '#0284C7', '#0D9488', '#10B981', '#F59E0B',
+    '#EA580C', '#DC2626', '#9333EA', '#4F46E5', '#06B6D4',
+    '#14B8A6', '#84CC16', '#EAB308', '#F97316', '#F43F5E',
+    '#A855F7', '#6366F1', '#38BDF8', '#475569', '#64748B'
+  ];
+
+  // 5 Category Palette
   const categoryPalette = ['#1E3A8A', '#0D9488', '#F59E0B', '#06B6D4', '#94A3B8'];
 
-  if (!breakdownFn) {
-    if (secTitleEl) secTitleEl.textContent = 'Distribusi Pangsa: 5 Teratas';
-    if (secSubEl) secSubEl.textContent = `Pangsa Nilai Terhadap Total (${metricInfo.unit})`;
+  // Toggle button visibility if category breakdown is available
+  if (breakdownFn) {
+    if (toggleContainer) toggleContainer.classList.remove('hidden');
+    if (btnKec && btnCat) {
+      if (state.secondaryChartMode === 'category') {
+        btnCat.className = 'text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-white text-slate-900 shadow-xs transition-all cursor-pointer';
+        btnKec.className = 'text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+      } else {
+        btnKec.className = 'text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-white text-slate-900 shadow-xs transition-all cursor-pointer';
+        btnCat.className = 'text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+      }
+    }
+  } else {
+    if (toggleContainer) toggleContainer.classList.add('hidden');
+    state.secondaryChartMode = 'kecamatan';
+  }
 
-    // If no breakdown available (e.g. Geografi / Pertanian), show top 5 vs other distribution
-    const sorted = [...records].sort((a, b) => (metricInfo.extractFn(b) || 0) - (metricInfo.extractFn(a) || 0));
-    const top5 = sorted.slice(0, 5);
-    const othersVal = sorted.slice(5).reduce((acc, r) => acc + (metricInfo.extractFn(r) || 0), 0);
+  // MODE 1: Category Breakdown (only if selected by user on chapters with sub-categories)
+  if (state.secondaryChartMode === 'category' && breakdownFn) {
+    if (secTitleEl) secTitleEl.textContent = `Komposisi: ${title}`;
+    if (secSubEl) secSubEl.textContent = `Proporsi Kategori Sektoral (${unit})`;
 
-    const labels = [...top5.map((r) => r.namaKecamatan), 'Kecamatan Lainnya'];
-    const data = [...top5.map((r) => metricInfo.extractFn(r) || 0), othersVal];
+    let breakdownTotals = {};
+    records.forEach((r) => {
+      if (state.selectedKecamatan !== 'ALL' && r.kodeKecamatan !== state.selectedKecamatan) return;
+      const cat = breakdownFn(r);
+      Object.keys(cat).forEach((k) => {
+        breakdownTotals[k] = (breakdownTotals[k] || 0) + (cat[k] || 0);
+      });
+    });
+
+    const labels = Object.keys(breakdownTotals);
+    const data = Object.values(breakdownTotals);
 
     secondaryChartInstance = new Chart(ctx, {
       type: 'doughnut',
@@ -1297,36 +1348,48 @@ function renderSecondaryChart(metricInfo) {
           {
             data: data,
             backgroundColor: categoryPalette,
+            borderRadius: 4,
           },
         ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: '70%',
+        cutout: '65%',
         plugins: {
-          legend: { position: 'bottom', labels: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' }, boxWidth: 12, padding: 12 } },
+          legend: {
+            position: 'bottom',
+            labels: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' }, boxWidth: 12, padding: 10 },
+          },
+          tooltip: {
+            callbacks: {
+              label: (item) => {
+                const val = item.raw || 0;
+                const total = item.dataset.data.reduce((a, b) => a + (b || 0), 0);
+                const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
+                const formatVal = new Intl.NumberFormat('id-ID').format(val);
+                return ` ${item.label}: ${formatVal} ${unit} (${pct}%)`;
+              },
+            },
+          },
         },
       },
     });
     return;
   }
 
-  if (secTitleEl) secTitleEl.textContent = `Komposisi: ${metricInfo.title}`;
-  if (secSubEl) secSubEl.textContent = `Proporsi Kategori Sektoral (${metricInfo.unit})`;
+  // MODE 2 (DEFAULT): ALL 20 KECAMATAN DISTRIBUTION
+  if (secTitleEl) secTitleEl.textContent = 'Pangsa Kontribusi 20 Kecamatan';
+  if (secSubEl) secSubEl.textContent = `${title} (Satuan: ${unit})`;
 
-  // Calculate aggregated categories
-  let breakdownTotals = {};
-  records.forEach((r) => {
-    if (state.selectedKecamatan !== 'ALL' && r.kodeKecamatan !== state.selectedKecamatan) return;
-    const cat = breakdownFn(r);
-    Object.keys(cat).forEach((k) => {
-      breakdownTotals[k] = (breakdownTotals[k] || 0) + (cat[k] || 0);
-    });
-  });
+  const sorted = [...records].sort((a, b) => (extractFn(b) || 0) - (extractFn(a) || 0));
+  const labels = sorted.map((r) => r.namaKecamatan);
+  const data = sorted.map((r) => extractFn(r) || 0);
 
-  const labels = Object.keys(breakdownTotals);
-  const data = Object.values(breakdownTotals);
+  // Highlight slice if a specific kecamatan is selected in header filter
+  const offsets = sorted.map((r) => (state.selectedKecamatan === r.kodeKecamatan ? 14 : 0));
+  const borderWidths = sorted.map((r) => (state.selectedKecamatan === r.kodeKecamatan ? 3 : 1));
+  const borderColors = sorted.map((r) => (state.selectedKecamatan === r.kodeKecamatan ? '#F59E0B' : '#FFFFFF'));
 
   secondaryChartInstance = new Chart(ctx, {
     type: 'doughnut',
@@ -1335,17 +1398,39 @@ function renderSecondaryChart(metricInfo) {
       datasets: [
         {
           data: data,
-          backgroundColor: categoryPalette,
-          borderRadius: 4,
+          backgroundColor: palette20,
+          offset: offsets,
+          borderWidth: borderWidths,
+          borderColor: borderColors,
         },
       ],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '70%',
+      cutout: '62%',
       plugins: {
-        legend: { position: 'bottom', labels: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' }, boxWidth: 12, padding: 12 } },
+        legend: {
+          position: 'bottom',
+          labels: {
+            font: { family: 'Plus Jakarta Sans', size: 9, weight: '600' },
+            boxWidth: 8,
+            boxHeight: 8,
+            padding: 5,
+          },
+          maxHeight: 125,
+        },
+        tooltip: {
+          callbacks: {
+            label: (item) => {
+              const val = item.raw || 0;
+              const total = item.dataset.data.reduce((a, b) => a + (b || 0), 0);
+              const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
+              const formatVal = new Intl.NumberFormat('id-ID').format(val);
+              return ` Kec. ${item.label}: ${formatVal} ${unit} (${pct}%)`;
+            },
+          },
+        },
       },
     },
   });
