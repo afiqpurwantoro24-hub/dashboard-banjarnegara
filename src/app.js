@@ -1147,6 +1147,8 @@ function renderTrendLineChart(metricInfo) {
     });
   }
 
+  const isInteger = [2, 3, 4, 7].includes(state.bab) || (state.bab === 6 && state.subTopic !== 'sinyal');
+
   trendLineChartInstance = new Chart(ctx, {
     type: 'line',
     data: {
@@ -1163,7 +1165,12 @@ function renderTrendLineChart(metricInfo) {
         },
         tooltip: {
           callbacks: {
-            label: (item) => `${item.dataset.label}: ${item.raw !== null ? new Intl.NumberFormat('id-ID').format(item.raw) : 'Belum Tersedia'} ${metricInfo.unit}`,
+            label: (item) => {
+              const val = item.raw !== null
+                ? new Intl.NumberFormat('id-ID', { maximumFractionDigits: isInteger ? 0 : 2 }).format(item.raw)
+                : 'Belum Tersedia';
+              return `${item.dataset.label}: ${val} ${metricInfo.unit}`;
+            },
           },
         },
       },
@@ -1176,7 +1183,20 @@ function renderTrendLineChart(metricInfo) {
             color: '#64748B',
           },
           grid: { color: '#F1F5F9' },
-          ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
+          ticks: {
+            font: { family: 'Plus Jakarta Sans', size: 10 },
+            precision: isInteger ? 0 : 2,
+            stepSize: isInteger ? 1 : undefined,
+            callback: function (val) {
+              if (isInteger) {
+                if (Math.floor(val) === val) {
+                  return new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(val);
+                }
+                return '';
+              }
+              return new Intl.NumberFormat('id-ID').format(val);
+            },
+          },
         },
         x: {
           grid: { display: false },
@@ -1219,6 +1239,8 @@ function renderComparisonBarChart(metricInfo) {
     return '#1E3A8A'; // Biru Navy
   });
 
+  const isInteger = [2, 3, 4, 7].includes(state.bab) || (state.bab === 6 && state.subTopic !== 'sinyal');
+
   comparisonBarChartInstance = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -1240,7 +1262,12 @@ function renderComparisonBarChart(metricInfo) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (item) => `${item.raw !== null ? new Intl.NumberFormat('id-ID').format(item.raw) : 'Belum Tersedia'} ${unit}`,
+            label: (item) => {
+              const val = item.raw !== null
+                ? new Intl.NumberFormat('id-ID', { maximumFractionDigits: isInteger ? 0 : 2 }).format(item.raw)
+                : 'Belum Tersedia';
+              return `${metricInfo.title}: ${val} ${unit}`;
+            },
           },
         },
       },
@@ -1259,7 +1286,20 @@ function renderComparisonBarChart(metricInfo) {
                 color: '#64748B',
               },
               grid: { color: '#F1F5F9' },
-              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
+              ticks: {
+                font: { family: 'Plus Jakarta Sans', size: 10 },
+                precision: isInteger ? 0 : 2,
+                stepSize: isInteger ? 1 : undefined,
+                callback: function (val) {
+                  if (isInteger) {
+                    if (Math.floor(val) === val) {
+                      return new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(val);
+                    }
+                    return '';
+                  }
+                  return new Intl.NumberFormat('id-ID').format(val);
+                },
+              },
             },
           }
         : {
@@ -1272,7 +1312,20 @@ function renderComparisonBarChart(metricInfo) {
                 color: '#64748B',
               },
               grid: { color: '#F1F5F9' },
-              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
+              ticks: {
+                font: { family: 'Plus Jakarta Sans', size: 10 },
+                precision: isInteger ? 0 : 2,
+                stepSize: isInteger ? 1 : undefined,
+                callback: function (val) {
+                  if (isInteger) {
+                    if (Math.floor(val) === val) {
+                      return new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(val);
+                    }
+                    return '';
+                  }
+                  return new Intl.NumberFormat('id-ID').format(val);
+                },
+              },
             },
             x: {
               grid: { display: false },
@@ -1294,6 +1347,8 @@ function renderSecondaryChart(metricInfo) {
   if (secondaryChartInstance) secondaryChartInstance.destroy();
 
   const { records, breakdownFn, extractFn, unit, title } = metricInfo;
+
+  const isInteger = [2, 3, 4, 7].includes(state.bab) || (state.bab === 6 && state.subTopic !== 'sinyal');
 
   // 20 Harmony Colors Palette for All 20 Kecamatan
   const palette20 = [
@@ -1367,7 +1422,7 @@ function renderSecondaryChart(metricInfo) {
                 const val = item.raw || 0;
                 const total = item.dataset.data.reduce((a, b) => a + (b || 0), 0);
                 const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
-                const formatVal = new Intl.NumberFormat('id-ID').format(val);
+                const formatVal = new Intl.NumberFormat('id-ID', { maximumFractionDigits: isInteger ? 0 : 2 }).format(val);
                 return ` ${item.label}: ${formatVal} ${unit} (${pct}%)`;
               },
             },
@@ -1426,7 +1481,7 @@ function renderSecondaryChart(metricInfo) {
               const val = item.raw || 0;
               const total = item.dataset.data.reduce((a, b) => a + (b || 0), 0);
               const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
-              const formatVal = new Intl.NumberFormat('id-ID').format(val);
+              const formatVal = new Intl.NumberFormat('id-ID', { maximumFractionDigits: isInteger ? 0 : 2 }).format(val);
               return ` Kec. ${item.label}: ${formatVal} ${unit} (Kontribusi: ${pct}%)`;
             },
           },
