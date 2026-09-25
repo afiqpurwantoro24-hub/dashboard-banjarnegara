@@ -304,6 +304,15 @@ function initEventListeners() {
   document.getElementById('btnTableExport').addEventListener('click', () => {
     exportCurrentDataCSV();
   });
+
+  // Responsive window resize for comparison bar chart orientation switch
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      renderComparisonBarChart(getCurrentMetrics());
+    }, 250);
+  });
 }
 
 function updateCompareCheckboxes() {
@@ -556,6 +565,8 @@ function renderKPIs(metricInfo) {
   let valAvg = 0;
   let maxKec = null;
   let maxVal = -Infinity;
+  let minKec = null;
+  let minVal = Infinity;
   let hasValidData = false;
 
   const validRecords = records.filter((r) => {
@@ -589,6 +600,10 @@ function renderKPIs(metricInfo) {
         maxVal = v;
         maxKec = r.namaKecamatan;
       }
+      if (v < minVal) {
+        minVal = v;
+        minKec = r.namaKecamatan;
+      }
     });
   }
 
@@ -621,67 +636,81 @@ function renderKPIs(metricInfo) {
     return new Intl.NumberFormat('id-ID', { minimumFractionDigits: dec, maximumFractionDigits: dec }).format(v);
   };
 
+  // Build YoY badge or description for Card 1
+  let card1Badge = '';
+  if (state.bab === 1) {
+    card1Badge = '<span class="text-slate-500 font-semibold text-[10px] sm:text-[11px]">Kabupaten Banjarnegara</span>';
+  } else if (yoyPct !== null) {
+    const isUp = yoyPct >= 0;
+    card1Badge = `<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-extrabold ${isUp ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">${isUp ? '▲ +' : '▼ '}${Math.abs(yoyPct).toFixed(1)}% vs ${prevTahun}</span>`;
+  } else if (prevTahun < 2021) {
+    card1Badge = '<span class="text-slate-400 font-semibold text-[10px] sm:text-[11px]">Tahun Dasar 2021</span>';
+  } else {
+    card1Badge = `<span class="text-slate-400 font-semibold text-[10px] sm:text-[11px]">Data Tahun ${state.tahun}</span>`;
+  }
+
+  // Calculate share of max/min
+  let maxShareStr = '';
+  let minShareStr = '';
+  if (valPrimary && valPrimary > 0 && !metricInfo.unit.includes('%')) {
+    if (maxVal > -Infinity) maxShareStr = ` • ${((maxVal / valPrimary) * 100).toFixed(1)}%`;
+    if (minVal < Infinity) minShareStr = ` • ${((minVal / valPrimary) * 100).toFixed(1)}%`;
+  }
+
   const kpis = [
     {
       label: isKecSelected ? `Nilai ${targetKec.nama}` : `Total Kabupaten`,
       val: hasValidData ? formatId(valPrimary, metricInfo.unit.includes('%') ? 1 : 0) : 'Belum Tersedia',
       unit: unit,
-      sub: `Tahun ${state.tahun}`,
+      sub: card1Badge,
       icon: 'activity',
       color: 'bg-blue-50 text-[#1E3A8A] border border-blue-100',
     },
     {
-      label: 'Rata-rata per Kecamatan',
+      label: 'Rata-rata Kecamatan',
       val: validRecords.length ? formatId(valAvg, 1) : '—',
       unit: unit,
-      sub: `Dari 20 kecamatan`,
-      icon: 'bar-chart',
+      sub: `<span class="text-slate-500 font-medium text-[10px] sm:text-[11px]">Dari ${validRecords.length} kecamatan</span>`,
+      icon: 'bar-chart-2',
       color: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
     },
     {
-      label: 'Nilai Tertinggi (Kecamatan)',
-      val: maxKec ? `${formatId(maxVal, metricInfo.unit.includes('%') ? 1 : 0)}` : '—',
+      label: state.bab === 1 ? 'Kecamatan Terluas' : 'Nilai Tertinggi',
+      val: maxKec && maxVal > -Infinity ? formatId(maxVal, metricInfo.unit.includes('%') ? 1 : 0) : '—',
       unit: unit,
-      sub: maxKec ? `Kec. ${maxKec}` : 'Tidak ada data',
+      sub: maxKec ? `<span class="font-bold text-amber-900 text-[10px] sm:text-[11px]">Kec. ${maxKec}</span><span class="text-slate-400 text-[10px]">${maxShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
       icon: 'award',
       color: 'bg-amber-50 text-amber-700 border border-amber-100',
     },
+    {
+      label: state.bab === 1 ? 'Kecamatan Terkecil' : 'Nilai Terendah',
+      val: minKec && minVal < Infinity ? formatId(minVal, metricInfo.unit.includes('%') ? 1 : 0) : '—',
+      unit: unit,
+      sub: minKec ? `<span class="font-bold text-purple-900 text-[10px] sm:text-[11px]">Kec. ${minKec}</span><span class="text-slate-400 text-[10px]">${minShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
+      icon: 'trending-down',
+      color: 'bg-purple-50 text-purple-700 border border-purple-100',
+    },
   ];
 
-  // Di Bab 1 (Geografi / Luas Wilayah bernilai tetap), kartu ke-4 Pertumbuhan Tahunan dihilangkan
-  if (state.bab !== 1) {
-    kpis.push({
-      label: 'Pertumbuhan Tahunan (vs Th. Sebelumnya)',
-      val: yoyPct !== null ? `${yoyPct > 0 ? '+' : ''}${yoyPct.toFixed(1)}%` : '—',
-      unit: prevTahun >= 2021 ? `Dibanding ${prevTahun}` : 'Tahun dasar',
-      sub: yoyPct !== null ? (yoyPct >= 0 ? 'Tren Meningkat' : 'Tren Menurun') : 'Data dasar 2021',
-      icon: 'trending-up',
-      color: yoyPct !== null ? (yoyPct >= 0 ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 'bg-rose-50 text-rose-700 border border-rose-100') : 'bg-slate-50 text-slate-600 border border-slate-100',
-    });
-  }
-
-  container.className = state.bab === 1
-    ? 'grid grid-cols-1 sm:grid-cols-3 gap-4'
-    : 'grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4';
+  container.className = 'grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4';
 
   kpis.forEach((k) => {
     const card = document.createElement('div');
-    card.className = 'bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-5 shadow-sm flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-200';
+    card.className = 'bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 p-3 sm:p-4 lg:p-5 shadow-xs flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 min-h-[105px] sm:min-h-[125px]';
     card.innerHTML = `
-      <div class="flex items-center justify-between mb-3">
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">${k.label}</span>
-        <div class="p-2.5 rounded-xl ${k.color} shadow-xs">
-          <i data-lucide="${k.icon}" class="w-4 h-4"></i>
+      <div class="flex items-center justify-between gap-1.5 mb-1 sm:mb-2">
+        <span class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate">${k.label}</span>
+        <div class="p-1 sm:p-2 rounded-lg sm:rounded-xl ${k.color} shrink-0 shadow-2xs">
+          <i data-lucide="${k.icon}" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
         </div>
       </div>
       <div>
-        <div class="flex items-baseline gap-1.5">
-          <span class="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight tabular-nums">${k.val}</span>
-          <span class="text-xs font-bold text-slate-400">${k.unit}</span>
+        <div class="flex flex-wrap items-baseline gap-1">
+          <span class="text-lg sm:text-2xl lg:text-3xl font-black text-[#0F172A] tracking-tight tabular-nums">${k.val}</span>
+          <span class="text-[10px] sm:text-xs font-bold text-slate-400">${k.unit}</span>
         </div>
-        <div class="mt-1.5 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-          <span>${k.sub}</span>
+        <div class="mt-1 truncate">
+          ${k.sub}
         </div>
       </div>
     `;
@@ -737,11 +766,17 @@ function getHistoricalRecords(bab, sub, th) {
 // ===================================================================
 
 function renderMapChoropleth(metricInfo) {
+  const mapTitleEl = document.getElementById('mapCardTitle');
+  if (mapTitleEl) mapTitleEl.textContent = `Peta Tematik: ${metricInfo.title}`;
+  const mapSubEl = document.getElementById('mapCardSubtitle');
+  if (mapSubEl) mapSubEl.textContent = `Distribusi Spasial Wilayah (Satuan: ${metricInfo.unit})`;
+
   const svg = document.getElementById('banjarnegaraMapSvg');
   if (!svg) return;
   svg.innerHTML = '';
 
-  document.getElementById('mapSelectedIndicatorLabel').textContent = `${metricInfo.title} (${metricInfo.unit})`;
+  const mapIndicatorEl = document.getElementById('mapSelectedIndicatorLabel');
+  if (mapIndicatorEl) mapIndicatorEl.textContent = `${metricInfo.title} (${metricInfo.unit})`;
 
   const { records, extractFn, unit } = metricInfo;
   const values = records.map((r) => extractFn(r)).filter((v) => v !== null && v !== undefined);
@@ -864,6 +899,11 @@ function renderCharts(metricInfo) {
 }
 
 function renderTrendLineChart(metricInfo) {
+  const lineTitleEl = document.getElementById('lineChartTitle');
+  if (lineTitleEl) lineTitleEl.textContent = `Tren Perkembangan: ${metricInfo.title}`;
+  const lineSubEl = document.getElementById('lineChartSubtitle');
+  if (lineSubEl) lineSubEl.textContent = `Seri Data 2021–2025 (Satuan: ${metricInfo.unit})`;
+
   const ctx = document.getElementById('trendLineChart').getContext('2d');
   if (trendLineChartInstance) trendLineChartInstance.destroy();
 
@@ -945,7 +985,7 @@ function renderTrendLineChart(metricInfo) {
   trendLineChartInstance = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['2021', '2022', '2023', '2024', '2025 (Sem.)'],
+      labels: ['2021', '2022', '2023', '2024', '2025'],
       datasets: datasets,
     },
     options: {
@@ -964,6 +1004,12 @@ function renderTrendLineChart(metricInfo) {
       },
       scales: {
         y: {
+          title: {
+            display: true,
+            text: metricInfo.unit,
+            font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' },
+            color: '#64748B',
+          },
           grid: { color: '#F1F5F9' },
           ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
         },
@@ -977,6 +1023,11 @@ function renderTrendLineChart(metricInfo) {
 }
 
 function renderComparisonBarChart(metricInfo) {
+  const barTitleEl = document.getElementById('barChartTitle');
+  if (barTitleEl) barTitleEl.textContent = 'Perbandingan 20 Kecamatan';
+  const barSubEl = document.getElementById('barChartSubtitle');
+  if (barSubEl) barSubEl.textContent = `${metricInfo.title} (Satuan: ${metricInfo.unit})`;
+
   const ctx = document.getElementById('comparisonBarChart').getContext('2d');
   if (comparisonBarChartInstance) comparisonBarChartInstance.destroy();
 
@@ -991,6 +1042,7 @@ function renderComparisonBarChart(metricInfo) {
     sorted.sort((a, b) => a.namaKecamatan.localeCompare(b.namaKecamatan));
   }
 
+  const isMobile = window.innerWidth < 768;
   const labels = sorted.map((r) => r.namaKecamatan);
   const data = sorted.map((r) => extractFn(r));
 
@@ -1011,11 +1063,12 @@ function renderComparisonBarChart(metricInfo) {
           label: metricInfo.title,
           data: data,
           backgroundColor: backgroundColors,
-          borderRadius: 6,
+          borderRadius: isMobile ? 4 : 6,
         },
       ],
     },
     options: {
+      indexAxis: isMobile ? 'y' : 'x',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
@@ -1026,22 +1079,49 @@ function renderComparisonBarChart(metricInfo) {
           },
         },
       },
-      scales: {
-        y: {
-          type: state.bab === 5 ? 'logarithmic' : 'linear', // Skala log untuk pertanian Bab 5 sesuai PRD
-          grid: { color: '#F1F5F9' },
-          ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
-        },
-        x: {
-          grid: { display: false },
-          ticks: { font: { family: 'Plus Jakarta Sans', size: 9 }, maxRotation: 45, minRotation: 45 },
-        },
-      },
+      scales: isMobile
+        ? {
+            y: {
+              grid: { display: false },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' }, autoSkip: false },
+            },
+            x: {
+              type: state.bab === 5 ? 'logarithmic' : 'linear',
+              title: {
+                display: true,
+                text: unit,
+                font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' },
+                color: '#64748B',
+              },
+              grid: { color: '#F1F5F9' },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
+            },
+          }
+        : {
+            y: {
+              type: state.bab === 5 ? 'logarithmic' : 'linear',
+              title: {
+                display: true,
+                text: unit,
+                font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' },
+                color: '#64748B',
+              },
+              grid: { color: '#F1F5F9' },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } },
+            },
+            x: {
+              grid: { display: false },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 9 }, maxRotation: 45, minRotation: 45 },
+            },
+          },
     },
   });
 }
 
 function renderSecondaryChart(metricInfo) {
+  const secTitleEl = document.getElementById('secondaryChartTitle');
+  const secSubEl = document.getElementById('secondaryChartSubtitle');
+
   const ctx = document.getElementById('secondaryChart').getContext('2d');
   if (secondaryChartInstance) secondaryChartInstance.destroy();
 
@@ -1051,6 +1131,9 @@ function renderSecondaryChart(metricInfo) {
   const categoryPalette = ['#1E3A8A', '#0D9488', '#F59E0B', '#06B6D4', '#94A3B8'];
 
   if (!breakdownFn) {
+    if (secTitleEl) secTitleEl.textContent = 'Distribusi Pangsa: 5 Teratas';
+    if (secSubEl) secSubEl.textContent = `Pangsa Nilai Terhadap Total (${metricInfo.unit})`;
+
     // If no breakdown available (e.g. Geografi / Pertanian), show top 5 vs other distribution
     const sorted = [...records].sort((a, b) => (metricInfo.extractFn(b) || 0) - (metricInfo.extractFn(a) || 0));
     const top5 = sorted.slice(0, 5);
@@ -1081,6 +1164,9 @@ function renderSecondaryChart(metricInfo) {
     });
     return;
   }
+
+  if (secTitleEl) secTitleEl.textContent = `Komposisi: ${metricInfo.title}`;
+  if (secSubEl) secSubEl.textContent = `Proporsi Kategori Sektoral (${metricInfo.unit})`;
 
   // Calculate aggregated categories
   let breakdownTotals = {};

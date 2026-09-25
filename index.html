@@ -94,71 +94,76 @@
     <div class="max-w-[1600px] mx-auto px-4 sm:px-6 py-2">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
         
-        <!-- Brand / Logo BPS, BerAKHLAK & Sensus Ekonomi 2026 (ENLARGED) -->
-        <div class="flex items-center gap-3 sm:gap-4">
-          <div class="flex items-center gap-3 bg-white rounded-2xl px-3.5 py-1.5 shadow-md shrink-0 border border-amber-200/80">
-            <img src="src/assets/logo-bps.png" alt="Logo BPS" class="h-11 sm:h-13 w-auto object-contain" title="Badan Pusat Statistik" />
-            <div class="h-9 w-px bg-slate-200"></div>
-            <img src="src/assets/logo-berakhlak.png" alt="Logo BerAKHLAK" class="h-9 sm:h-11 w-auto object-contain" title="Core Values ASN BerAKHLAK" />
-            <div class="h-9 w-px bg-slate-200"></div>
-            <img src="src/assets/logo-sensus-ekonomi.webp" alt="Logo Sensus Ekonomi 2026" class="h-10 sm:h-12 w-auto object-contain" title="Menyongsong Sensus Ekonomi 2026" />
+        <!-- Brand / Logo BPS, BerAKHLAK & Sensus Ekonomi 2026 -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <div class="flex items-center gap-2 sm:gap-3 bg-white rounded-xl sm:rounded-2xl px-2 sm:px-3.5 py-1 sm:py-1.5 shadow-md shrink-0 border border-amber-200/80">
+            <img src="src/assets/logo-bps.png" alt="Logo BPS" class="h-7 sm:h-11 w-auto object-contain" title="Badan Pusat Statistik" />
+            <div class="hidden sm:block h-8 w-px bg-slate-200"></div>
+            <img src="src/assets/logo-berakhlak.png" alt="Logo BerAKHLAK" class="hidden sm:block h-8 sm:h-10 w-auto object-contain" title="Core Values ASN BerAKHLAK" />
+            <div class="hidden sm:block h-8 w-px bg-slate-200"></div>
+            <img src="src/assets/logo-sensus-ekonomi.webp" alt="Logo Sensus Ekonomi 2026" class="hidden sm:block h-9 sm:h-11 w-auto object-contain" title="Menyongsong Sensus Ekonomi 2026" />
           </div>
-          <div class="flex flex-col">
-            <h1 class="font-black italic uppercase tracking-wider text-xs sm:text-sm lg:text-[15px] leading-tight text-[#002B6A]">
+          <div class="flex flex-col min-w-0">
+            <h1 class="font-black italic uppercase tracking-wider text-[11px] sm:text-sm lg:text-[15px] leading-tight text-[#002B6A]">
               <div>DASHBOARD KECAMATAN DALAM ANGKA</div>
               <div>KABUPATEN BANJARNEGARA</div>
             </h1>
-            <p class="text-xs text-[#0F172A]/85 font-normal mt-0.5">Badan Pusat Statistik Kabupaten Banjarnegara &bull; Publikasi Terpadu 20 Kecamatan</p>
+            <p class="hidden sm:block text-xs text-[#0F172A]/85 font-normal mt-0.5">Badan Pusat Statistik Kabupaten Banjarnegara &bull; Publikasi Terpadu 20 Kecamatan</p>
           </div>
         </div>
 
         <!-- Global Filters -->
-        <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 bg-amber-900/15 p-1.5 rounded-xl border border-amber-700/25">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2.5 bg-amber-900/15 p-1 sm:p-1.5 rounded-xl border border-amber-700/25 w-full lg:w-auto">
           
-          <!-- Filter Tahun -->
-          <div class="flex items-center gap-1.5 bg-white/95 px-2.5 py-1.5 rounded-lg border border-amber-200 shadow-sm">
-            <span class="text-xs text-[#0F172A] font-bold">Tahun:</span>
-            <select id="filterTahun" class="bg-transparent text-[#0F172A] text-xs font-bold focus:outline-none cursor-pointer">
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-              <option value="2024">2024</option>
-              <option value="2025" selected>2025</option>
-            </select>
+          <div class="grid grid-cols-2 gap-1.5 w-full sm:w-auto sm:flex sm:items-center">
+            <!-- Filter Tahun -->
+            <div class="flex items-center gap-1 bg-white/95 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-lg border border-amber-200 shadow-sm">
+              <span class="text-[11px] sm:text-xs text-[#0F172A] font-bold">Tahun:</span>
+              <select id="filterTahun" class="bg-transparent text-[#0F172A] text-xs font-bold focus:outline-none cursor-pointer">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025" selected>2025</option>
+              </select>
+            </div>
+
+            <!-- Filter Kecamatan -->
+            <div class="flex items-center gap-1 bg-white/95 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-lg border border-amber-200 shadow-sm min-w-0">
+              <span class="text-[11px] sm:text-xs text-[#0F172A] font-bold">Kec:</span>
+              <select id="filterKecamatan" class="bg-transparent text-[#0F172A] text-xs font-bold focus:outline-none cursor-pointer w-full sm:max-w-[155px] truncate">
+                <option value="ALL">Semua Kecamatan</option>
+              </select>
+            </div>
           </div>
 
-          <!-- Filter Kecamatan -->
-          <div class="flex items-center gap-1.5 bg-white/95 px-2.5 py-1.5 rounded-lg border border-amber-200 shadow-sm">
-            <span class="text-xs text-[#0F172A] font-bold">Kecamatan:</span>
-            <select id="filterKecamatan" class="bg-transparent text-[#0F172A] text-xs font-bold focus:outline-none cursor-pointer max-w-[155px]">
-              <option value="ALL">Semua Kecamatan (Kabupaten)</option>
-            </select>
-          </div>
-
-          <!-- Mode Komparasi Button / Toggle -->
-          <button id="btnToggleCompare" class="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:text-white hover:bg-[#F59E0B] shadow-sm">
-            <i data-lucide="git-compare" class="w-3.5 h-3.5 text-amber-700"></i>
-            <span>Komparasi</span>
-          </button>
-
-          <!-- Live Google Sheets Sync Button / Status Badge -->
-          <button id="sheetsSyncIndicator" onclick="window.syncWithGoogleSheets(true)" title="Klik untuk menyinkronkan data langsung dari Google Spreadsheet" class="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:bg-emerald-50 hover:border-emerald-300 shadow-sm">
-            <span id="syncDot" class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span id="syncText" class="text-[11px]">Google Sheets (Live)</span>
-            <i id="syncIcon" data-lucide="refresh-cw" class="w-3.5 h-3.5 text-slate-500"></i>
-          </button>
-
-          <!-- Quick Action Buttons -->
-          <div class="flex items-center gap-1 border-l border-amber-600/30 pl-2">
-            <button id="btnShare" title="Salin Tautan Tampilan Aktif" class="p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
-              <i data-lucide="share-2" class="w-4 h-4"></i>
+          <!-- Secondary Actions Toolbar -->
+          <div class="flex items-center justify-between sm:justify-start gap-1 w-full sm:w-auto mt-0.5 sm:mt-0">
+            <!-- Mode Komparasi Button / Toggle -->
+            <button id="btnToggleCompare" class="flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:text-white hover:bg-[#F59E0B] shadow-sm">
+              <i data-lucide="git-compare" class="w-3.5 h-3.5 text-amber-700"></i>
+              <span>Komparasi</span>
             </button>
-            <button id="btnExportCSV" title="Ekspor Data ke CSV" class="p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
-              <i data-lucide="download" class="w-4 h-4"></i>
+
+            <!-- Live Google Sheets Sync Button / Status Badge -->
+            <button id="sheetsSyncIndicator" onclick="window.syncWithGoogleSheets(true)" title="Klik untuk menyinkronkan data langsung dari Google Spreadsheet" class="flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:bg-emerald-50 hover:border-emerald-300 shadow-sm">
+              <span id="syncDot" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span id="syncText" class="text-[10px] sm:text-[11px]">Sync Sheets</span>
+              <i id="syncIcon" data-lucide="refresh-cw" class="w-3 h-3 text-slate-500"></i>
             </button>
-            <button onclick="window.print()" title="Cetak / Unduh PDF" class="p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
-              <i data-lucide="printer" class="w-4 h-4"></i>
-            </button>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex items-center gap-0.5 border-l border-amber-600/30 pl-1.5 ml-auto sm:ml-0">
+              <button id="btnShare" title="Salin Tautan Tampilan Aktif" class="p-1 sm:p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
+                <i data-lucide="share-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </button>
+              <button id="btnExportCSV" title="Ekspor Data ke CSV" class="p-1 sm:p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
+                <i data-lucide="download" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </button>
+              <button onclick="window.print()" title="Cetak / Unduh PDF" class="p-1 sm:p-1.5 text-slate-800 hover:text-slate-900 hover:bg-white/80 rounded-lg transition-colors">
+                <i data-lucide="printer" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -278,7 +283,7 @@
       </div>
 
       <!-- 4 KPI CARDS GRID -->
-      <div id="kpiGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div id="kpiGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         <!-- Dynamically populated KPI cards -->
       </div>
 
@@ -288,14 +293,17 @@
         <!-- Left: Peta Tematik GIS (Choropleth) -->
         <div class="lg:col-span-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col">
           <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-            <div class="flex items-center gap-2">
-              <div class="p-1.5 bg-blue-50 text-bpsPrimary rounded-lg">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="p-1.5 bg-blue-50 text-bpsPrimary rounded-lg shrink-0">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
               </div>
-              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Peta Wilayah 20 Kecamatan</h3>
+              <div class="min-w-0">
+                <h3 id="mapCardTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Peta Wilayah 20 Kecamatan</h3>
+                <p id="mapCardSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Distribusi Spasial Wilayah</p>
+              </div>
             </div>
             
-            <span class="text-[11px] font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">Klik wilayah untuk filter</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">Klik wilayah untuk filter</span>
           </div>
 
           <!-- Interactive Choropleth Map Container -->
@@ -330,22 +338,23 @@
         <!-- Right: Line Chart (Trend 2021-2025) -->
         <div class="lg:col-span-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col">
           <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-            <div class="flex items-center gap-2">
-              <div class="p-1.5 bg-amber-50 text-bpsAccent rounded-lg">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="p-1.5 bg-amber-50 text-bpsAccent rounded-lg shrink-0">
                 <i data-lucide="trending-up" class="w-4 h-4"></i>
               </div>
-              <div>
-                <h3 id="lineChartTitle" class="font-bold text-slate-900 text-sm sm:text-base">Tren Perkembangan (2021–2025)</h3>
+              <div class="min-w-0">
+                <h3 id="lineChartTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Tren Perkembangan (2021–2025)</h3>
+                <p id="lineChartSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Perkembangan Data 5 Tahun</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 text-xs">
-              <span class="flex items-center gap-1 text-[11px] text-slate-500">
-                <span class="w-3 h-0.5 bg-blue-700 inline-block"></span> 2021–2025
+            <div class="flex items-center gap-2 text-xs shrink-0">
+              <span class="flex items-center gap-1 text-[11px] text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-md font-medium">
+                <span class="w-2 h-2 rounded-full bg-blue-700 inline-block"></span> 2021–2025
               </span>
             </div>
           </div>
 
-          <div class="relative flex-1 min-h-[300px]">
+          <div class="relative flex-1 min-h-[260px] sm:min-h-[300px]">
             <canvas id="trendLineChart"></canvas>
           </div>
         </div>
@@ -357,15 +366,18 @@
         
         <!-- Bar Chart Komparasi Antar Kecamatan -->
         <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col">
-          <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-            <div class="flex items-center gap-2">
-              <div class="p-1.5 bg-emerald-50 text-emerald-700 rounded-lg">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 mb-2 border-b border-slate-100">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="p-1.5 bg-emerald-50 text-emerald-700 rounded-lg shrink-0">
                 <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
               </div>
-              <h3 id="barChartTitle" class="font-bold text-slate-900 text-sm sm:text-base">Peringkat & Perbandingan 20 Kecamatan</h3>
+              <div class="min-w-0">
+                <h3 id="barChartTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Peringkat & Perbandingan 20 Kecamatan</h3>
+                <p id="barChartSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Urutan Nilai Wilayah</p>
+              </div>
             </div>
-            <div class="flex items-center gap-1">
-              <select id="barSortOrder" class="text-xs bg-slate-100 border border-slate-200 text-slate-700 rounded-lg px-2 py-1 focus:outline-none">
+            <div class="flex items-center gap-1.5 shrink-0 self-end sm:self-auto">
+              <select id="barSortOrder" class="text-[11px] sm:text-xs bg-slate-100 border border-slate-200 text-slate-700 font-medium rounded-lg px-2 py-1 focus:outline-none cursor-pointer">
                 <option value="desc">Tertinggi &rarr; Terendah</option>
                 <option value="asc">Terendah &rarr; Tertinggi</option>
                 <option value="alpha">Urut Alfabet</option>
@@ -373,7 +385,7 @@
             </div>
           </div>
 
-          <div class="relative flex-1 min-h-[320px]">
+          <div id="comparisonBarContainer" class="relative flex-1 min-h-[460px] sm:min-h-[340px]">
             <canvas id="comparisonBarChart"></canvas>
           </div>
         </div>
@@ -381,15 +393,18 @@
         <!-- Secondary Breakdown / Distribution Chart -->
         <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col">
           <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-            <div class="flex items-center gap-2">
-              <div class="p-1.5 bg-purple-50 text-purple-700 rounded-lg">
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="p-1.5 bg-purple-50 text-purple-700 rounded-lg shrink-0">
                 <i data-lucide="pie-chart" class="w-4 h-4"></i>
               </div>
-              <h3 id="secondaryChartTitle" class="font-bold text-slate-900 text-sm sm:text-base">Distribusi / Komposisi Kategori</h3>
+              <div class="min-w-0">
+                <h3 id="secondaryChartTitle" class="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">Distribusi / Komposisi Kategori</h3>
+                <p id="secondaryChartSubtitle" class="text-[11px] text-slate-400 font-medium truncate mt-0.5">Proporsi Sektoral</p>
+              </div>
             </div>
           </div>
 
-          <div class="relative flex-1 min-h-[320px] flex items-center justify-center">
+          <div class="relative flex-1 min-h-[280px] sm:min-h-[340px] flex items-center justify-center">
             <canvas id="secondaryChart"></canvas>
           </div>
         </div>
