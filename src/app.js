@@ -644,14 +644,14 @@ function renderApp() {
   curBadge.className = 'bg-[#F59E0B] text-white font-extrabold text-xs px-2.5 py-0.5 rounded-md shadow-sm';
   document.getElementById('currentBabTitle').innerHTML = `${curBabDef.title} <span class="italic font-normal text-slate-500 text-sm sm:text-base font-sans ml-1.5">/ ${curBabDef.titleEn}</span>`;
   
-  let targetKecName = 'Kabupaten Banjarnegara (Seluruh Kecamatan)';
+  let targetKecHtml = '<span class="font-bold text-slate-800 text-sm sm:text-base">Kabupaten Banjarnegara (Seluruh Kecamatan)</span>';
   if (state.isCompareMode && state.compareList.length > 0) {
-    targetKecName = `Mode Komparasi: ${state.compareList.length} Kecamatan`;
+    targetKecHtml = `<span class="font-extrabold text-[#002B6A] text-sm sm:text-base bg-blue-50 px-2 py-0.5 rounded-lg border border-blue-200">Mode Komparasi: ${state.compareList.length} Kecamatan</span>`;
   } else if (state.selectedKecamatan !== 'ALL') {
     const k = window.MASTER_KECAMATAN.find((m) => m.kode === state.selectedKecamatan);
-    if (k) targetKecName = `Kecamatan ${k.nama}`;
+    if (k) targetKecHtml = `<span class="font-black text-[#002B6A] text-base sm:text-lg bg-amber-100/90 px-2.5 py-0.5 rounded-lg border border-amber-300 shadow-2xs">Kecamatan ${k.nama}</span>`;
   }
-  document.getElementById('currentFilterInfo').textContent = `${targetKecName} • Data Tahun ${state.tahun}`;
+  document.getElementById('currentFilterInfo').innerHTML = `${targetKecHtml} <span class="text-amber-500 font-bold mx-1.5">✦</span> <span class="text-slate-500 font-semibold text-xs sm:text-sm">Data Tahun ${state.tahun}</span>`;
 
   // Subtopics switcher
   const subContainer = document.getElementById('subTopicContainer');
@@ -818,13 +818,13 @@ function renderKPIs(metricInfo) {
   let maxShareStr = '';
   let minShareStr = '';
   if (valPrimary && valPrimary > 0 && !metricInfo.unit.includes('%')) {
-    if (maxVal > -Infinity) maxShareStr = ` • ${((maxVal / valPrimary) * 100).toFixed(1)}%`;
-    if (minVal < Infinity) minShareStr = ` • ${((minVal / valPrimary) * 100).toFixed(1)}%`;
+    if (maxVal > -Infinity) maxShareStr = ` <span class="text-amber-600 font-bold mx-0.5">✦</span> ${((maxVal / valPrimary) * 100).toFixed(1)}%`;
+    if (minVal < Infinity) minShareStr = ` <span class="text-purple-600 font-bold mx-0.5">✦</span> ${((minVal / valPrimary) * 100).toFixed(1)}%`;
   }
 
   const kpis = [
     {
-      label: isKecSelected ? `Nilai ${targetKec.nama}` : `Total Kabupaten`,
+      label: isKecSelected ? `Kecamatan ${targetKec.nama}` : `Total Kabupaten`,
       val: hasValidData ? formatId(valPrimary, metricInfo.unit.includes('%') ? 1 : 0) : 'Belum Tersedia',
       unit: unit,
       sub: card1Badge,
@@ -843,7 +843,7 @@ function renderKPIs(metricInfo) {
       label: state.bab === 1 ? 'Kecamatan Terluas' : 'Nilai Tertinggi',
       val: maxKec && maxVal > -Infinity ? formatId(maxVal, metricInfo.unit.includes('%') ? 1 : 0) : '—',
       unit: unit,
-      sub: maxKec ? `<span class="font-bold text-amber-900 text-[10px] sm:text-[11px]">Kec. ${maxKec}</span><span class="text-slate-400 text-[10px]">${maxShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
+      sub: maxKec ? `<span class="font-black text-amber-900 text-xs sm:text-[13px]">Kec. ${maxKec}</span><span class="text-slate-500 text-[10px] sm:text-[11px]">${maxShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
       icon: 'award',
       color: 'bg-amber-50 text-amber-700 border border-amber-100',
     },
@@ -851,7 +851,7 @@ function renderKPIs(metricInfo) {
       label: state.bab === 1 ? 'Kecamatan Terkecil' : 'Nilai Terendah',
       val: minKec && minVal < Infinity ? formatId(minVal, metricInfo.unit.includes('%') ? 1 : 0) : '—',
       unit: unit,
-      sub: minKec ? `<span class="font-bold text-purple-900 text-[10px] sm:text-[11px]">Kec. ${minKec}</span><span class="text-slate-400 text-[10px]">${minShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
+      sub: minKec ? `<span class="font-black text-purple-900 text-xs sm:text-[13px]">Kec. ${minKec}</span><span class="text-slate-500 text-[10px] sm:text-[11px]">${minShareStr}</span>` : '<span class="text-slate-400 text-[10px]">Tidak ada data</span>',
       icon: 'trending-down',
       color: 'bg-purple-50 text-purple-700 border border-purple-100',
     },
@@ -1029,7 +1029,7 @@ function renderMapChoropleth(metricInfo) {
     textEl.setAttribute('x', mp.center[0]);
     textEl.setAttribute('y', mp.center[1]);
     textEl.setAttribute('text-anchor', 'middle');
-    textEl.setAttribute('font-size', mp.nama === 'Purwareja Klampok' ? '8.5' : (mp.nama.length > 11 ? '9.5' : '10.5'));
+    textEl.setAttribute('font-size', mp.nama === 'Purwareja Klampok' ? '9.5' : (mp.nama.length > 11 ? '10.5' : '11.5'));
     textEl.setAttribute('font-weight', '800');
     textEl.setAttribute('fill', isSelected ? '#FFFFFF' : '#0F172A');
     textEl.setAttribute('pointer-events', 'none');
@@ -1379,7 +1379,7 @@ function renderSecondaryChart(metricInfo) {
   }
 
   // MODE 2 (DEFAULT): ALL 20 KECAMATAN DISTRIBUTION
-  if (secTitleEl) secTitleEl.textContent = 'Pangsa Kontribusi 20 Kecamatan';
+  if (secTitleEl) secTitleEl.textContent = 'Kontribusi 20 Kecamatan';
   if (secSubEl) secSubEl.textContent = `${title} (Satuan: ${unit})`;
 
   const sorted = [...records].sort((a, b) => (extractFn(b) || 0) - (extractFn(a) || 0));
@@ -1427,7 +1427,7 @@ function renderSecondaryChart(metricInfo) {
               const total = item.dataset.data.reduce((a, b) => a + (b || 0), 0);
               const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
               const formatVal = new Intl.NumberFormat('id-ID').format(val);
-              return ` Kec. ${item.label}: ${formatVal} ${unit} (${pct}%)`;
+              return ` Kec. ${item.label}: ${formatVal} ${unit} (Kontribusi: ${pct}%)`;
             },
           },
         },
@@ -1535,7 +1535,7 @@ function renderTable(metricInfo) {
     }
 
     // Kecamatan Name
-    let cellsHtml = `<td class="py-2.5 px-4 font-bold text-slate-900">${rankBadge}${r.namaKecamatan}</td>`;
+    let cellsHtml = `<td class="py-2.5 px-4 font-black text-slate-900 text-[13px] sm:text-sm tracking-tight">${rankBadge}<span>${r.namaKecamatan}</span></td>`;
     
     // Primary Value with Mini Relative Magnitude Bar
     cellsHtml += `
