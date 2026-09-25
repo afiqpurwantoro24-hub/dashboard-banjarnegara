@@ -139,6 +139,13 @@
 
           <!-- Secondary Actions Toolbar -->
           <div class="flex items-center justify-between sm:justify-start gap-1 w-full sm:w-auto mt-0.5 sm:mt-0">
+            <!-- Mobile Bab Trigger Button -->
+            <button id="btnHeaderBabMobile" class="lg:hidden flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:bg-amber-100 shadow-sm shrink-0">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-700"></i>
+              <span id="headerBabMobileLabel">Bab 1</span>
+              <i data-lucide="chevron-down" class="w-3 h-3 text-slate-500"></i>
+            </button>
+
             <!-- Mode Komparasi Button / Toggle -->
             <button id="btnToggleCompare" class="flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:text-white hover:bg-[#F59E0B] shadow-sm">
               <i data-lucide="git-compare" class="w-3.5 h-3.5 text-amber-700"></i>
@@ -190,7 +197,7 @@
   <!-- ============================================================== -->
   <!-- MAIN LAYOUT: SIDEBAR + CONTENT AREA -->
   <!-- ============================================================== -->
-  <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 py-5 flex-1 flex flex-col lg:flex-row gap-6">
+  <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 py-5 pb-24 lg:pb-5 flex-1 flex flex-col lg:flex-row gap-6">
 
     <!-- SIDEBAR NAVIGATION (7 BAB TEMATIK) -->
     <aside class="no-print w-full lg:w-80 xl:w-[330px] shrink-0">
@@ -496,6 +503,60 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Mobile Navigation Dock (Bab Selector & Scroll to Top) -->
+  <div id="mobileFloatingNav" class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex items-center gap-1.5 bg-[#002B6A]/95 backdrop-blur-md text-white p-1.5 px-3 rounded-full shadow-2xl border-2 border-amber-400 max-w-[92vw]">
+    <button id="btnMobileScrollTop" title="Gulir Kembali ke Atas" class="flex items-center gap-1 text-[11px] font-bold text-amber-300 hover:text-white pr-2.5 border-r border-amber-400/40 shrink-0">
+      <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+      <span>Ke Atas</span>
+    </button>
+    <button id="btnOpenMobileBab" title="Pilih Bab Statistik" class="flex items-center gap-1.5 text-xs font-bold text-white hover:text-amber-200 pl-0.5 truncate">
+      <i data-lucide="book-open" class="w-4 h-4 text-amber-400 shrink-0"></i>
+      <span id="floatingBabLabel" class="truncate">Bab 1: Geografi</span>
+      <i data-lucide="chevron-up" class="w-3.5 h-3.5 text-amber-300 shrink-0"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Bottom Sheet Backdrop -->
+  <div id="mobileBabBackdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden transition-opacity duration-300 opacity-0"></div>
+
+  <!-- Mobile Bottom Sheet Drawer for Bab Navigation -->
+  <div id="mobileBabDrawer" class="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-2xl border-t border-slate-200 transform translate-y-full transition-transform duration-300 ease-out flex flex-col max-h-[85vh] lg:hidden">
+    <!-- Handle bar for swipe/click to dismiss -->
+    <div class="pt-3 pb-1 flex justify-center cursor-pointer" id="mobileBabHandle">
+      <div class="w-12 h-1.5 bg-slate-300 rounded-full"></div>
+    </div>
+    
+    <!-- Drawer Header -->
+    <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="p-2 bg-amber-50 text-amber-700 rounded-xl">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-slate-900 text-sm">Daftar Bab Statistik</h3>
+          <p class="text-[11px] text-slate-400">Pilih bab untuk melihat indikator & data</p>
+        </div>
+      </div>
+      <button id="btnCloseMobileBab" class="p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100 cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Content (List of 7 Bab) -->
+    <div id="mobileBabList" class="p-4 space-y-2 overflow-y-auto flex-1">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-3.5 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs">
+      <span class="text-slate-500 font-medium text-[11px]">BPS Kab. Banjarnegara</span>
+      <button id="btnDrawerScrollTop" class="flex items-center gap-1 font-bold text-[#1E3A8A] hover:underline text-[11px] cursor-pointer">
+        <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        <span>Ke Atas Halaman</span>
+      </button>
+    </div>
+  </div>
 
   <!-- Toast Notification -->
   <div id="toastNotification" class="fixed bottom-6 right-6 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">

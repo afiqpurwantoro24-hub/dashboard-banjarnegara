@@ -105,6 +105,8 @@ let secondaryChartInstance = null;
 document.addEventListener('DOMContentLoaded', () => {
   readUrlParams();
   initSidebar();
+  initMobileBabDrawer();
+  updateMobileBabLabels();
   initHeaderFilters();
   initEventListeners();
   renderApp();
@@ -156,7 +158,7 @@ function initSidebar() {
   BAB_DEFINITIONS.forEach((b) => {
     const isActive = state.bab === b.id;
     const btn = document.createElement('button');
-    btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-start justify-between gap-2 transition-all ${
+    btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-start justify-between gap-2 transition-all cursor-pointer ${
       isActive
         ? 'bg-[#F59E0B] text-white font-extrabold shadow-md'
         : 'text-[#64748B] hover:bg-amber-50 hover:text-[#0F172A]'
@@ -177,9 +179,109 @@ function initSidebar() {
       renderApp();
       updateUrlParams();
       initSidebar();
+      initMobileBabDrawer();
+      updateMobileBabLabels();
       lucide.createIcons();
     };
     container.appendChild(btn);
+  });
+}
+
+function updateMobileBabLabels() {
+  const curBabDef = BAB_DEFINITIONS.find((b) => b.id === state.bab);
+  if (!curBabDef) return;
+
+  const floatingLabel = document.getElementById('floatingBabLabel');
+  if (floatingLabel) {
+    floatingLabel.textContent = `Bab ${curBabDef.id}: ${curBabDef.shortTitle}`;
+  }
+
+  const headerLabel = document.getElementById('headerBabMobileLabel');
+  if (headerLabel) {
+    headerLabel.textContent = `Bab ${curBabDef.id}`;
+  }
+}
+
+function openMobileBabDrawer() {
+  const backdrop = document.getElementById('mobileBabBackdrop');
+  const drawer = document.getElementById('mobileBabDrawer');
+  if (!backdrop || !drawer) return;
+
+  initMobileBabDrawer();
+  backdrop.classList.remove('hidden');
+  void backdrop.offsetWidth;
+  backdrop.classList.remove('opacity-0');
+  backdrop.classList.add('opacity-100');
+
+  drawer.classList.remove('translate-y-full');
+  drawer.classList.add('translate-y-0');
+  document.body.style.overflow = 'hidden';
+  lucide.createIcons();
+}
+
+function closeMobileBabDrawer() {
+  const backdrop = document.getElementById('mobileBabBackdrop');
+  const drawer = document.getElementById('mobileBabDrawer');
+  if (!backdrop || !drawer) return;
+
+  drawer.classList.remove('translate-y-0');
+  drawer.classList.add('translate-y-full');
+
+  backdrop.classList.remove('opacity-100');
+  backdrop.classList.add('opacity-0');
+  setTimeout(() => {
+    backdrop.classList.add('hidden');
+  }, 300);
+
+  document.body.style.overflow = '';
+}
+
+function initMobileBabDrawer() {
+  const container = document.getElementById('mobileBabList');
+  if (!container) return;
+  container.innerHTML = '';
+
+  BAB_DEFINITIONS.forEach((b) => {
+    const isActive = state.bab === b.id;
+    const item = document.createElement('button');
+    item.className = `w-full text-left p-3 rounded-2xl flex items-center justify-between gap-3 border transition-all cursor-pointer ${
+      isActive
+        ? 'bg-gradient-to-r from-[#002B6A] to-[#1E3A8A] text-white border-amber-400 shadow-md ring-2 ring-amber-400/30'
+        : 'bg-white hover:bg-amber-50 text-slate-800 border-slate-200'
+    }`;
+    item.innerHTML = `
+      <div class="flex items-center gap-3 min-w-0 flex-1">
+        <div class="p-2 rounded-xl shrink-0 ${isActive ? 'bg-amber-400 text-blue-950 font-bold' : 'bg-slate-100 text-slate-600'}">
+          <i data-lucide="${b.icon}" class="w-4 h-4"></i>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="font-bold text-xs truncate ${isActive ? 'text-white' : 'text-slate-900'}">Bab ${b.id}: ${b.title}</div>
+          <div class="text-[10px] italic truncate mt-0.5 ${isActive ? 'text-amber-200' : 'text-slate-400'}">${b.titleEn}</div>
+        </div>
+      </div>
+      ${
+        isActive
+          ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-400 text-blue-950 shrink-0">Aktif</span>'
+          : '<i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 shrink-0"></i>'
+      }
+    `;
+
+    item.onclick = () => {
+      state.bab = b.id;
+      state.subTopic = b.subTopics.length > 0 ? b.subTopics[0].id : null;
+      renderApp();
+      updateUrlParams();
+      initSidebar();
+      initMobileBabDrawer();
+      updateMobileBabLabels();
+      closeMobileBabDrawer();
+      lucide.createIcons();
+
+      // Smooth scroll back to top of dashboard content
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    container.appendChild(item);
   });
 }
 
@@ -313,6 +415,48 @@ function initEventListeners() {
       renderComparisonBarChart(getCurrentMetrics());
     }, 250);
   });
+
+  // Mobile Floating Bab Navigation & Bottom Sheet Drawer
+  const btnOpenMobileBab = document.getElementById('btnOpenMobileBab');
+  if (btnOpenMobileBab) {
+    btnOpenMobileBab.addEventListener('click', openMobileBabDrawer);
+  }
+
+  const btnHeaderBabMobile = document.getElementById('btnHeaderBabMobile');
+  if (btnHeaderBabMobile) {
+    btnHeaderBabMobile.addEventListener('click', openMobileBabDrawer);
+  }
+
+  const btnCloseMobileBab = document.getElementById('btnCloseMobileBab');
+  if (btnCloseMobileBab) {
+    btnCloseMobileBab.addEventListener('click', closeMobileBabDrawer);
+  }
+
+  const mobileBabBackdrop = document.getElementById('mobileBabBackdrop');
+  if (mobileBabBackdrop) {
+    mobileBabBackdrop.addEventListener('click', closeMobileBabDrawer);
+  }
+
+  const mobileBabHandle = document.getElementById('mobileBabHandle');
+  if (mobileBabHandle) {
+    mobileBabHandle.addEventListener('click', closeMobileBabDrawer);
+  }
+
+  // Mobile Scroll-to-Top buttons
+  const btnMobileScrollTop = document.getElementById('btnMobileScrollTop');
+  if (btnMobileScrollTop) {
+    btnMobileScrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const btnDrawerScrollTop = document.getElementById('btnDrawerScrollTop');
+  if (btnDrawerScrollTop) {
+    btnDrawerScrollTop.addEventListener('click', () => {
+      closeMobileBabDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
 
 function updateCompareCheckboxes() {
@@ -466,6 +610,9 @@ function getCurrentMetrics() {
 function renderApp() {
   const curBabDef = BAB_DEFINITIONS.find((b) => b.id === state.bab);
   if (!curBabDef) return;
+
+  updateMobileBabLabels();
+  initMobileBabDrawer();
 
   // Header Titles
   const pubYear = state.tahun + 1;
