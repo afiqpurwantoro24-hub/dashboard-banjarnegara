@@ -110,9 +110,92 @@ document.addEventListener('DOMContentLoaded', () => {
   updateMobileBabLabels();
   initHeaderFilters();
   initEventListeners();
+  initLiveClock();
   renderApp();
   lucide.createIcons();
 });
+
+function initLiveClock() {
+  const DAYS = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+  const MONTHS = [
+    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+  ];
+  const SHORT_MONTHS = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+    'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'
+  ];
+
+  function update() {
+    try {
+      const now = new Date();
+      // Format in Asia/Jakarta (WIB) timezone
+      const timeParts = new Intl.DateTimeFormat('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      }).formatToParts(now);
+
+      const hh = timeParts.find((p) => p.type === 'hour')?.value || String(now.getHours()).padStart(2, '0');
+      const mm = timeParts.find((p) => p.type === 'minute')?.value || String(now.getMinutes()).padStart(2, '0');
+      const ss = timeParts.find((p) => p.type === 'second')?.value || String(now.getSeconds()).padStart(2, '0');
+      const timeStr = `${hh}:${mm}:${ss} WIB`;
+
+      const fullDateStr = new Intl.DateTimeFormat('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }).format(now);
+
+      const shortDateStr = new Intl.DateTimeFormat('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }).format(now);
+
+      const elTimeDesktop = document.getElementById('liveTimeDesktop');
+      const elDateDesktop = document.getElementById('liveDateDesktop');
+      const elTimeMobile = document.getElementById('liveTimeMobile');
+      const elDateMobile = document.getElementById('liveDateMobile');
+
+      if (elTimeDesktop) elTimeDesktop.textContent = timeStr;
+      if (elDateDesktop) elDateDesktop.textContent = fullDateStr;
+
+      if (elTimeMobile) elTimeMobile.textContent = timeStr;
+      if (elDateMobile) elDateMobile.textContent = shortDateStr;
+    } catch (e) {
+      // Fallback
+      const now = new Date();
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      const ss = String(now.getSeconds()).padStart(2, '0');
+      const dayName = DAYS[now.getDay()];
+      const d = now.getDate();
+      const m = MONTHS[now.getMonth()];
+      const sm = SHORT_MONTHS[now.getMonth()];
+      const y = now.getFullYear();
+
+      const timeStr = `${hh}:${mm}:${ss} WIB`;
+      const elTimeDesktop = document.getElementById('liveTimeDesktop');
+      const elDateDesktop = document.getElementById('liveDateDesktop');
+      const elTimeMobile = document.getElementById('liveTimeMobile');
+      const elDateMobile = document.getElementById('liveDateMobile');
+
+      if (elTimeDesktop) elTimeDesktop.textContent = timeStr;
+      if (elDateDesktop) elDateDesktop.textContent = `${dayName}, ${d} ${m} ${y}`;
+      if (elTimeMobile) elTimeMobile.textContent = timeStr;
+      if (elDateMobile) elDateMobile.textContent = `${d} ${sm} ${y}`;
+    }
+  }
+
+  update();
+  setInterval(update, 1000);
+}
 
 function readUrlParams() {
   const params = new URLSearchParams(window.location.search);
