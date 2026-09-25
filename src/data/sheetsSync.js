@@ -246,9 +246,9 @@
       if (icon) icon.classList.add('animate-spin');
     } else if (status === 'success') {
       dot.className = 'w-2 h-2 rounded-full bg-emerald-500';
-      text.textContent = 'Google Sheets (Live)';
+      text.textContent = 'Update Data (Live)';
       if (icon) icon.classList.remove('animate-spin');
-      if (container) container.title = `Data tersinkron otomatis dari Google Spreadsheet\nTerakhir disinkron: ${message || 'baru saja'}`;
+      if (container) container.title = `Data terhubung langsung (Live)\nTerakhir diperbarui: ${message || 'baru saja'}`;
     } else if (status === 'offline') {
       dot.className = 'w-2 h-2 rounded-full bg-slate-400';
       text.textContent = 'Data Lokal (Offline)';
