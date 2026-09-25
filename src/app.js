@@ -160,11 +160,16 @@ function initLiveClock() {
 
       const elTimeDesktop = document.getElementById('liveTimeDesktop');
       const elDateDesktop = document.getElementById('liveDateDesktop');
+      const elTimeDesktopXl = document.getElementById('liveTimeDesktopXl');
+      const elDateDesktopXl = document.getElementById('liveDateDesktopXl');
       const elTimeMobile = document.getElementById('liveTimeMobile');
       const elDateMobile = document.getElementById('liveDateMobile');
 
       if (elTimeDesktop) elTimeDesktop.textContent = timeStr;
       if (elDateDesktop) elDateDesktop.textContent = fullDateStr;
+
+      if (elTimeDesktopXl) elTimeDesktopXl.textContent = timeStr;
+      if (elDateDesktopXl) elDateDesktopXl.textContent = fullDateStr;
 
       if (elTimeMobile) elTimeMobile.textContent = timeStr;
       if (elDateMobile) elDateMobile.textContent = shortDateStr;
@@ -183,11 +188,17 @@ function initLiveClock() {
       const timeStr = `${hh}:${mm}:${ss} WIB`;
       const elTimeDesktop = document.getElementById('liveTimeDesktop');
       const elDateDesktop = document.getElementById('liveDateDesktop');
+      const elTimeDesktopXl = document.getElementById('liveTimeDesktopXl');
+      const elDateDesktopXl = document.getElementById('liveDateDesktopXl');
       const elTimeMobile = document.getElementById('liveTimeMobile');
       const elDateMobile = document.getElementById('liveDateMobile');
 
       if (elTimeDesktop) elTimeDesktop.textContent = timeStr;
       if (elDateDesktop) elDateDesktop.textContent = `${dayName}, ${d} ${m} ${y}`;
+
+      if (elTimeDesktopXl) elTimeDesktopXl.textContent = timeStr;
+      if (elDateDesktopXl) elDateDesktopXl.textContent = `${dayName}, ${d} ${m} ${y}`;
+
       if (elTimeMobile) elTimeMobile.textContent = timeStr;
       if (elDateMobile) elDateMobile.textContent = `${d} ${sm} ${y}`;
     }
