@@ -156,93 +156,175 @@
       }
     });
 
-    // 4. Sosial dan Kesejahteraan Rakyat
-    // Tahun 2021-2025: Sekolah kolom 1..20 (4 col/thn), Listrik kolom 21..25 (1 col/thn)
-    // Tahun 2026+ (i >= 5): Menggunakan kolom 26 ke atas (hanya jika telah diinputkan)
-    getKecRows(gridsMap['Sosial dan Kesejahteraan Rakyat']).forEach(({ row, kode, nama }) => {
-      for (let i = 0; i < 10; i++) {
-        const th = 2021 + i;
-        let sd = null, smp = null, sma = null, pt = null, pln = null;
+    // 4. Sosial dan Kesejahteraan Rakyat (Sekolah & Listrik)
+    const rawSosialRows = getKecRows(gridsMap['Sosial dan Kesejahteraan Rakyat']);
+    if (rawSosialRows.length > 20) {
+      // FORMAT BARU: Tabel 1 (Sekolah) di atas (20 baris pertama), Tabel 2 (Listrik) di bawah (20 baris berikutnya)
+      const sekolahRows = rawSosialRows.slice(0, 20);
+      const listrikRows = rawSosialRows.slice(20, 40);
 
-        if (i < 5) {
+      sekolahRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
           const b = 1 + i * 4;
-          sd = parseCellNum(row[b]);
-          smp = parseCellNum(row[b + 1]);
-          sma = parseCellNum(row[b + 2]);
-          pt = parseCellNum(row[b + 3]);
-          pln = parseCellNum(row[21 + i]);
-        } else {
-          // Tahun 2026 ke atas (i >= 5)
-          const offset = (i - 5) * 5;
-          sd = parseCellNum(row[26 + offset]);
-          smp = parseCellNum(row[27 + offset]);
-          sma = parseCellNum(row[28 + offset]);
-          pt = parseCellNum(row[29 + offset]);
-          pln = parseCellNum(row[30 + offset]);
+          const sd = parseCellNum(row[b]);
+          const smp = parseCellNum(row[b + 1]);
+          const sma = parseCellNum(row[b + 2]);
+          const pt = parseCellNum(row[b + 3]);
+          if (i < 5 || sd !== null || smp !== null || sma !== null || pt !== null) {
+            data.sekolah.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              sdMi: sd,
+              smpMts: smp,
+              smaSmkMa: sma,
+              perguruanTinggi: pt
+            });
+          }
         }
+      });
 
-        if (i < 5 || sd !== null || smp !== null || sma !== null || pt !== null) {
-          data.sekolah.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            sdMi: sd,
-            smpMts: smp,
-            smaSmkMa: sma,
-            perguruanTinggi: pt
-          });
+      listrikRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          // Kolom A = Kecamatan, Kolom B = 2021 (row[1]), Kolom C = 2022 (row[2]), dst.
+          const pln = parseCellNum(row[1 + i]);
+          if (i < 5 || pln !== null) {
+            data.listrik.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              jumlahKeluargaPLN: pln
+            });
+          }
         }
+      });
+    } else {
+      // FORMAT LAMA: Berdampingan horizontal
+      rawSosialRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          let sd = null, smp = null, sma = null, pt = null, pln = null;
 
-        if (i < 5 || pln !== null) {
-          data.listrik.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            jumlahKeluargaPLN: pln
-          });
+          if (i < 5) {
+            const b = 1 + i * 4;
+            sd = parseCellNum(row[b]);
+            smp = parseCellNum(row[b + 1]);
+            sma = parseCellNum(row[b + 2]);
+            pt = parseCellNum(row[b + 3]);
+            pln = parseCellNum(row[21 + i]);
+          } else {
+            const offset = (i - 5) * 5;
+            sd = parseCellNum(row[26 + offset]);
+            smp = parseCellNum(row[27 + offset]);
+            sma = parseCellNum(row[28 + offset]);
+            pt = parseCellNum(row[29 + offset]);
+            pln = parseCellNum(row[30 + offset]);
+          }
+
+          if (i < 5 || sd !== null || smp !== null || sma !== null || pt !== null) {
+            data.sekolah.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              sdMi: sd,
+              smpMts: smp,
+              smaSmkMa: sma,
+              perguruanTinggi: pt
+            });
+          }
+
+          if (i < 5 || pln !== null) {
+            data.listrik.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              jumlahKeluargaPLN: pln
+            });
+          }
         }
-      }
-    });
+      });
+    }
 
-    // 5. Pariwisata, Transportasi, dan Komunikasi
-    // Tahun 2021-2025: Menara kolom 1..5 (1 col/thn), Sinyal kolom 6..15 (2 col/thn)
-    // Tahun 2026+ (i >= 5): Menggunakan kolom 16 ke atas (Menara 16, Sinyal 17-18)
-    getKecRows(gridsMap['Pariwisata, Transportasi, dan Komunikasi']).forEach(({ row, kode, nama }) => {
-      for (let i = 0; i < 10; i++) {
-        const th = 2021 + i;
-        let menaraVal = null, sLemah = null, sKuat = null;
+    // 5. Pariwisata, Transportasi, dan Komunikasi (Menara & Sinyal)
+    const rawKomRows = getKecRows(gridsMap['Pariwisata, Transportasi, dan Komunikasi']);
+    if (rawKomRows.length > 20) {
+      // FORMAT BARU: Tabel 1 (Menara) di atas (20 baris pertama), Tabel 2 (Sinyal) di bawah (20 baris berikutnya)
+      const menaraRows = rawKomRows.slice(0, 20);
+      const sinyalRows = rawKomRows.slice(20, 40);
 
-        if (i < 5) {
-          menaraVal = parseCellNum(row[1 + i]);
-          sLemah = parseCellNum(row[6 + i * 2]);
-          sKuat = parseCellNum(row[7 + i * 2]);
-        } else {
-          const offset = (i - 5) * 3;
-          menaraVal = parseCellNum(row[16 + offset]);
-          sLemah = parseCellNum(row[17 + offset]);
-          sKuat = parseCellNum(row[18 + offset]);
+      menaraRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          const menaraVal = parseCellNum(row[1 + i]);
+          if (i < 5 || menaraVal !== null) {
+            data.menara.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              jumlahMenara: menaraVal
+            });
+          }
         }
+      });
 
-        if (i < 5 || menaraVal !== null) {
-          data.menara.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            jumlahMenara: menaraVal
-          });
+      sinyalRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          // Kolom A = Kecamatan, Kolom B/C = 2021 (row[1]/row[2]), Kolom D/E = 2022 (row[3]/row[4]), dst.
+          const sLemah = parseCellNum(row[1 + i * 2]);
+          const sKuat = parseCellNum(row[2 + i * 2]);
+          if (i < 5 || sLemah !== null || sKuat !== null) {
+            data.sinyal.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              persenSinyalLemah: sLemah,
+              persenSinyalKuat: sKuat
+            });
+          }
         }
+      });
+    } else {
+      // FORMAT LAMA: Berdampingan horizontal
+      rawKomRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          let menaraVal = null, sLemah = null, sKuat = null;
 
-        if (i < 5 || sLemah !== null || sKuat !== null) {
-          data.sinyal.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            persenSinyalLemah: sLemah,
-            persenSinyalKuat: sKuat
-          });
+          if (i < 5) {
+            menaraVal = parseCellNum(row[1 + i]);
+            sLemah = parseCellNum(row[6 + i * 2]);
+            sKuat = parseCellNum(row[7 + i * 2]);
+          } else {
+            const offset = (i - 5) * 3;
+            menaraVal = parseCellNum(row[16 + offset]);
+            sLemah = parseCellNum(row[17 + offset]);
+            sKuat = parseCellNum(row[18 + offset]);
+          }
+
+          if (i < 5 || menaraVal !== null) {
+            data.menara.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              jumlahMenara: menaraVal
+            });
+          }
+
+          if (i < 5 || sLemah !== null || sKuat !== null) {
+            data.sinyal.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              persenSinyalLemah: sLemah,
+              persenSinyalKuat: sKuat
+            });
+          }
         }
-      }
-    });
+      });
+    }
 
     // 6. Pertanian (Dukungan tahun 2021 - 2030: 1 kolom per tahun)
     getKecRows(gridsMap['Pertanian']).forEach(({ row, kode, nama }) => {
@@ -260,64 +342,115 @@
       }
     });
 
-    // 7. Perbankan, Koperasi, dan Perdagangan
-    // Tahun 2021-2025: Bank kolom 1..15 (3 col/thn), Perdagangan kolom 16..35 (4 col/thn)
-    // Tahun 2026+ (i >= 5): Menggunakan kolom 36 ke atas (Bank 36-38, Perdagangan 39-42)
-    getKecRows(gridsMap['Perbankan, Koperasi, dan Perdagangan']).forEach(({ row, kode, nama }) => {
-      for (let i = 0; i < 10; i++) {
-        const th = 2021 + i;
-        let bp = null, bs = null, bprVal = null;
-        let pToko = null, pPasar = null, pMini = null, pResto = null;
+    // 7. Perbankan, Koperasi, dan Perdagangan (Bank & Perdagangan)
+    const rawDagangRows = getKecRows(gridsMap['Perbankan, Koperasi, dan Perdagangan']);
+    if (rawDagangRows.length > 20) {
+      // FORMAT BARU: Tabel 1 (Bank) di atas (20 baris pertama), Tabel 2 (Perdagangan) di bawah (20 baris berikutnya)
+      const bankRows = rawDagangRows.slice(0, 20);
+      const perdaganganRows = rawDagangRows.slice(20, 40);
 
-        if (i < 5) {
+      bankRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
           const bIdx = 1 + i * 3;
-          bp = parseCellNum(row[bIdx]);
-          bs = parseCellNum(row[bIdx + 1]);
-          bprVal = parseCellNum(row[bIdx + 2]);
-
-          const pIdx = 16 + i * 4;
-          pToko = parseCellNum(row[pIdx]);
-          pPasar = parseCellNum(row[pIdx + 1]);
-          pMini = parseCellNum(row[pIdx + 2]);
-          pResto = parseCellNum(row[pIdx + 3]);
-        } else {
-          const offset = (i - 5) * 7;
-          bp = parseCellNum(row[36 + offset]);
-          bs = parseCellNum(row[37 + offset]);
-          bprVal = parseCellNum(row[38 + offset]);
-
-          pToko = parseCellNum(row[39 + offset]);
-          pPasar = parseCellNum(row[40 + offset]);
-          pMini = parseCellNum(row[41 + offset]);
-          pResto = parseCellNum(row[42 + offset]);
+          const bp = parseCellNum(row[bIdx]);
+          const bs = parseCellNum(row[bIdx + 1]);
+          const bprVal = parseCellNum(row[bIdx + 2]);
+          if (i < 5 || bp !== null || bs !== null || bprVal !== null) {
+            data.bank.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              bankPemerintah: bp,
+              bankSwasta: bs,
+              bpr: bprVal
+            });
+          }
         }
+      });
 
-        if (i < 5 || bp !== null || bs !== null || bprVal !== null) {
-          data.bank.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            bankPemerintah: bp,
-            bankSwasta: bs,
-            bpr: bprVal
-          });
+      perdaganganRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          // Kolom A = Kecamatan, Kolom B-E = 2021 (row[1] s.d. row[4]), dst.
+          const pIdx = 1 + i * 4;
+          const pToko = parseCellNum(row[pIdx]);
+          const pPasar = parseCellNum(row[pIdx + 1]);
+          const pMini = parseCellNum(row[pIdx + 2]);
+          const pResto = parseCellNum(row[pIdx + 3]);
+          if (i < 5 || pToko !== null || pPasar !== null || pMini !== null || pResto !== null) {
+            data.perdagangan.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              pertokoan: pToko,
+              pasarPermanen: pPasar,
+              pasarSemiPermanen: 0,
+              pasarTanpaBangunan: 0,
+              minimarket: pMini,
+              restoranRumahMakan: pResto
+            });
+          }
         }
+      });
+    } else {
+      // FORMAT LAMA: Berdampingan horizontal
+      rawDagangRows.forEach(({ row, kode, nama }) => {
+        for (let i = 0; i < 10; i++) {
+          const th = 2021 + i;
+          let bp = null, bs = null, bprVal = null;
+          let pToko = null, pPasar = null, pMini = null, pResto = null;
 
-        if (i < 5 || pToko !== null || pPasar !== null || pMini !== null || pResto !== null) {
-          data.perdagangan.push({
-            tahun: th,
-            kodeKecamatan: kode,
-            namaKecamatan: nama,
-            pertokoan: pToko,
-            pasarPermanen: pPasar,
-            pasarSemiPermanen: 0,
-            pasarTanpaBangunan: 0,
-            minimarket: pMini,
-            restoranRumahMakan: pResto
-          });
+          if (i < 5) {
+            const bIdx = 1 + i * 3;
+            bp = parseCellNum(row[bIdx]);
+            bs = parseCellNum(row[bIdx + 1]);
+            bprVal = parseCellNum(row[bIdx + 2]);
+
+            const pIdx = 16 + i * 4;
+            pToko = parseCellNum(row[pIdx]);
+            pPasar = parseCellNum(row[pIdx + 1]);
+            pMini = parseCellNum(row[pIdx + 2]);
+            pResto = parseCellNum(row[pIdx + 3]);
+          } else {
+            const offset = (i - 5) * 7;
+            bp = parseCellNum(row[36 + offset]);
+            bs = parseCellNum(row[37 + offset]);
+            bprVal = parseCellNum(row[38 + offset]);
+
+            pToko = parseCellNum(row[39 + offset]);
+            pPasar = parseCellNum(row[40 + offset]);
+            pMini = parseCellNum(row[41 + offset]);
+            pResto = parseCellNum(row[42 + offset]);
+          }
+
+          if (i < 5 || bp !== null || bs !== null || bprVal !== null) {
+            data.bank.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              bankPemerintah: bp,
+              bankSwasta: bs,
+              bpr: bprVal
+            });
+          }
+
+          if (i < 5 || pToko !== null || pPasar !== null || pMini !== null || pResto !== null) {
+            data.perdagangan.push({
+              tahun: th,
+              kodeKecamatan: kode,
+              namaKecamatan: nama,
+              pertokoan: pToko,
+              pasarPermanen: pPasar,
+              pasarSemiPermanen: 0,
+              pasarTanpaBangunan: 0,
+              minimarket: pMini,
+              restoranRumahMakan: pResto
+            });
+          }
         }
-      }
-    });
+      });
+    }
 
     // Otomatis duplikasi geografi untuk tahun 2026 ke atas HANYA jika ada data riil yang terdeteksi
     const extraYearsWithData = new Set();
