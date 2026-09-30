@@ -870,6 +870,17 @@ function renderApp() {
       banner2025.classList.add('hidden');
     }
   }
+
+  // Tampilkan Catatan Khusus Komoditas Sayuran jika di Bab 5 (Pertanian)
+  const bab5Note = document.getElementById('bab5VegetableNote');
+  if (bab5Note) {
+    if (state.bab === 5) {
+      bab5Note.classList.remove('hidden');
+    } else {
+      bab5Note.classList.add('hidden');
+    }
+  }
+
   renderKPIs(metricInfo);
   renderMapChoropleth(metricInfo);
   renderCharts(metricInfo);
@@ -1813,6 +1824,16 @@ function renderTable(metricInfo) {
 
   table.appendChild(tbody);
   document.getElementById('tableSummaryText').textContent = `Menampilkan ${filtered.length} dari 20 kecamatan`;
+
+  const tableBabNote = document.getElementById('tableBabNote');
+  if (tableBabNote) {
+    if (state.bab === 5) {
+      tableBabNote.innerHTML = '<span class="text-emerald-700 font-semibold">✦ Komoditas:</span> Cabai Besar/TW/Teropong, Cabai Keriting, Cabai Rawit, Kentang, Kubis, Tomat, Bawang Putih, Buncis, Terung.';
+    } else {
+      tableBabNote.innerHTML = '';
+    }
+  }
+
   lucide.createIcons();
 }
 

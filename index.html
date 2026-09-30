@@ -357,6 +357,57 @@
             <span class="font-bold text-[#002B6A]">Keterangan Publikasi:</span> Publikasi Kecamatan Dalam Angka terdiri dari data primer BPS Kabupaten Banjarnegara dan data sekunder instansi pemerintah/swasta. Data yang dimuat adalah data tahun sebelumnya (misal KCDA 2026 menyajikan data tahun 2025).
           </div>
         </div>
+
+        <!-- Catatan Khusus Bab 5: Komoditas Sayuran -->
+        <div id="bab5VegetableNote" class="hidden mt-2.5 p-3 sm:p-3.5 bg-emerald-50/90 border border-emerald-300/80 rounded-xl text-xs text-emerald-950 shadow-2xs">
+          <div class="flex items-center gap-2 mb-1.5">
+            <div class="p-1 bg-emerald-600 text-white rounded-md shrink-0">
+              <i data-lucide="sprout" class="w-3.5 h-3.5"></i>
+            </div>
+            <span class="font-bold text-emerald-900 text-xs sm:text-sm">Catatan Komoditas Sayuran (Bab 5 - Pertanian):</span>
+          </div>
+          <p class="text-emerald-800 text-[11px] sm:text-xs leading-relaxed mb-2.5">
+            Data produksi tanaman sayuran yang dihasilkan di Kabupaten Banjarnegara mencakup 9 jenis komoditas sayuran:
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 text-[11px]">
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">1. Cabai Besar / TW / Teropong</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Chili / Big Chili</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">2. Cabai Keriting</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Curly Chili</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">3. Cabai Rawit</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Chili / Cayenne Pepper</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">4. Kentang</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Potato</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">5. Kubis</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Cabbage</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">6. Tomat</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Tomato</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">7. Bawang Putih</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Garlic</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">8. Buncis</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">String Bean</div>
+            </div>
+            <div class="bg-white/95 border border-emerald-200 rounded-lg p-2 shadow-2xs">
+              <div class="font-bold text-slate-800">9. Terung</div>
+              <div class="text-[10px] text-slate-500 italic mt-0.5">Eggplant</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 4 KPI CARDS GRID -->
@@ -529,9 +580,12 @@
           </table>
         </div>
 
-        <div class="flex items-center justify-between pt-3 text-xs text-slate-500">
-          <span id="tableSummaryText">Menampilkan 20 kecamatan</span>
-          <span class="text-slate-400 italic">Klik judul kolom tabel untuk mengurutkan</span>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-3 text-xs text-slate-500 gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+            <span id="tableSummaryText" class="font-bold text-slate-700">Menampilkan 20 kecamatan</span>
+            <span id="tableBabNote" class="text-slate-500 text-[11px]"></span>
+          </div>
+          <span class="text-slate-400 italic text-[11px]">Klik judul kolom tabel untuk mengurutkan</span>
         </div>
       </div>
 
