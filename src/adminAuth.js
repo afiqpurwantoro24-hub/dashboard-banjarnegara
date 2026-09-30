@@ -24,6 +24,7 @@
   const AUTH_STORAGE_KEY = 'KCDA_ADMIN_AUTHENTICATED';
   const CURRENT_USER_KEY = 'KCDA_ADMIN_CURRENT_USER';
   const CUSTOM_ACCOUNTS_STORAGE_KEY = 'KCDA_CUSTOM_ADMIN_ACCOUNTS';
+  const DELETED_ACCOUNTS_STORAGE_KEY = 'KCDA_DELETED_ADMIN_ACCOUNTS';
 
   // Helper fungsi SHA-256 bawaan peramban (Web Crypto API)
   async function computeSHA256(text) {
@@ -45,16 +46,17 @@
     return hash;
   };
 
-  // Mendapatkan seluruh daftar akun (gabungan default + custom di browser)
+  // Mendapatkan seluruh daftar akun (gabungan default + custom di browser, tanpa yang telah dihapus)
   window.getAdminAccounts = function () {
     let custom = [];
+    let deleted = [];
     try {
       const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
-      if (stored) {
-        custom = JSON.parse(stored);
-      }
+      if (stored) custom = JSON.parse(stored);
+      const storedDel = localStorage.getItem(DELETED_ACCOUNTS_STORAGE_KEY);
+      if (storedDel) deleted = JSON.parse(storedDel);
     } catch (e) {
-      console.warn('Gagal membaca custom admin accounts:', e);
+      console.warn('Gagal membaca admin accounts storage:', e);
     }
 
     // Merge: akun custom dapat menimpa (override) password akun default berdasarkan username
@@ -66,7 +68,12 @@
       map.set(acc.username.toLowerCase(), { ...acc });
     });
 
-    return Array.from(map.values());
+    // Filter akun yang tidak dihapus
+    const active = Array.from(map.values()).filter(
+      (acc) => !deleted.includes(acc.username.toLowerCase())
+    );
+
+    return active;
   };
 
   // Menyimpan daftar custom accounts ke localStorage
@@ -330,6 +337,7 @@
   };
 
   // Render daftar akun admin di modal
+  // Render daftar akun admin di modal
   window.refreshAdminAccountsList = function () {
     const container = document.getElementById('adminAccountsListContainer');
     if (!container) return;
@@ -356,21 +364,17 @@
                     ? '<span class="px-1.5 py-0.2 text-[9px] font-extrabold bg-amber-200 text-amber-900 rounded-md">Sedang Aktif</span>'
                     : ''
                 }
-                <span class="px-1.5 py-0.2 text-[9px] font-semibold ${
-                  acc.isDefault ? 'bg-slate-200 text-slate-700' : 'bg-blue-100 text-blue-800'
-                } rounded-md">
-                  ${acc.isDefault ? 'Default' : 'Kustom'}
-                </span>
               </div>
               <span class="text-[11px] text-slate-500">${acc.name || 'Admin'}</span>
             </div>
           </div>
           ${
-            !acc.isDefault
-              ? `<button type="button" onclick="window.deleteCustomAdminAccount('${acc.username}')" class="text-rose-600 hover:text-rose-800 p-1 hover:bg-rose-50 rounded-lg text-xs" title="Hapus akun ini">
+            !isCur
+              ? `<button type="button" onclick="window.deleteAdminAccount('${acc.username}')" class="text-rose-600 hover:text-rose-800 hover:bg-rose-50 px-2 py-1 rounded-lg text-xs flex items-center gap-1 transition-colors border border-rose-200" title="Hapus akun admin ${acc.username}">
                   <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                  <span class="text-[10px] font-bold">Hapus</span>
                 </button>`
-              : ''
+              : '<span class="text-[10px] text-amber-800 font-bold italic px-2 py-1">Akun Anda</span>'
           }
         </div>
       `;
@@ -452,17 +456,34 @@
     const hash = await computeSHA256(pass);
 
     let custom = [];
+    let deleted = [];
     try {
       const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
       if (stored) custom = JSON.parse(stored);
+      const storedDel = localStorage.getItem(DELETED_ACCOUNTS_STORAGE_KEY);
+      if (storedDel) deleted = JSON.parse(storedDel);
     } catch (err) {}
 
-    custom.push({
-      username: username,
-      name: name,
-      passwordHash: hash,
-      isDefault: false
-    });
+    // Hapus dari daftar deleted jika sebelumnya pernah dihapus
+    if (deleted.includes(username.toLowerCase())) {
+      deleted = deleted.filter((u) => u !== username.toLowerCase());
+      try {
+        localStorage.setItem(DELETED_ACCOUNTS_STORAGE_KEY, JSON.stringify(deleted));
+      } catch (e) {}
+    }
+
+    // Tambah / Update di custom
+    const cIdx = custom.findIndex((a) => a.username.toLowerCase() === username.toLowerCase());
+    if (cIdx >= 0) {
+      custom[cIdx] = { username, name, passwordHash: hash, isDefault: false };
+    } else {
+      custom.push({
+        username: username,
+        name: name,
+        passwordHash: hash,
+        isDefault: false
+      });
+    }
 
     saveCustomAccounts(custom);
     document.getElementById('formAddAdmin').reset();
@@ -470,19 +491,44 @@
     window.refreshAdminAccountsList();
   };
 
-  // Hapus akun kustom
-  window.deleteCustomAdminAccount = function (username) {
-    if (!confirm(`Hapus akun admin "${username}"?`)) return;
+  // Hapus akun admin (bisa menghapus admin manapun yang tidak sedang aktif)
+  window.deleteAdminAccount = function (username) {
+    const curUser = sessionStorage.getItem(CURRENT_USER_KEY) || 'admin';
+    if (username.toLowerCase() === curUser.toLowerCase()) {
+      showManageMessage('Anda tidak dapat menghapus akun yang sedang Anda gunakan saat ini!', 'error');
+      return;
+    }
+
+    const accounts = window.getAdminAccounts();
+    if (accounts.length <= 1) {
+      showManageMessage('Harus menyisakan minimal 1 akun admin aktif!', 'error');
+      return;
+    }
+
+    if (!confirm(`Hapus akun admin "${username}"? Akun ini tidak akan dapat login lagi.`)) return;
 
     let custom = [];
+    let deleted = [];
     try {
       const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
       if (stored) custom = JSON.parse(stored);
+      const storedDel = localStorage.getItem(DELETED_ACCOUNTS_STORAGE_KEY);
+      if (storedDel) deleted = JSON.parse(storedDel);
     } catch (err) {}
 
+    // Hapus dari custom accounts jika ada
     custom = custom.filter((a) => a.username.toLowerCase() !== username.toLowerCase());
     saveCustomAccounts(custom);
-    showManageMessage(`Akun "${username}" telah dihapus.`, 'info');
+
+    // Tandai sebagai deleted agar akun bawaan pun dinonaktifkan
+    if (!deleted.includes(username.toLowerCase())) {
+      deleted.push(username.toLowerCase());
+      try {
+        localStorage.setItem(DELETED_ACCOUNTS_STORAGE_KEY, JSON.stringify(deleted));
+      } catch (e) {}
+    }
+
+    showManageMessage(`Akun admin "${username}" telah berhasil dihapus.`, 'info');
     window.refreshAdminAccountsList();
   };
 
@@ -490,6 +536,7 @@
   window.resetAllAdminAccountsToDefault = function () {
     if (!confirm('Kembalikan semua akun admin dan password ke setelan awal pabrik (default)?')) return;
     localStorage.removeItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+    localStorage.removeItem(DELETED_ACCOUNTS_STORAGE_KEY);
     showManageMessage('Semua akun telah di-reset ke setelan awal default.', 'info');
     window.refreshAdminAccountsList();
   };
