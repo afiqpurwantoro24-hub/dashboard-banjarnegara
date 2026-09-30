@@ -417,7 +417,7 @@
 
       // Simpan ke localStorage agar tidak hilang saat reload
       try {
-        localStorage.setItem('KCDA_SHEETS_CACHE_V3', JSON.stringify(window.KCDA_DATA));
+        localStorage.setItem('KCDA_SHEETS_CACHE_V4', JSON.stringify(window.KCDA_DATA));
       } catch (e) {}
 
       // Re-render dashboard dan perbarui filter tahun

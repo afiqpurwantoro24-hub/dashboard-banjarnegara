@@ -399,7 +399,7 @@ function initHeaderFilters() {
   // Populate Tahun Dropdown dynamically based on available data years
   const selectTahun = document.getElementById('filterTahun');
   if (selectTahun) {
-    const yearSet = new Set([2021, 2022, 2023, 2024, 2025]);
+    const yearSet = new Set([2021, 2022, 2023, 2024, 2025, 2026]);
     if (window.KCDA_DATA) {
       ['penduduk', 'geografi', 'pemerintahan', 'pertanian', 'sekolah', 'menara', 'bank'].forEach((key) => {
         if (Array.isArray(window.KCDA_DATA[key])) {
@@ -639,29 +639,35 @@ function getCurrentMetrics() {
     extractFn = (r) => r.luasWilayah;
   } else if (bab === 2) {
     // Pemerintahan (PNS)
-    records = window.KCDA_DATA.pemerintahan.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalPns: (r.pnsLakiLaki || 0) + (r.pnsPerempuan || 0),
-    }));
+    records = window.KCDA_DATA.pemerintahan.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.pnsLakiLaki !== null || r.pnsPerempuan !== null;
+      return {
+        ...r,
+        totalPns: hasVal ? (r.pnsLakiLaki || 0) + (r.pnsPerempuan || 0) : null,
+      };
+    });
     unit = 'Orang PNS';
     title = 'Jumlah PNS Pemda';
     extractFn = (r) => r.totalPns;
     breakdownFn = (r) => ({
-      'Laki-laki': r.pnsLakiLaki || 0,
-      Perempuan: r.pnsPerempuan || 0,
+      'Laki-laki': r.pnsLakiLaki,
+      Perempuan: r.pnsPerempuan,
     });
   } else if (bab === 3) {
     // Penduduk
-    records = window.KCDA_DATA.penduduk.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalPenduduk: (r.pendudukLakiLaki || 0) + (r.pendudukPerempuan || 0),
-    }));
+    records = window.KCDA_DATA.penduduk.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.pendudukLakiLaki !== null || r.pendudukPerempuan !== null;
+      return {
+        ...r,
+        totalPenduduk: hasVal ? (r.pendudukLakiLaki || 0) + (r.pendudukPerempuan || 0) : null,
+      };
+    });
     unit = 'Jiwa';
     title = 'Jumlah Penduduk';
     extractFn = (r) => r.totalPenduduk;
     breakdownFn = (r) => ({
-      'Laki-laki': r.pendudukLakiLaki || 0,
-      Perempuan: r.pendudukPerempuan || 0,
+      'Laki-laki': r.pendudukLakiLaki,
+      Perempuan: r.pendudukPerempuan,
     });
   } else if (bab === 4) {
     if (sub === 'listrik') {
@@ -671,18 +677,21 @@ function getCurrentMetrics() {
       extractFn = (r) => r.jumlahKeluargaPLN;
     } else {
       // Pendidikan
-      records = window.KCDA_DATA.sekolah.filter((r) => r.tahun === th).map((r) => ({
-        ...r,
-        totalSekolah: (r.sdMi || 0) + (r.smpMts || 0) + (r.smaSmkMa || 0) + (r.perguruanTinggi || 0),
-      }));
+      records = window.KCDA_DATA.sekolah.filter((r) => r.tahun === th).map((r) => {
+        const hasVal = r.sdMi !== null || r.smpMts !== null || r.smaSmkMa !== null || r.perguruanTinggi !== null;
+        return {
+          ...r,
+          totalSekolah: hasVal ? (r.sdMi || 0) + (r.smpMts || 0) + (r.smaSmkMa || 0) + (r.perguruanTinggi || 0) : null,
+        };
+      });
       unit = 'Unit Sekolah';
       title = 'Sarana Pendidikan';
       extractFn = (r) => r.totalSekolah;
       breakdownFn = (r) => ({
-        'SD/MI': r.sdMi || 0,
-        'SMP/MTs': r.smpMts || 0,
-        'SMA/SMK/MA': r.smaSmkMa || 0,
-        'Perguruan Tinggi': r.perguruanTinggi || 0,
+        'SD/MI': r.sdMi,
+        'SMP/MTs': r.smpMts,
+        'SMA/SMK/MA': r.smaSmkMa,
+        'Perguruan Tinggi': r.perguruanTinggi,
       });
     }
   } else if (bab === 5) {
@@ -697,8 +706,8 @@ function getCurrentMetrics() {
       title = 'Kekuatan Sinyal Desa';
       extractFn = (r) => r.persenSinyalKuat;
       breakdownFn = (r) => ({
-        'Sangat Kuat / Kuat (%)': r.persenSinyalKuat || 0,
-        'Lemah / Lainnya (%)': r.persenSinyalLemah || 0,
+        'Sangat Kuat / Kuat (%)': r.persenSinyalKuat,
+        'Lemah / Lainnya (%)': r.persenSinyalLemah,
       });
     } else {
       records = window.KCDA_DATA.menara.filter((r) => r.tahun === th);
@@ -708,33 +717,49 @@ function getCurrentMetrics() {
     }
   } else if (bab === 7) {
     if (sub === 'perdagangan') {
-      records = window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => ({
-        ...r,
-        totalSarana: (r.pertokoan || 0) + (r.pasarPermanen || 0) + (r.minimarket || 0) + (r.restoranRumahMakan || 0),
-      }));
+      records = window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => {
+        const hasVal = r.pertokoan !== null || r.pasarPermanen !== null || r.minimarket !== null || r.restoranRumahMakan !== null;
+        return {
+          ...r,
+          totalSarana: hasVal ? (r.pertokoan || 0) + (r.pasarPermanen || 0) + (r.minimarket || 0) + (r.restoranRumahMakan || 0) : null,
+        };
+      });
       unit = 'Unit Sarana';
       title = 'Sarana Perdagangan';
       extractFn = (r) => r.totalSarana;
       breakdownFn = (r) => ({
-        Pertokoan: r.pertokoan || 0,
-        Pasar: r.pasarPermanen || 0,
-        Minimarket: r.minimarket || 0,
-        'Restoran/Rumah Makan': r.restoranRumahMakan || 0,
+        Pertokoan: r.pertokoan,
+        Pasar: r.pasarPermanen,
+        Minimarket: r.minimarket,
+        'Restoran/Rumah Makan': r.restoranRumahMakan,
       });
     } else {
-      records = window.KCDA_DATA.bank.filter((r) => r.tahun === th).map((r) => ({
-        ...r,
-        totalBank: (r.bankPemerintah || 0) + (r.bankSwasta || 0) + (r.bpr || 0),
-      }));
+      records = window.KCDA_DATA.bank.filter((r) => r.tahun === th).map((r) => {
+        const hasVal = r.bankPemerintah !== null || r.bankSwasta !== null || r.bpr !== null;
+        return {
+          ...r,
+          totalBank: hasVal ? (r.bankPemerintah || 0) + (r.bankSwasta || 0) + (r.bpr || 0) : null,
+        };
+      });
       unit = 'Kantor Bank';
       title = 'Lembaga Keuangan Bank';
       extractFn = (r) => r.totalBank;
       breakdownFn = (r) => ({
-        'Bank Pemerintah': r.bankPemerintah || 0,
-        'Bank Swasta': r.bankSwasta || 0,
-        'BPR': r.bpr || 0,
+        'Bank Pemerintah': r.bankPemerintah,
+        'Bank Swasta': r.bankSwasta,
+        'BPR': r.bpr,
       });
     }
+  }
+
+  // Jika belum ada data untuk tahun yang dipilih, sediakan 20 baris kecamatan dengan nilai kosong (null)
+  // agar tabel tetap terstruktur rapi dan menampilkan tanda strip (—)
+  if (records.length === 0 && window.MASTER_KECAMATAN) {
+    records = window.MASTER_KECAMATAN.map((k) => ({
+      tahun: th,
+      kodeKecamatan: k.kode,
+      namaKecamatan: k.nama
+    }));
   }
 
   return { bab, sub, tahun: th, records, unit, title, extractFn, breakdownFn };
@@ -1007,23 +1032,32 @@ function renderKPIs(metricInfo) {
 function getHistoricalRecords(bab, sub, th) {
   if (bab === 1) return window.KCDA_DATA.geografi.filter((r) => r.tahun === th);
   if (bab === 2) {
-    return window.KCDA_DATA.pemerintahan.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalPns: (r.pnsLakiLaki || 0) + (r.pnsPerempuan || 0),
-    }));
+    return window.KCDA_DATA.pemerintahan.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.pnsLakiLaki !== null || r.pnsPerempuan !== null;
+      return {
+        ...r,
+        totalPns: hasVal ? (r.pnsLakiLaki || 0) + (r.pnsPerempuan || 0) : null,
+      };
+    });
   }
   if (bab === 3) {
-    return window.KCDA_DATA.penduduk.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalPenduduk: (r.pendudukLakiLaki || 0) + (r.pendudukPerempuan || 0),
-    }));
+    return window.KCDA_DATA.penduduk.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.pendudukLakiLaki !== null || r.pendudukPerempuan !== null;
+      return {
+        ...r,
+        totalPenduduk: hasVal ? (r.pendudukLakiLaki || 0) + (r.pendudukPerempuan || 0) : null,
+      };
+    });
   }
   if (bab === 4) {
     if (sub === 'listrik') return window.KCDA_DATA.listrik.filter((r) => r.tahun === th);
-    return window.KCDA_DATA.sekolah.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalSekolah: (r.sdMi || 0) + (r.smpMts || 0) + (r.smaSmkMa || 0) + (r.perguruanTinggi || 0),
-    }));
+    return window.KCDA_DATA.sekolah.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.sdMi !== null || r.smpMts !== null || r.smaSmkMa !== null || r.perguruanTinggi !== null;
+      return {
+        ...r,
+        totalSekolah: hasVal ? (r.sdMi || 0) + (r.smpMts || 0) + (r.smaSmkMa || 0) + (r.perguruanTinggi || 0) : null,
+      };
+    });
   }
   if (bab === 5) return window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
   if (bab === 6) {
@@ -1032,15 +1066,21 @@ function getHistoricalRecords(bab, sub, th) {
   }
   if (bab === 7) {
     if (sub === 'perdagangan') {
-      return window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => ({
-        ...r,
-        totalSarana: (r.pertokoan || 0) + (r.pasarPermanen || 0) + (r.minimarket || 0) + (r.restoranRumahMakan || 0),
-      }));
+      return window.KCDA_DATA.perdagangan.filter((r) => r.tahun === th).map((r) => {
+        const hasVal = r.pertokoan !== null || r.pasarPermanen !== null || r.minimarket !== null || r.restoranRumahMakan !== null;
+        return {
+          ...r,
+          totalSarana: hasVal ? (r.pertokoan || 0) + (r.pasarPermanen || 0) + (r.minimarket || 0) + (r.restoranRumahMakan || 0) : null,
+        };
+      });
     }
-    return window.KCDA_DATA.bank.filter((r) => r.tahun === th).map((r) => ({
-      ...r,
-      totalBank: (r.bankPemerintah || 0) + (r.bankSwasta || 0) + (r.bpr || 0),
-    }));
+    return window.KCDA_DATA.bank.filter((r) => r.tahun === th).map((r) => {
+      const hasVal = r.bankPemerintah !== null || r.bankSwasta !== null || r.bpr !== null;
+      return {
+        ...r,
+        totalBank: hasVal ? (r.bankPemerintah || 0) + (r.bankSwasta || 0) + (r.bpr || 0) : null,
+      };
+    });
   }
   return [];
 }
@@ -1184,14 +1224,29 @@ function renderCharts(metricInfo) {
 
 function renderTrendLineChart(metricInfo) {
   const lineTitleEl = document.getElementById('lineChartTitle');
-  if (lineTitleEl) lineTitleEl.textContent = `Tren Perkembangan: ${metricInfo.title}`;
   const lineSubEl = document.getElementById('lineChartSubtitle');
-  if (lineSubEl) lineSubEl.textContent = `Seri Data 2021–2025 (Satuan: ${metricInfo.unit})`;
+  const lineYearBadge = document.getElementById('lineChartYearBadge');
+
+  // Window pergeseran 5 tahun otomatis (5-year rolling window):
+  // Jika tahun <= 2025 -> 2021 s.d. 2025
+  // Jika tahun 2026 -> 2022 s.d. 2026
+  // Jika tahun 2027 -> 2023 s.d. 2027, dst.
+  const endYear = Math.max(state.tahun || 2025, 2025);
+  const startYear = endYear > 2025 ? endYear - 4 : 2021;
+  const years = [];
+  for (let y = startYear; y <= endYear; y++) {
+    years.push(y);
+  }
+
+  if (lineTitleEl) lineTitleEl.textContent = `Tren Perkembangan (${startYear}–${endYear}): ${metricInfo.title}`;
+  if (lineSubEl) lineSubEl.textContent = `Seri Data ${startYear}–${endYear} (Satuan: ${metricInfo.unit})`;
+  if (lineYearBadge) {
+    lineYearBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-blue-700 inline-block"></span> ${startYear}–${endYear}`;
+  }
 
   const ctx = document.getElementById('trendLineChart').getContext('2d');
   if (trendLineChartInstance) trendLineChartInstance.destroy();
 
-  const years = [2021, 2022, 2023, 2024, 2025];
   let datasets = [];
 
   const paletteColors = [
@@ -1271,7 +1326,7 @@ function renderTrendLineChart(metricInfo) {
   trendLineChartInstance = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['2021', '2022', '2023', '2024', '2025'],
+      labels: years.map(String),
       datasets: datasets,
     },
     options: {
