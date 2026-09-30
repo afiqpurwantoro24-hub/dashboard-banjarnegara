@@ -396,6 +396,22 @@ function initHeaderFilters() {
 
   selectKec.value = state.selectedKecamatan;
 
+  // Populate Comparison Checkboxes
+  const compareBox = document.getElementById('compareCheckboxes');
+  if (compareBox) {
+    compareBox.innerHTML = '';
+    sortedKec.forEach((k) => {
+      const isChecked = state.compareList.includes(k.kode);
+      const label = document.createElement('label');
+      label.className = 'flex items-center gap-1.5 text-xs text-blue-100 bg-blue-900/60 hover:bg-blue-900 px-2 py-1 rounded cursor-pointer';
+      label.innerHTML = `
+        <input type="checkbox" value="${k.kode}" ${isChecked ? 'checked' : ''} class="compare-chk rounded border-blue-600 text-amber-500 focus:ring-0" />
+        <span class="truncate">${k.nama}</span>
+      `;
+      compareBox.appendChild(label);
+    });
+  }
+
   // Populate Tahun Dropdown dynamically based on available data years
   window.updateYearFilterOptions();
 }
@@ -441,21 +457,6 @@ window.updateYearFilterOptions = function () {
   });
   selectTahun.value = state.tahun.toString();
 };
-
-  // Populate Comparison Checkboxes
-  const compareBox = document.getElementById('compareCheckboxes');
-  compareBox.innerHTML = '';
-  sortedKec.forEach((k) => {
-    const isChecked = state.compareList.includes(k.kode);
-    const label = document.createElement('label');
-    label.className = 'flex items-center gap-1.5 text-xs text-blue-100 bg-blue-900/60 hover:bg-blue-900 px-2 py-1 rounded cursor-pointer';
-    label.innerHTML = `
-      <input type="checkbox" value="${k.kode}" ${isChecked ? 'checked' : ''} class="compare-chk rounded border-blue-600 text-amber-500 focus:ring-0" />
-      <span class="truncate">${k.nama}</span>
-    `;
-    compareBox.appendChild(label);
-  });
-}
 
 function initEventListeners() {
   // Tahun Change
