@@ -498,16 +498,6 @@
   }
 
   window.syncWithGoogleSheets = async function (isManual = false) {
-    // Pengamanan: Hanya Admin terautentikasi yang dapat memicu sinkronisasi manual dari Spreadsheet
-    if (isManual) {
-      if (typeof window.isAdminAuthenticated === 'function' && !window.isAdminAuthenticated()) {
-        if (typeof window.openAdminAuthModal === 'function') {
-          window.openAdminAuthModal();
-        }
-        return;
-      }
-    }
-
     updateSyncUI('syncing');
 
     try {

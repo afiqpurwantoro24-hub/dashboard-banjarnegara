@@ -100,14 +100,10 @@
     };
   };
 
-  // Handler klik tombol Sync di header
+  // Handler klik tombol Sync di header (Langsung sinkron tanpa perlu login)
   window.handleSyncClick = function () {
-    if (window.isAdminAuthenticated()) {
-      if (typeof window.syncWithGoogleSheets === 'function') {
-        window.syncWithGoogleSheets(true);
-      }
-    } else {
-      window.openAdminAuthModal();
+    if (typeof window.syncWithGoogleSheets === 'function') {
+      window.syncWithGoogleSheets(true);
     }
   };
 
@@ -617,7 +613,7 @@
     if (window.lucide) window.lucide.createIcons();
   }
 
-  // Perbarui tampilan status Admin pada antarmuka (Header Sync Button)
+  // Perbarui tampilan status Admin pada antarmuka
   window.updateAdminUI = function () {
     const isAuth = window.isAdminAuthenticated();
     const btnSync = document.getElementById('sheetsSyncIndicator');
@@ -628,20 +624,17 @@
     const btnLogout = document.getElementById('btnAdminLogout');
     const btnManage = document.getElementById('btnAdminManageUsers');
 
-    if (!btnSync) return;
-
-    if (isAuth) {
-      const curAdmin = window.getCurrentAdmin();
-      // Mode Admin Aktif
-      btnSync.title = `Admin Aktif: ${curAdmin.name || curAdmin.username}. Klik untuk sinkronisasi data Google Spreadsheet.`;
-      btnSync.className =
-        'flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-emerald-50/95 border-emerald-400 text-emerald-900 hover:bg-emerald-100 shadow-sm ring-1 ring-emerald-400/40';
-
+    if (btnSync) {
+      btnSync.title = 'Klik untuk memperbarui data langsung dari Google Spreadsheet';
       if (lockIcon) lockIcon.classList.add('hidden');
       if (syncDot) syncDot.classList.remove('hidden');
       if (syncIcon) syncIcon.classList.remove('hidden');
-      if (syncText) syncText.textContent = 'Update Data (Live)';
+      if (syncText && !syncText.textContent.includes('Menyinkronkan')) {
+        syncText.textContent = 'Update Data (Live)';
+      }
+    }
 
+    if (isAuth) {
       if (btnLogout) {
         btnLogout.classList.remove('hidden');
         btnLogout.classList.add('flex');
@@ -651,16 +644,6 @@
         btnManage.classList.add('flex');
       }
     } else {
-      // Mode Pengunjung Terkunci
-      btnSync.title = 'Hanya Admin: Masukkan username & password untuk memperbarui data Google Spreadsheet.';
-      btnSync.className =
-        'flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:bg-amber-100 shadow-sm';
-
-      if (lockIcon) lockIcon.classList.remove('hidden');
-      if (syncDot) syncDot.classList.add('hidden');
-      if (syncIcon) syncIcon.classList.add('hidden');
-      if (syncText) syncText.textContent = 'Update Data';
-
       if (btnLogout) {
         btnLogout.classList.add('hidden');
         btnLogout.classList.remove('flex');
