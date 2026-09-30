@@ -1616,11 +1616,20 @@ function renderSecondaryChart(metricInfo) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: '65%',
+        cutout: '60%',
+        layout: {
+          padding: { top: 6, bottom: 6 },
+        },
         plugins: {
           legend: {
             position: 'bottom',
-            labels: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' }, boxWidth: 12, padding: 10 },
+            labels: {
+              font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' },
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 12,
+              usePointStyle: true,
+            },
           },
           tooltip: {
             callbacks: {
@@ -1669,17 +1678,21 @@ function renderSecondaryChart(metricInfo) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '62%',
+      cutout: '58%',
+      layout: {
+        padding: { top: 6, bottom: 6 },
+      },
       plugins: {
         legend: {
           position: 'bottom',
           labels: {
-            font: { family: 'Plus Jakarta Sans', size: 9, weight: '600' },
+            font: { family: 'Plus Jakarta Sans', size: 9.5, weight: '600' },
             boxWidth: 8,
             boxHeight: 8,
-            padding: 5,
+            padding: 6,
+            usePointStyle: true,
           },
-          maxHeight: 125,
+          maxHeight: 240,
         },
         tooltip: {
           callbacks: {
