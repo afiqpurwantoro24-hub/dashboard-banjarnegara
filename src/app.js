@@ -697,7 +697,7 @@ function getCurrentMetrics() {
   } else if (bab === 5) {
     records = window.KCDA_DATA.pertanian.filter((r) => r.tahun === th);
     unit = 'Kuintal';
-    title = 'Produksi Sayuran & Buah Semusim';
+    title = 'Produksi Sayuran';
     extractFn = (r) => r.produksiSayuranBuah;
   } else if (bab === 6) {
     if (sub === 'sinyal') {

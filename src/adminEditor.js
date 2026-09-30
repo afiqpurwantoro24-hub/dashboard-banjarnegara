@@ -64,7 +64,7 @@
       tabName: 'Pertanian',
       subTopics: [],
       fields: [
-        { key: 'produksiSayuranBuah', label: 'Produksi Sayuran & Buah Semusim', unit: 'Kuintal', step: '0.1', min: 0 }
+        { key: 'produksiSayuranBuah', label: 'Produksi Sayuran', unit: 'Kuintal', step: '0.1', min: 0 }
       ]
     },
     6: {

@@ -1,4 +1,4 @@
-﻿// ===================================================================
+// ===================================================================
 // Dashboard Kecamatan Dalam Angka Kabupaten Banjarnegara
 // Core Type Definitions
 // ===================================================================
@@ -85,7 +85,7 @@ export interface ListrikData {
   jumlahKeluargaPLN: number;
 }
 
-/** Bab 5: Pertanian - Produksi Sayuran & Buah */
+/** Bab 5: Pertanian - Produksi Sayuran */
 export interface PertanianData {
   tahun: number;
   kodeKecamatan: string;
