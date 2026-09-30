@@ -536,7 +536,10 @@
           updateSyncUI('success', 'Live');
         }
 
-        // Re-render dashboard active views
+        // Update year filter options & re-render active views
+        if (typeof window.updateYearFilterOptions === 'function') {
+          window.updateYearFilterOptions();
+        }
         if (typeof window.renderApp === 'function') {
           window.renderApp();
         }
@@ -554,6 +557,7 @@
           window.KCDA_DATA = JSON.parse(cached);
           const timeStr = localStorage.getItem(CACHE_TIME_KEY);
           updateSyncUI('success', timeStr ? `Tersimpan ${timeStr}` : 'Cache');
+          if (typeof window.updateYearFilterOptions === 'function') window.updateYearFilterOptions();
           if (typeof window.renderApp === 'function') window.renderApp();
           return;
         }
@@ -575,11 +579,9 @@
       }
     } catch (e) {}
 
-    // Auto-sync di latar belakang hanya jika Admin sedang aktif
+    // Auto-sync data terbaru dari Google Spreadsheet saat halaman dimuat
     setTimeout(() => {
-      if (typeof window.isAdminAuthenticated === 'function' && window.isAdminAuthenticated()) {
-        window.syncWithGoogleSheets(false);
-      }
+      window.syncWithGoogleSheets(false);
     }, 400);
   });
 })();
