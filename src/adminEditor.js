@@ -140,19 +140,26 @@
 
     if (selBab && window.state) selBab.value = window.state.bab || 1;
 
-    // Populate Tahun Dropdown in Editor (Dukungan tahun 2026 dan seterusnya)
+    // Populate Tahun Dropdown in Editor (Tahun 2026+ hanya jika sudah ada data riil atau lewat Tambah Baru)
     if (selTahun) {
-      const yearSet = new Set([2021, 2022, 2023, 2024, 2025, 2026, 2027]);
+      const yearSet = new Set([2021, 2022, 2023, 2024, 2025]);
       if (window.KCDA_DATA) {
-        ['penduduk', 'geografi', 'pemerintahan', 'pertanian', 'sekolah', 'menara', 'bank'].forEach((key) => {
+        const dataKeys = ['penduduk', 'pemerintahan', 'pertanian', 'sekolah', 'listrik', 'menara', 'sinyal', 'bank', 'perdagangan'];
+        dataKeys.forEach((key) => {
           if (Array.isArray(window.KCDA_DATA[key])) {
             window.KCDA_DATA[key].forEach((item) => {
-              if (item && item.tahun) yearSet.add(item.tahun);
+              if (item && item.tahun && item.tahun > 2025) {
+                const hasData = Object.entries(item).some(
+                  ([k, v]) => k !== 'tahun' && k !== 'kodeKecamatan' && k !== 'namaKecamatan' && v !== null && v !== undefined && !isNaN(v)
+                );
+                if (hasData) {
+                  yearSet.add(item.tahun);
+                }
+              }
             });
           }
         });
       }
-      if (window.state && window.state.tahun) yearSet.add(window.state.tahun);
 
       const sortedYears = Array.from(yearSet).sort((a, b) => a - b);
       selTahun.innerHTML = '';
@@ -168,7 +175,8 @@
       optCustom.textContent = '+ Tambah Tahun Baru...';
       selTahun.appendChild(optCustom);
 
-      selTahun.value = (window.state && window.state.tahun) ? window.state.tahun.toString() : '2025';
+      const targetYear = (window.state && window.state.tahun && yearSet.has(window.state.tahun)) ? window.state.tahun.toString() : '2025';
+      selTahun.value = targetYear;
     }
 
     // Populate Kecamatan
@@ -417,7 +425,7 @@
 
       // Simpan ke localStorage agar tidak hilang saat reload
       try {
-        localStorage.setItem('KCDA_SHEETS_CACHE_V4', JSON.stringify(window.KCDA_DATA));
+        localStorage.setItem('KCDA_SHEETS_CACHE_V5', JSON.stringify(window.KCDA_DATA));
       } catch (e) {}
 
       // Re-render dashboard dan perbarui filter tahun
@@ -477,6 +485,17 @@
     } else {
       const newRec = { tahun, kodeKecamatan: kodeKec, namaKecamatan: namaKec, ...updates };
       window.KCDA_DATA[arrayName].push(newRec);
+    }
+
+    // Pastikan geografi juga tersedia untuk tahun baru tersebut
+    if (tahun > 2025 && window.KCDA_DATA.geografi) {
+      const geoExist = window.KCDA_DATA.geografi.some((g) => g.tahun === tahun);
+      if (!geoExist) {
+        const base2025 = window.KCDA_DATA.geografi.filter((g) => g.tahun === 2025);
+        base2025.forEach((b) => {
+          window.KCDA_DATA.geografi.push({ ...b, tahun });
+        });
+      }
     }
   }
 

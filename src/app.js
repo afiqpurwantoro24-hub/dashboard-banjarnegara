@@ -399,17 +399,32 @@ function initHeaderFilters() {
   // Populate Tahun Dropdown dynamically based on available data years
   const selectTahun = document.getElementById('filterTahun');
   if (selectTahun) {
-    const yearSet = new Set([2021, 2022, 2023, 2024, 2025, 2026]);
+    // Tahun dasar publikasi KCDA adalah 2021–2025.
+    // Tahun 2026 dan seterusnya HANYA ditampilkan jika sudah ada data riil yang diinputkan.
+    const yearSet = new Set([2021, 2022, 2023, 2024, 2025]);
+
     if (window.KCDA_DATA) {
-      ['penduduk', 'geografi', 'pemerintahan', 'pertanian', 'sekolah', 'menara', 'bank'].forEach((key) => {
+      const dataKeys = ['penduduk', 'pemerintahan', 'pertanian', 'sekolah', 'listrik', 'menara', 'sinyal', 'bank', 'perdagangan'];
+      dataKeys.forEach((key) => {
         if (Array.isArray(window.KCDA_DATA[key])) {
           window.KCDA_DATA[key].forEach((item) => {
-            if (item && item.tahun) yearSet.add(item.tahun);
+            if (item && item.tahun && item.tahun > 2025) {
+              const hasData = Object.entries(item).some(
+                ([k, v]) => k !== 'tahun' && k !== 'kodeKecamatan' && k !== 'namaKecamatan' && v !== null && v !== undefined && !isNaN(v)
+              );
+              if (hasData) {
+                yearSet.add(item.tahun);
+              }
+            }
           });
         }
       });
     }
-    if (state.tahun) yearSet.add(state.tahun);
+
+    // Jika tahun di URL/state tidak ada di yearSet (misal 2026 belum ada data), kembalikan ke 2025
+    if (!yearSet.has(state.tahun)) {
+      state.tahun = 2025;
+    }
 
     const sortedYears = Array.from(yearSet).sort((a, b) => a - b);
     selectTahun.innerHTML = '';
