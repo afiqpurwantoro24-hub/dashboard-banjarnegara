@@ -1,17 +1,29 @@
 // ===================================================================
 // Dashboard Kecamatan Dalam Angka Kabupaten Banjarnegara
-// Admin Authentication Module (Google Sheets Sync Protection)
+// Admin Authentication Module (Google Sheets Sync Protection & Account Management)
 // ===================================================================
 
 (function () {
-  // Kredensial Default Admin BPS:
-  // Username: admin
-  // Password Default: adminbps2026
-  // Password disimpan dalam bentuk Hash SHA-256 agar tidak terbaca dalam kode sumber
-  const ADMIN_USERNAME = 'admin';
-  const ADMIN_PASSWORD_HASH = '4b30c22d3b224bdade814284b9b4f289fac859e4acf726037c3c50bcc48227a3'; // SHA-256 dari "adminbps2026"
+  // ===================================================================
+  // 1. DAFTAR AKUN ADMIN BAWAAN (DEFAULT)
+  // Untuk menambah akun admin baru atau mengganti password secara permanen di kode,
+  // Anda cukup menambah/mengedit baris pada DEFAULT_ADMIN_ACCOUNTS di bawah ini.
+  // Password disimpan dalam bentuk SHA-256 Hash demi keamanan.
+  // Gunakan fungsi: window.generateAdminHash("passwordBaru") di console untuk membuat hash.
+  // ===================================================================
+  const DEFAULT_ADMIN_ACCOUNTS = [
+    {
+      username: 'admin',
+      name: 'Administrator Utama (BPS)',
+      // SHA-256 dari password default: "adminbps2026"
+      passwordHash: '4b30c22d3b224bdade814284b9b4f289fac859e4acf726037c3c50bcc48227a3',
+      isDefault: true
+    }
+  ];
 
   const AUTH_STORAGE_KEY = 'KCDA_ADMIN_AUTHENTICATED';
+  const CURRENT_USER_KEY = 'KCDA_ADMIN_CURRENT_USER';
+  const CUSTOM_ACCOUNTS_STORAGE_KEY = 'KCDA_CUSTOM_ADMIN_ACCOUNTS';
 
   // Helper fungsi SHA-256 bawaan peramban (Web Crypto API)
   async function computeSHA256(text) {
@@ -21,9 +33,64 @@
     return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
   }
 
+  // Utility global untuk membuat SHA-256 hash (bisa dipanggil via Console F12)
+  window.generateAdminHash = async function (plainPassword) {
+    if (!plainPassword) {
+      console.warn('Gunakan: window.generateAdminHash("kataSandiAnda")');
+      return '';
+    }
+    const hash = await computeSHA256(plainPassword);
+    console.log(`%cPassword:%c ${plainPassword}`, 'font-weight:bold;color:#f59e0b', 'color:#0f172a');
+    console.log(`%cSHA-256 Hash:%c ${hash}`, 'font-weight:bold;color:#10b981', 'color:#047857;font-family:monospace');
+    return hash;
+  };
+
+  // Mendapatkan seluruh daftar akun (gabungan default + custom di browser)
+  window.getAdminAccounts = function () {
+    let custom = [];
+    try {
+      const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+      if (stored) {
+        custom = JSON.parse(stored);
+      }
+    } catch (e) {
+      console.warn('Gagal membaca custom admin accounts:', e);
+    }
+
+    // Merge: akun custom dapat menimpa (override) password akun default berdasarkan username
+    const map = new Map();
+    DEFAULT_ADMIN_ACCOUNTS.forEach((acc) => {
+      map.set(acc.username.toLowerCase(), { ...acc });
+    });
+    custom.forEach((acc) => {
+      map.set(acc.username.toLowerCase(), { ...acc });
+    });
+
+    return Array.from(map.values());
+  };
+
+  // Menyimpan daftar custom accounts ke localStorage
+  function saveCustomAccounts(accounts) {
+    try {
+      localStorage.setItem(CUSTOM_ACCOUNTS_STORAGE_KEY, JSON.stringify(accounts));
+    } catch (e) {
+      console.error('Gagal menyimpan custom accounts:', e);
+    }
+  }
+
   // Cek apakah Admin sedang login dalam sesi browser saat ini
   window.isAdminAuthenticated = function () {
     return sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true';
+  };
+
+  // Mendapatkan info admin yang sedang aktif
+  window.getCurrentAdmin = function () {
+    const username = sessionStorage.getItem(CURRENT_USER_KEY) || 'admin';
+    const accounts = window.getAdminAccounts();
+    return accounts.find((a) => a.username.toLowerCase() === username.toLowerCase()) || {
+      username: username,
+      name: 'Administrator'
+    };
   };
 
   // Handler klik tombol Sync di header
@@ -87,9 +154,9 @@
   };
 
   // Toggle lihat password (ikon mata)
-  window.toggleAdminPasswordVisibility = function () {
-    const passInput = document.getElementById('adminPasswordInput');
-    const eyeIcon = document.getElementById('adminPasswordEyeIcon');
+  window.toggleAdminPasswordVisibility = function (inputId = 'adminPasswordInput', iconId = 'adminPasswordEyeIcon') {
+    const passInput = document.getElementById(inputId);
+    const eyeIcon = document.getElementById(iconId);
     if (!passInput || !eyeIcon) return;
 
     if (passInput.type === 'password') {
@@ -133,15 +200,20 @@
 
     try {
       const inputHash = await computeSHA256(password);
+      const accounts = window.getAdminAccounts();
+      const matched = accounts.find(
+        (acc) => acc.username.toLowerCase() === username.toLowerCase() && acc.passwordHash === inputHash
+      );
 
-      if (username.toLowerCase() === ADMIN_USERNAME.toLowerCase() && inputHash === ADMIN_PASSWORD_HASH) {
+      if (matched) {
         // Berhasil login
         sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+        sessionStorage.setItem(CURRENT_USER_KEY, matched.username);
         window.updateAdminUI();
         window.closeAdminAuthModal();
 
         if (typeof window.showToast === 'function') {
-          window.showToast('Login Admin Berhasil!');
+          window.showToast(`Login berhasil! Selamat datang, ${matched.name || matched.username}`);
         }
 
         // Jika ada aksi tertunda (misal buka form edit data)
@@ -189,11 +261,272 @@
   // Keluar dari mode Admin (Logout)
   window.adminLogout = function () {
     sessionStorage.removeItem(AUTH_STORAGE_KEY);
+    sessionStorage.removeItem(CURRENT_USER_KEY);
     window.updateAdminUI();
     if (typeof window.showToast === 'function') {
       window.showToast('Berhasil keluar dari Mode Admin.');
     }
   };
+
+  // ===================================================================
+  // MODAL KELOLA AKUN & GANTI PASSWORD
+  // ===================================================================
+
+  window.openAdminManageModal = function () {
+    if (!window.isAdminAuthenticated()) {
+      window.openAdminAuthModal();
+      return;
+    }
+
+    const modal = document.getElementById('adminManageModal');
+    if (!modal) return;
+
+    window.refreshAdminAccountsList();
+
+    // Reset input form
+    const currentAdmin = window.getCurrentAdmin();
+    const curUserLabel = document.getElementById('manageCurrentUsername');
+    if (curUserLabel) curUserLabel.textContent = `${currentAdmin.username} (${currentAdmin.name || 'Admin'})`;
+
+    const changePassForm = document.getElementById('formChangePassword');
+    if (changePassForm) changePassForm.reset();
+
+    const addAdminForm = document.getElementById('formAddAdmin');
+    if (addAdminForm) addAdminForm.reset();
+
+    const msgBox = document.getElementById('manageAccountsMessage');
+    if (msgBox) msgBox.classList.add('hidden');
+
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.remove('opacity-0');
+    modal.classList.add('opacity-100');
+
+    const card = modal.querySelector('div');
+    if (card) {
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+
+    if (window.lucide) window.lucide.createIcons();
+  };
+
+  window.closeAdminManageModal = function () {
+    const modal = document.getElementById('adminManageModal');
+    if (!modal) return;
+
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+
+    const card = modal.querySelector('div');
+    if (card) {
+      card.classList.remove('scale-100');
+      card.classList.add('scale-95');
+    }
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 200);
+  };
+
+  // Render daftar akun admin di modal
+  window.refreshAdminAccountsList = function () {
+    const container = document.getElementById('adminAccountsListContainer');
+    if (!container) return;
+
+    const accounts = window.getAdminAccounts();
+    const curUser = sessionStorage.getItem(CURRENT_USER_KEY) || 'admin';
+
+    let html = '';
+    accounts.forEach((acc) => {
+      const isCur = acc.username.toLowerCase() === curUser.toLowerCase();
+      html += `
+        <div class="flex items-center justify-between p-2.5 rounded-xl border ${
+          isCur ? 'bg-amber-50/80 border-amber-300' : 'bg-slate-50 border-slate-200'
+        } text-xs">
+          <div class="flex items-center gap-2">
+            <div class="p-1.5 rounded-lg ${isCur ? 'bg-amber-500 text-white' : 'bg-slate-200 text-slate-600'}">
+              <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-slate-800">${acc.username}</span>
+                ${
+                  isCur
+                    ? '<span class="px-1.5 py-0.2 text-[9px] font-extrabold bg-amber-200 text-amber-900 rounded-md">Sedang Aktif</span>'
+                    : ''
+                }
+                <span class="px-1.5 py-0.2 text-[9px] font-semibold ${
+                  acc.isDefault ? 'bg-slate-200 text-slate-700' : 'bg-blue-100 text-blue-800'
+                } rounded-md">
+                  ${acc.isDefault ? 'Default' : 'Kustom'}
+                </span>
+              </div>
+              <span class="text-[11px] text-slate-500">${acc.name || 'Admin'}</span>
+            </div>
+          </div>
+          ${
+            !acc.isDefault
+              ? `<button type="button" onclick="window.deleteCustomAdminAccount('${acc.username}')" class="text-rose-600 hover:text-rose-800 p-1 hover:bg-rose-50 rounded-lg text-xs" title="Hapus akun ini">
+                  <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                </button>`
+              : ''
+          }
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+    if (window.lucide) window.lucide.createIcons();
+  };
+
+  // Submit Ubah Sandi
+  window.submitChangePassword = async function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    const newPass = document.getElementById('inputNewAdminPassword').value;
+    const confirmPass = document.getElementById('inputConfirmAdminPassword').value;
+    const msgBox = document.getElementById('manageAccountsMessage');
+
+    if (!newPass || newPass.length < 6) {
+      showManageMessage('Password baru minimal 6 karakter!', 'error');
+      return;
+    }
+    if (newPass !== confirmPass) {
+      showManageMessage('Konfirmasi password baru tidak cocok!', 'error');
+      return;
+    }
+
+    const currentAdmin = window.getCurrentAdmin();
+    const newHash = await computeSHA256(newPass);
+
+    // Dapatkan custom accounts
+    let custom = [];
+    try {
+      const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+      if (stored) custom = JSON.parse(stored);
+    } catch (err) {}
+
+    // Cari apakah sudah ada di custom
+    const idx = custom.findIndex((a) => a.username.toLowerCase() === currentAdmin.username.toLowerCase());
+    if (idx >= 0) {
+      custom[idx].passwordHash = newHash;
+    } else {
+      custom.push({
+        username: currentAdmin.username,
+        name: currentAdmin.name,
+        passwordHash: newHash,
+        isDefault: false
+      });
+    }
+
+    saveCustomAccounts(custom);
+    document.getElementById('formChangePassword').reset();
+    showManageMessage(`Password untuk akun "${currentAdmin.username}" berhasil diubah!`, 'success');
+    window.refreshAdminAccountsList();
+  };
+
+  // Submit Tambah Akun Admin Baru
+  window.submitAddNewAdmin = async function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    const username = document.getElementById('inputNewAdminUsername').value.trim();
+    const name = document.getElementById('inputNewAdminName').value.trim() || 'Admin';
+    const pass = document.getElementById('inputNewAdminPass').value;
+
+    if (!username || username.length < 3) {
+      showManageMessage('Username minimal 3 karakter tanpa spasi!', 'error');
+      return;
+    }
+    if (!pass || pass.length < 6) {
+      showManageMessage('Password minimal 6 karakter!', 'error');
+      return;
+    }
+
+    const existing = window.getAdminAccounts();
+    if (existing.some((a) => a.username.toLowerCase() === username.toLowerCase())) {
+      showManageMessage(`Username "${username}" sudah digunakan! Gunakan username lain.`, 'error');
+      return;
+    }
+
+    const hash = await computeSHA256(pass);
+
+    let custom = [];
+    try {
+      const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+      if (stored) custom = JSON.parse(stored);
+    } catch (err) {}
+
+    custom.push({
+      username: username,
+      name: name,
+      passwordHash: hash,
+      isDefault: false
+    });
+
+    saveCustomAccounts(custom);
+    document.getElementById('formAddAdmin').reset();
+    showManageMessage(`Akun admin baru "${username}" berhasil ditambahkan!`, 'success');
+    window.refreshAdminAccountsList();
+  };
+
+  // Hapus akun kustom
+  window.deleteCustomAdminAccount = function (username) {
+    if (!confirm(`Hapus akun admin "${username}"?`)) return;
+
+    let custom = [];
+    try {
+      const stored = localStorage.getItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+      if (stored) custom = JSON.parse(stored);
+    } catch (err) {}
+
+    custom = custom.filter((a) => a.username.toLowerCase() !== username.toLowerCase());
+    saveCustomAccounts(custom);
+    showManageMessage(`Akun "${username}" telah dihapus.`, 'info');
+    window.refreshAdminAccountsList();
+  };
+
+  // Reset semua akun kembali ke bawaan
+  window.resetAllAdminAccountsToDefault = function () {
+    if (!confirm('Kembalikan semua akun admin dan password ke setelan awal pabrik (default)?')) return;
+    localStorage.removeItem(CUSTOM_ACCOUNTS_STORAGE_KEY);
+    showManageMessage('Semua akun telah di-reset ke setelan awal default.', 'info');
+    window.refreshAdminAccountsList();
+  };
+
+  // Salin template kode untuk disimpan permanen di src/adminAuth.js
+  window.copyAdminConfigCode = function () {
+    const accounts = window.getAdminAccounts();
+    const formatted = JSON.stringify(accounts, null, 2);
+    const codeSnippet = `const DEFAULT_ADMIN_ACCOUNTS = ${formatted};`;
+
+    navigator.clipboard.writeText(codeSnippet).then(() => {
+      showManageMessage('Kode konfigurasi berhasil disalin ke clipboard! Siap di-paste ke src/adminAuth.js', 'success');
+    }).catch(() => {
+      prompt('Salin kode ini dan masukkan ke src/adminAuth.js:', codeSnippet);
+    });
+  };
+
+  function showManageMessage(text, type = 'info') {
+    const box = document.getElementById('manageAccountsMessage');
+    if (!box) return;
+
+    box.className = 'mb-3 p-2.5 rounded-xl text-xs font-semibold flex items-center gap-2';
+    if (type === 'error') {
+      box.className += ' bg-rose-50 border border-rose-200 text-rose-700';
+    } else if (type === 'success') {
+      box.className += ' bg-emerald-50 border border-emerald-200 text-emerald-800';
+    } else {
+      box.className += ' bg-blue-50 border border-blue-200 text-blue-800';
+    }
+
+    box.innerHTML = `
+      <i data-lucide="${type === 'error' ? 'alert-circle' : type === 'success' ? 'check-circle-2' : 'info'}" class="w-4 h-4 shrink-0"></i>
+      <span>${text}</span>
+    `;
+    box.classList.remove('hidden');
+    if (window.lucide) window.lucide.createIcons();
+  }
 
   // Perbarui tampilan status Admin pada antarmuka (Header Sync Button)
   window.updateAdminUI = function () {
@@ -204,12 +537,14 @@
     const syncIcon = document.getElementById('syncIcon');
     const syncText = document.getElementById('syncText');
     const btnLogout = document.getElementById('btnAdminLogout');
+    const btnManage = document.getElementById('btnAdminManageUsers');
 
     if (!btnSync) return;
 
     if (isAuth) {
+      const curAdmin = window.getCurrentAdmin();
       // Mode Admin Aktif
-      btnSync.title = 'Mode Admin Aktif. Klik untuk menyinkronkan data dari Google Spreadsheet.';
+      btnSync.title = `Admin Aktif: ${curAdmin.name || curAdmin.username}. Klik untuk sinkronisasi data Google Spreadsheet.`;
       btnSync.className =
         'flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-emerald-50/95 border-emerald-400 text-emerald-900 hover:bg-emerald-100 shadow-sm ring-1 ring-emerald-400/40';
 
@@ -221,6 +556,10 @@
       if (btnLogout) {
         btnLogout.classList.remove('hidden');
         btnLogout.classList.add('flex');
+      }
+      if (btnManage) {
+        btnManage.classList.remove('hidden');
+        btnManage.classList.add('flex');
       }
     } else {
       // Mode Pengunjung Terkunci
@@ -236,6 +575,10 @@
       if (btnLogout) {
         btnLogout.classList.add('hidden');
         btnLogout.classList.remove('flex');
+      }
+      if (btnManage) {
+        btnManage.classList.add('hidden');
+        btnManage.classList.remove('flex');
       }
     }
 
@@ -259,6 +602,7 @@
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       window.closeAdminAuthModal();
+      window.closeAdminManageModal();
     }
   });
 
@@ -267,3 +611,4 @@
     window.updateAdminUI();
   });
 })();
+
