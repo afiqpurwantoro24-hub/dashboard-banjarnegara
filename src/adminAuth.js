@@ -288,7 +288,11 @@
     const modal = document.getElementById('adminManageModal');
     if (!modal) return;
 
+    window.switchManageTab('accounts');
     window.refreshAdminAccountsList();
+    if (typeof window.renderLogoManagerUI === 'function') {
+      window.renderLogoManagerUI();
+    }
 
     // Reset input form
     const currentAdmin = window.getCurrentAdmin();
@@ -334,6 +338,44 @@
     setTimeout(() => {
       modal.classList.add('hidden');
     }, 200);
+  };
+
+  // Pindah tab antara Akun & Logo
+  window.switchManageTab = function (tab) {
+    const tabAccBtn = document.getElementById('tabBtnManageAccounts');
+    const tabLogoBtn = document.getElementById('tabBtnManageLogos');
+    const tabAccContent = document.getElementById('tabContentManageAccounts');
+    const tabLogoContent = document.getElementById('tabContentManageLogos');
+
+    if (tab === 'logos') {
+      if (tabAccBtn) {
+        tabAccBtn.className =
+          'py-2.5 px-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer';
+      }
+      if (tabLogoBtn) {
+        tabLogoBtn.className =
+          'py-2.5 px-3 text-xs font-bold border-b-2 border-amber-600 text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer';
+      }
+      if (tabAccContent) tabAccContent.classList.add('hidden');
+      if (tabLogoContent) tabLogoContent.classList.remove('hidden');
+
+      if (typeof window.renderLogoManagerUI === 'function') {
+        window.renderLogoManagerUI();
+      }
+    } else {
+      if (tabAccBtn) {
+        tabAccBtn.className =
+          'py-2.5 px-3 text-xs font-bold border-b-2 border-amber-600 text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer';
+      }
+      if (tabLogoBtn) {
+        tabLogoBtn.className =
+          'py-2.5 px-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer';
+      }
+      if (tabAccContent) tabAccContent.classList.remove('hidden');
+      if (tabLogoContent) tabLogoContent.classList.add('hidden');
+    }
+
+    if (window.lucide) window.lucide.createIcons();
   };
 
   // Render daftar akun admin di modal

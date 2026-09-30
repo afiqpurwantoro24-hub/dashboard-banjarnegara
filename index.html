@@ -102,8 +102,8 @@
         <!-- Brand / Logo BPS, BerAKHLAK & Sensus Ekonomi 2026 -->
         <div class="flex items-center justify-between gap-2 sm:gap-4 shrink-0">
           <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-            <!-- Logos pill box -->
-            <div class="flex items-center gap-1.5 sm:gap-2.5 bg-white rounded-xl sm:rounded-2xl px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm shrink-0 border border-amber-200/80">
+            <!-- Logos pill box (Dikelola dinamis oleh logoManager.js) -->
+            <div id="headerLogosContainer" class="flex items-center gap-1.5 sm:gap-2.5 bg-white rounded-xl sm:rounded-2xl px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm shrink-0 border border-amber-200/80">
               <img src="src/assets/logo-bps.png" alt="Logo BPS" class="h-7 sm:h-8 md:h-9 lg:h-10 w-auto object-contain" title="Badan Pusat Statistik" />
               <div class="hidden sm:block h-6 sm:h-7 w-px bg-slate-200"></div>
               <img src="src/assets/logo-berakhlak.png" alt="Logo BerAKHLAK" class="hidden sm:block h-6 sm:h-7 md:h-8 w-auto object-contain" title="Core Values ASN BerAKHLAK" />
@@ -726,97 +726,180 @@
         </button>
       </div>
 
+      <!-- Modal Tabs Header -->
+      <div class="flex border-b border-slate-200 px-4 sm:px-5 bg-slate-50/70 gap-2 shrink-0">
+        <button type="button" id="tabBtnManageAccounts" onclick="window.switchManageTab('accounts')"
+          class="py-2.5 px-3 text-xs font-bold border-b-2 border-amber-600 text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i>
+          <span>Akun & Sandi</span>
+        </button>
+        <button type="button" id="tabBtnManageLogos" onclick="window.switchManageTab('logos')"
+          class="py-2.5 px-3 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer">
+          <i data-lucide="image" class="w-3.5 h-3.5"></i>
+          <span>Kelola Logo Header</span>
+        </button>
+      </div>
+
       <!-- Scrollable Modal Body -->
       <div class="p-4 sm:p-5 overflow-y-auto space-y-4">
         
         <!-- Status / Feedback Message -->
         <div id="manageAccountsMessage" class="hidden"></div>
 
-        <!-- Section 1: Ganti Password Akun Aktif -->
-        <div class="p-3.5 bg-amber-50/50 border border-amber-200/70 rounded-2xl">
-          <div class="flex items-center justify-between mb-2">
-            <h4 class="text-xs font-bold text-amber-950 flex items-center gap-1.5">
-              <i data-lucide="key-round" class="w-3.5 h-3.5 text-amber-600"></i>
-              <span>Ganti Sandi Akun Aktif</span>
+        <!-- TAB 1: ACCOUNTS & PASSWORDS -->
+        <div id="tabContentManageAccounts" class="space-y-4">
+          <!-- Section 1: Ganti Password Akun Aktif -->
+          <div class="p-3.5 bg-amber-50/50 border border-amber-200/70 rounded-2xl">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+                <i data-lucide="key-round" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>Ganti Sandi Akun Aktif</span>
+              </h4>
+              <span id="manageCurrentUsername" class="text-[10px] font-extrabold px-2 py-0.5 bg-amber-200 text-amber-900 rounded-md">admin</span>
+            </div>
+
+            <form id="formChangePassword" onsubmit="window.submitChangePassword(event)" class="space-y-2.5">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Password Baru</label>
+                <div class="relative">
+                  <input type="password" id="inputNewAdminPassword" required minlength="6" placeholder="Minimal 6 karakter"
+                    class="w-full pl-3 pr-9 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
+                  <button type="button" onclick="window.toggleAdminPasswordVisibility('inputNewAdminPassword', 'eyeNewPass')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                    <i id="eyeNewPass" data-lucide="eye" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Ulangi Password Baru</label>
+                <input type="password" id="inputConfirmAdminPassword" required minlength="6" placeholder="Ketik ulang password baru"
+                  class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
+              </div>
+
+              <button type="submit" class="w-full py-1.5 px-3 text-xs font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                <span>Simpan Sandi Baru</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Section 2: Tambah Akun Admin Baru -->
+          <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
+            <h4 class="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="user-plus" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Tambah Akun Admin Baru</span>
             </h4>
-            <span id="manageCurrentUsername" class="text-[10px] font-extrabold px-2 py-0.5 bg-amber-200 text-amber-900 rounded-md">admin</span>
+
+            <form id="formAddAdmin" onsubmit="window.submitAddNewAdmin(event)" class="space-y-2.5">
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Username Baru</label>
+                  <input type="text" id="inputNewAdminUsername" required placeholder="Contoh: admin_sektoral"
+                    class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
+                </div>
+                <div>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">Nama / Jabatan</label>
+                  <input type="text" id="inputNewAdminName" placeholder="Contoh: Tim Pengolahan Data BPS"
+                    class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Password</label>
+                <div class="relative">
+                  <input type="password" id="inputNewAdminPass" required minlength="6" placeholder="Minimal 6 karakter"
+                    class="w-full pl-3 pr-9 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
+                  <button type="button" onclick="window.toggleAdminPasswordVisibility('inputNewAdminPass', 'eyeNewAdminPass')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                    <i id="eyeNewAdminPass" data-lucide="eye" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-1.5 px-3 text-xs font-bold text-white bg-slate-800 hover:bg-slate-900 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+                <span>Tambah Admin</span>
+              </button>
+            </form>
           </div>
 
-          <form id="formChangePassword" onsubmit="window.submitChangePassword(event)" class="space-y-2.5">
-            <div>
-              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Password Baru</label>
-              <div class="relative">
-                <input type="password" id="inputNewAdminPassword" required minlength="6" placeholder="Minimal 6 karakter"
-                  class="w-full pl-3 pr-9 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
-                <button type="button" onclick="window.toggleAdminPasswordVisibility('inputNewAdminPassword', 'eyeNewPass')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
-                  <i id="eyeNewPass" data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </button>
-              </div>
+          <!-- Section 3: Daftar Akun Terdaftar -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-700">Daftar Akun Terdaftar</span>
+              <button type="button" onclick="window.copyAdminConfigCode()" title="Salin kode array untuk src/adminAuth.js" class="text-[11px] text-amber-700 hover:text-amber-900 font-semibold flex items-center gap-1 cursor-pointer">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span>Salin Kode File</span>
+              </button>
             </div>
-
-            <div>
-              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Ulangi Password Baru</label>
-              <input type="password" id="inputConfirmAdminPassword" required minlength="6" placeholder="Ketik ulang password baru"
-                class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
+            <div id="adminAccountsListContainer" class="space-y-1.5">
+              <!-- Populated dynamically by JS -->
             </div>
-
-            <button type="submit" class="w-full py-1.5 px-3 text-xs font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              <span>Simpan Sandi Baru</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Section 2: Tambah Akun Admin Baru -->
-        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
-          <h4 class="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-2.5">
-            <i data-lucide="user-plus" class="w-3.5 h-3.5 text-blue-600"></i>
-            <span>Tambah Akun Admin Baru</span>
-          </h4>
-
-          <form id="formAddAdmin" onsubmit="window.submitAddNewAdmin(event)" class="space-y-2.5">
-            <div class="grid grid-cols-2 gap-2">
-              <div>
-                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Username Baru</label>
-                <input type="text" id="inputNewAdminUsername" required placeholder="Contoh: admin_sektoral"
-                  class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
-              </div>
-              <div>
-                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Nama / Jabatan</label>
-                <input type="text" id="inputNewAdminName" placeholder="Contoh: Tim Pengolahan Data BPS"
-                  class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Password</label>
-              <div class="relative">
-                <input type="password" id="inputNewAdminPass" required minlength="6" placeholder="Minimal 6 karakter"
-                  class="w-full pl-3 pr-9 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-slate-800" />
-                <button type="button" onclick="window.toggleAdminPasswordVisibility('inputNewAdminPass', 'eyeNewAdminPass')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
-                  <i id="eyeNewAdminPass" data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </button>
-              </div>
-            </div>
-
-            <button type="submit" class="w-full py-1.5 px-3 text-xs font-bold text-white bg-slate-800 hover:bg-slate-900 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5">
-              <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
-              <span>Tambah Admin</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Section 3: Daftar Akun Terdaftar -->
-        <div>
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-slate-700">Daftar Akun Terdaftar</span>
-            <button type="button" onclick="window.copyAdminConfigCode()" title="Salin kode array untuk src/adminAuth.js" class="text-[11px] text-amber-700 hover:text-amber-900 font-semibold flex items-center gap-1">
-              <i data-lucide="copy" class="w-3 h-3"></i>
-              <span>Salin Kode File</span>
-            </button>
           </div>
-          <div id="adminAccountsListContainer" class="space-y-1.5">
-            <!-- Populated dynamically by JS -->
+        </div>
+
+        <!-- TAB 2: LOGO MANAGER -->
+        <div id="tabContentManageLogos" class="hidden space-y-4">
+          <!-- Section A: Daftar Logo Aktif -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <h4 class="text-xs font-bold text-slate-800">Logo di Header Dashboard</h4>
+                <p class="text-[10px] text-slate-500">Klik sakelar (switch) untuk menampilkan atau menyembunyikan</p>
+              </div>
+              <button type="button" onclick="window.resetLogosToDefault()" class="text-[10px] text-rose-600 hover:underline font-semibold flex items-center gap-1 cursor-pointer">
+                <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                <span>Reset Logo</span>
+              </button>
+            </div>
+            
+            <div id="logoItemsManagerContainer" class="space-y-2">
+              <!-- Populated by window.renderLogoManagerUI() -->
+            </div>
+          </div>
+
+          <!-- Section B: Tambah Logo Baru -->
+          <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
+            <h4 class="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-2.5">
+              <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amber-600"></i>
+              <span>Tambah Gambar Logo Baru</span>
+            </h4>
+
+            <form id="formAddNewLogo" onsubmit="window.submitAddNewLogo(event)" class="space-y-2.5">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Judul / Keterangan Logo</label>
+                <input type="text" id="inputNewLogoTitle" required placeholder="Contoh: Sensus Pertanian / Logo Pemkab"
+                  class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Upload File Gambar (PNG, JPG, WebP)</label>
+                <input type="file" id="inputNewLogoFile" accept="image/*" onchange="window.handleLogoFileSelect(event)"
+                  class="w-full text-xs text-slate-500 file:mr-2 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-amber-100 file:text-amber-800 hover:file:bg-amber-200 cursor-pointer" />
+              </div>
+
+              <!-- Preview Image Box -->
+              <div id="previewNewLogoImage" class="hidden p-2 bg-white rounded-xl border border-slate-200 flex items-center gap-2">
+                <img id="previewNewLogoImgTag" src="" alt="Preview" class="h-8 w-auto object-contain" />
+                <span class="text-[10px] text-emerald-700 font-semibold">Gambar siap ditampilkan di header!</span>
+              </div>
+
+              <div class="relative flex py-1 items-center">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span class="flex-shrink mx-2 text-[10px] text-slate-400">atau masukkan tautan link gambar</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">Tautan / URL Gambar (Opsional jika upload)</label>
+                <input type="url" id="inputNewLogoUrl" placeholder="https://domain.com/logo.png"
+                  class="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 text-slate-800" />
+              </div>
+
+              <button type="submit" class="w-full py-2 px-3 text-xs font-bold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-xl shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="image-plus" class="w-3.5 h-3.5"></i>
+                <span>Tambahkan Logo ke Header</span>
+              </button>
+            </form>
           </div>
         </div>
 
@@ -824,11 +907,11 @@
 
       <!-- Modal Footer -->
       <div class="p-3 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs">
-        <button type="button" onclick="window.resetAllAdminAccountsToDefault()" class="text-rose-600 hover:text-rose-800 font-semibold text-[11px] flex items-center gap-1">
+        <button type="button" onclick="window.resetAllAdminAccountsToDefault()" class="text-rose-600 hover:text-rose-800 font-semibold text-[11px] flex items-center gap-1 cursor-pointer">
           <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
-          <span>Reset Default</span>
+          <span>Reset Akun Default</span>
         </button>
-        <button type="button" onclick="window.closeAdminManageModal()" class="py-1.5 px-4 text-xs font-bold text-slate-700 bg-slate-200 hover:bg-slate-300 rounded-xl transition-colors">
+        <button type="button" onclick="window.closeAdminManageModal()" class="py-1.5 px-4 text-xs font-bold text-slate-700 bg-slate-200 hover:bg-slate-300 rounded-xl transition-colors cursor-pointer">
           Tutup
         </button>
       </div>
@@ -950,6 +1033,7 @@
   <!-- Load Embedded Data, Admin Auth, Live Google Sheets Sync & Application Core -->
   <script src="src/data/dataset.js?v=1.2"></script>
   <script src="src/adminAuth.js?v=1.0"></script>
+  <script src="src/logoManager.js?v=1.0"></script>
   <script src="src/adminEditor.js?v=1.0"></script>
   <script src="src/data/sheetsSync.js?v=1.2"></script>
   <script src="src/app.js?v=1.2"></script>
