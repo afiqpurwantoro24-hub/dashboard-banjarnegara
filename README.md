@@ -42,19 +42,16 @@ Transformasi Data Statistik BPS Kabupaten Banjarnegara Menjadi Dashboard Interak
 ## 🚀 Cara Menjalankan
 
 ### Cara 1: Buka Langsung di Browser (Tanpa Instalasi)
-Cukup buka file `index.html` menggunakan browser apapun (Google Chrome, Microsoft Edge, Mozilla Firefox, dsb.):
-```text
-E:\Afiq\dashboard-banjarnegara\index.html
-```
+Cukup buka file `index.html` menggunakan browser apapun (Google Chrome, Microsoft Edge, Mozilla Firefox, dsb.).
 
 ### Cara 2: Jalankan via Local Web Server
 Jika menggunakan Node.js / Python / Live Server:
 ```bash
 # Opsi A: Node npx serve
-npx serve E:\Afiq\dashboard-banjarnegara
+npx serve .
 
 # Opsi B: Python HTTP Server
-python -m http.server 8000 --directory E:\Afiq\dashboard-banjarnegara
+python -m http.server 8000
 ```
 Kemudian buka browser di `http://localhost:8000` atau `http://localhost:3000`.
 
