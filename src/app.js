@@ -1828,7 +1828,7 @@ function renderTable(metricInfo) {
   const tableBabNote = document.getElementById('tableBabNote');
   if (tableBabNote) {
     if (state.bab === 5) {
-      tableBabNote.innerHTML = '<span class="text-emerald-700 font-semibold">✦ Komoditas:</span> Cabai Besar/TW/Teropong, Cabai Keriting, Cabai Rawit, Kentang, Kubis, Tomat, Bawang Putih, Buncis, Terung.';
+      tableBabNote.innerHTML = '<span class="text-emerald-700 font-semibold">✦ Catatan:</span> Data yang dihasilkan merupakan jumlah produksi dari sayuran: Cabai Besar/TW/Teropong, Cabai Keriting, Cabai Rawit, Kentang, Kubis, Tomat, Bawang Putih, Buncis, Terung.';
     } else {
       tableBabNote.innerHTML = '';
     }
