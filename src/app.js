@@ -395,7 +395,32 @@ function initHeaderFilters() {
   });
 
   selectKec.value = state.selectedKecamatan;
-  document.getElementById('filterTahun').value = state.tahun.toString();
+
+  // Populate Tahun Dropdown dynamically based on available data years
+  const selectTahun = document.getElementById('filterTahun');
+  if (selectTahun) {
+    const yearSet = new Set([2021, 2022, 2023, 2024, 2025]);
+    if (window.KCDA_DATA) {
+      ['penduduk', 'geografi', 'pemerintahan', 'pertanian', 'sekolah', 'menara', 'bank'].forEach((key) => {
+        if (Array.isArray(window.KCDA_DATA[key])) {
+          window.KCDA_DATA[key].forEach((item) => {
+            if (item && item.tahun) yearSet.add(item.tahun);
+          });
+        }
+      });
+    }
+    if (state.tahun) yearSet.add(state.tahun);
+
+    const sortedYears = Array.from(yearSet).sort((a, b) => a - b);
+    selectTahun.innerHTML = '';
+    sortedYears.forEach((y) => {
+      const opt = document.createElement('option');
+      opt.value = y.toString();
+      opt.textContent = y.toString();
+      selectTahun.appendChild(opt);
+    });
+    selectTahun.value = state.tahun.toString();
+  }
 
   // Populate Comparison Checkboxes
   const compareBox = document.getElementById('compareCheckboxes');

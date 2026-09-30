@@ -139,7 +139,37 @@
     const selKec = document.getElementById('editorKecamatanSelect');
 
     if (selBab && window.state) selBab.value = window.state.bab || 1;
-    if (selTahun && window.state) selTahun.value = window.state.tahun || 2025;
+
+    // Populate Tahun Dropdown in Editor (Dukungan tahun 2026 dan seterusnya)
+    if (selTahun) {
+      const yearSet = new Set([2021, 2022, 2023, 2024, 2025, 2026, 2027]);
+      if (window.KCDA_DATA) {
+        ['penduduk', 'geografi', 'pemerintahan', 'pertanian', 'sekolah', 'menara', 'bank'].forEach((key) => {
+          if (Array.isArray(window.KCDA_DATA[key])) {
+            window.KCDA_DATA[key].forEach((item) => {
+              if (item && item.tahun) yearSet.add(item.tahun);
+            });
+          }
+        });
+      }
+      if (window.state && window.state.tahun) yearSet.add(window.state.tahun);
+
+      const sortedYears = Array.from(yearSet).sort((a, b) => a - b);
+      selTahun.innerHTML = '';
+      sortedYears.forEach((y) => {
+        const opt = document.createElement('option');
+        opt.value = y.toString();
+        opt.textContent = y.toString();
+        selTahun.appendChild(opt);
+      });
+
+      const optCustom = document.createElement('option');
+      optCustom.value = 'TAMBAH_BARU';
+      optCustom.textContent = '+ Tambah Tahun Baru...';
+      selTahun.appendChild(optCustom);
+
+      selTahun.value = (window.state && window.state.tahun) ? window.state.tahun.toString() : '2025';
+    }
 
     // Populate Kecamatan
     if (selKec && window.MASTER_KECAMATAN) {
@@ -390,7 +420,10 @@
         localStorage.setItem('KCDA_SHEETS_CACHE_V3', JSON.stringify(window.KCDA_DATA));
       } catch (e) {}
 
-      // Re-render dashboard seketika
+      // Re-render dashboard dan perbarui filter tahun
+      if (typeof window.initHeaderFilters === 'function') {
+        window.initHeaderFilters();
+      }
       if (typeof window.renderApp === 'function') {
         window.renderApp();
       }
@@ -467,6 +500,19 @@
     }
     if (selTahun) {
       selTahun.addEventListener('change', () => {
+        if (selTahun.value === 'TAMBAH_BARU') {
+          const inputY = prompt('Masukkan tahun baru (contoh: 2026, 2027):');
+          if (inputY && /^[0-9]{4}$/.test(inputY.trim())) {
+            const newY = parseInt(inputY.trim(), 10);
+            const opt = document.createElement('option');
+            opt.value = newY.toString();
+            opt.textContent = newY.toString();
+            selTahun.insertBefore(opt, selTahun.lastChild);
+            selTahun.value = newY.toString();
+          } else {
+            selTahun.value = '2025';
+          }
+        }
         window.populateEditorFieldValues();
       });
     }
