@@ -141,11 +141,18 @@
         window.closeAdminAuthModal();
 
         if (typeof window.showToast === 'function') {
-          window.showToast('Login Admin Berhasil! Memulai sinkronisasi data...');
+          window.showToast('Login Admin Berhasil!');
         }
 
-        // Jalankan sinkronisasi
-        if (typeof window.syncWithGoogleSheets === 'function') {
+        // Jika ada aksi tertunda (misal buka form edit data)
+        if (window._adminPendingAction === 'open_editor') {
+          window._adminPendingAction = null;
+          setTimeout(() => {
+            if (typeof window.openAdminEditorModal === 'function') {
+              window.openAdminEditorModal();
+            }
+          }, 250);
+        } else if (typeof window.syncWithGoogleSheets === 'function') {
           setTimeout(() => {
             window.syncWithGoogleSheets(true);
           }, 300);
@@ -229,6 +236,19 @@
       if (btnLogout) {
         btnLogout.classList.add('hidden');
         btnLogout.classList.remove('flex');
+      }
+    }
+
+    const btnEdit = document.getElementById('btnHeaderEditData');
+    if (btnEdit) {
+      if (isAuth) {
+        btnEdit.className =
+          'flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-amber-100/90 border-amber-400 text-amber-950 hover:bg-amber-200 shadow-sm ring-1 ring-amber-400/40';
+        btnEdit.title = 'Edit Data Indikator ke Google Spreadsheet (Admin Aktif)';
+      } else {
+        btnEdit.className =
+          'flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border transition-all bg-white/95 border-amber-200 text-[#0F172A] hover:bg-amber-100 shadow-sm';
+        btnEdit.title = 'Edit Data Indikator ke Google Spreadsheet (Perlu Login Admin)';
       }
     }
 
