@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderFilters();
   initEventListeners();
   initLiveClock();
+  initIntroBanner();
   renderApp();
   lucide.createIcons();
 });
@@ -1898,4 +1899,73 @@ function exportCurrentDataCSV() {
   link.click();
   document.body.removeChild(link);
   showToast('File CSV berhasil diunduh!');
+}
+
+// ===================================================================
+// 6. FLOATING INTRO POPUP BANNER (IKLAN / PENGUMUMAN PEMBUKA)
+// ===================================================================
+
+window.openIntroBannerModal = function () {
+  const modal = document.getElementById('introBannerModal');
+  if (!modal) return;
+
+  modal.classList.remove('hidden');
+  void modal.offsetWidth;
+  modal.classList.remove('opacity-0');
+  modal.classList.add('opacity-100');
+
+  const card = modal.querySelector('div');
+  if (card) {
+    card.classList.remove('scale-95');
+    card.classList.add('scale-100');
+  }
+
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+};
+
+window.closeIntroBannerModal = function () {
+  const modal = document.getElementById('introBannerModal');
+  if (!modal) return;
+
+  modal.classList.remove('opacity-100');
+  modal.classList.add('opacity-0');
+
+  const card = modal.querySelector('div');
+  if (card) {
+    card.classList.remove('scale-100');
+    card.classList.add('scale-95');
+  }
+
+  setTimeout(() => {
+    modal.classList.add('hidden');
+  }, 250);
+};
+
+function initIntroBanner() {
+  // Buka otomatis saat dashboard dimuat (setelah delay halus 400ms)
+  setTimeout(() => {
+    window.openIntroBannerModal();
+  }, 400);
+
+  // Tutup dengan tombol Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('introBannerModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        window.closeIntroBannerModal();
+      }
+    }
+  });
+
+  // Tutup saat klik pada area luar backdrop modal
+  const introModal = document.getElementById('introBannerModal');
+  if (introModal) {
+    introModal.addEventListener('click', (e) => {
+      if (e.target === introModal) {
+        window.closeIntroBannerModal();
+      }
+    });
+  }
 }
